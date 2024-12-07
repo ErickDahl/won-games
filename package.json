@@ -13,7 +13,8 @@
     "generate": "npx plop --plopfile generators/plopfile.mjs",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "commit": "git-cz"
   },
   "dependencies": {
     "next": "15.0.4",
@@ -23,6 +24,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "3.2.2",
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.16.0",
     "@storybook/addon-essentials": "8.4.7",
     "@storybook/addon-interactions": "8.4.7",
@@ -39,6 +42,8 @@
     "@types/node": "^20",
     "@types/react": "18.2.45",
     "@types/react-dom": "^19.0.1",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.16.0",
     "eslint-config-next": "15.0.4",
     "eslint-config-prettier": "^9.1.0",
@@ -66,5 +71,10 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
