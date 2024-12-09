@@ -13,6 +13,7 @@ const config: Config = {
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
     '!src/**/*.stories.tsx',
+    '!src/utils/supabase/**',
     '!src/app/**' // should be tested in e2e
   ],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
