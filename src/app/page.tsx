@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default async function Home() {
   const supabase = await createClient()
-  const { data } = await supabase.from('games').select()
+  const { data } = await supabase.from('games').select('*')
 
   console.log(data)
 
