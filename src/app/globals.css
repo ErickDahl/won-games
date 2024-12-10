@@ -5,6 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: '#F231A5';
+  --color-secondary: '#3CD3C1';
+  --color-mainBg: '#06092B';
+  --color-white: '#FAFAFA';
+  --color-black: '#030517';
+  --color-lightGray: '#EAEAEA';
+  --color-gray: '#8F8F8F';
+  --color-darkGray: '#2E2F42';
+}
+
+.theme-light {
+  --color-mainBg: '#707';
 }
 
 @media (prefers-color-scheme: dark) {

@@ -166,6 +166,7 @@ export type Database = {
       games: {
         Row: {
           classification_id: number
+          coverimage: string | null
           created_at: string | null
           description: string | null
           id: number
@@ -176,6 +177,7 @@ export type Database = {
         }
         Insert: {
           classification_id: number
+          coverimage?: string | null
           created_at?: string | null
           description?: string | null
           id?: number
@@ -186,6 +188,7 @@ export type Database = {
         }
         Update: {
           classification_id?: number
+          coverimage?: string | null
           created_at?: string | null
           description?: string | null
           id?: number

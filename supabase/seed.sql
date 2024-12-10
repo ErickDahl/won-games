@@ -122,10 +122,10 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 --
 
 INSERT INTO "public"."categories" ("id", "name", "created_at") VALUES
-	(1, 'Action', '2024-12-08 14:26:59.68844'),
-	(2, 'RPG', '2024-12-08 14:26:59.68844'),
-	(3, 'Adventure', '2024-12-08 14:26:59.68844'),
-	(4, 'Simulation', '2024-12-08 14:26:59.68844');
+	(1, 'Action', '2024-12-10 15:32:11.115615'),
+	(2, 'RPG', '2024-12-10 15:32:11.115615'),
+	(3, 'Adventure', '2024-12-10 15:32:11.115615'),
+	(4, 'Simulation', '2024-12-10 15:32:11.115615');
 
 
 --
@@ -133,20 +133,21 @@ INSERT INTO "public"."categories" ("id", "name", "created_at") VALUES
 --
 
 INSERT INTO "public"."classifications" ("id", "name", "age_limit", "created_at") VALUES
-	(1, 'Everyone', 0, '2024-12-08 14:26:59.68844'),
-	(2, 'Teen', 13, '2024-12-08 14:26:59.68844'),
-	(3, 'Mature', 17, '2024-12-08 14:26:59.68844');
+	(1, 'Everyone', 0, '2024-12-10 15:32:11.115615'),
+	(2, 'Teen', 13, '2024-12-10 15:32:11.115615'),
+	(3, 'Mature', 17, '2024-12-10 15:32:11.115615');
 
 
 --
 -- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."games" ("id", "title", "description", "release_date", "price", "stock", "created_at", "classification_id") VALUES
-	(1, 'The Legend of Zelda: Breath of the Wild', 'An action-adventure game set in a vast open world.', '2017-03-03', 59.99, 100, '2024-12-08 14:26:59.68844', 2),
-	(2, 'Elden Ring', 'A fantasy action RPG developed by FromSoftware.', '2022-02-25', 69.99, 200, '2024-12-08 14:26:59.68844', 3),
-	(3, 'The Sims 4', 'A life simulation game that allows players to create and control people.', '2014-09-02', 39.99, 300, '2024-12-08 14:26:59.68844', 1),
-	(4, 'Halo Infinite', 'A first-person shooter game in the Halo franchise.', '2021-12-08', 59.99, 150, '2024-12-08 14:26:59.68844', 2);
+INSERT INTO "public"."games" ("id", "title", "description", "release_date", "price", "stock", "created_at", "coverimage", "classification_id") VALUES
+	(1, 'The Legend of Zelda: Breath of the Wild', 'An action-adventure game set in a vast open world.', '2017-03-03', 59.99, 100, '2024-12-10 15:32:11.115615', NULL, 2),
+	(2, 'Elden Ring', 'A fantasy action RPG developed by FromSoftware.', '2022-02-25', 69.99, 200, '2024-12-10 15:32:11.115615', NULL, 3),
+	(3, 'The Sims 4', 'A life simulation game that allows players to create and control people.', '2014-09-02', 39.99, 300, '2024-12-10 15:32:11.115615', NULL, 1),
+	(4, 'Halo Infinite', 'A first-person shooter game in the Halo franchise.', '2021-12-08', 59.99, 150, '2024-12-10 15:32:11.115615', NULL, 2),
+	(5, 'Cyberpunk 2077', 'An open-world RPG set in a dystopian future.', '2020-12-10', 59.99, 100, '2024-12-10 15:32:11.115615', 'https://dlbwigsrcilhcygwsiby.supabase.co/storage/v1/object/sign/won-games/Games%20Cover/c75e674590b8947542c809924df30bbef2190341163dd08668e243c266be70c5.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ3b24tZ2FtZXMvR2FtZXMgQ292ZXIvYzc1ZTY3NDU5MGI4OTQ3NTQyYzgwOTkyNGRmMzBiYmVmMjE5MDM0MTE2M2RkMDg2NjhlMjQzYzI2NmJlNzBjNS5wbmciLCJpYXQiOjE3MzM4NDQ3NzgsImV4cCI6MTc2NTM4MDc3OH0.AjqvsY80Nw2HzQkm4v-Wa40k8tk0ZdoNupXAXKYprQk&t=2024-12-10T15%3A33%3A22.033Z', 3);
 
 
 --
@@ -161,7 +162,9 @@ INSERT INTO "public"."game_categories" ("game_id", "category_id") VALUES
 	(3, 3),
 	(3, 4),
 	(4, 1),
-	(4, 2);
+	(4, 2),
+	(5, 2),
+	(5, 3);
 
 
 --
@@ -169,10 +172,10 @@ INSERT INTO "public"."game_categories" ("game_id", "category_id") VALUES
 --
 
 INSERT INTO "public"."platforms" ("id", "name", "created_at") VALUES
-	(1, 'PC', '2024-12-08 14:26:59.68844'),
-	(2, 'PlayStation 5', '2024-12-08 14:26:59.68844'),
-	(3, 'Xbox Series X', '2024-12-08 14:26:59.68844'),
-	(4, 'Switch', '2024-12-08 14:26:59.68844');
+	(1, 'PC', '2024-12-10 15:32:11.115615'),
+	(2, 'PlayStation 5', '2024-12-10 15:32:11.115615'),
+	(3, 'Xbox Series X', '2024-12-10 15:32:11.115615'),
+	(4, 'Switch', '2024-12-10 15:32:11.115615');
 
 
 --
@@ -187,7 +190,10 @@ INSERT INTO "public"."game_platforms" ("game_id", "platform_id") VALUES
 	(3, 3),
 	(3, 4),
 	(4, 1),
-	(4, 2);
+	(4, 2),
+	(5, 1),
+	(5, 2),
+	(5, 3);
 
 
 --
@@ -195,11 +201,11 @@ INSERT INTO "public"."game_platforms" ("game_id", "platform_id") VALUES
 --
 
 INSERT INTO "public"."publishers" ("id", "name", "created_at") VALUES
-	(1, 'Electronic Arts', '2024-12-08 14:26:59.68844'),
-	(2, 'Ubisoft', '2024-12-08 14:26:59.68844'),
-	(3, 'Nintendo', '2024-12-08 14:26:59.68844'),
-	(4, 'Bandai Namco', '2024-12-08 14:26:59.68844'),
-	(5, 'Microsoft', '2024-12-08 14:26:59.68844');
+	(1, 'Electronic Arts', '2024-12-10 15:32:11.115615'),
+	(2, 'Ubisoft', '2024-12-10 15:32:11.115615'),
+	(3, 'Nintendo', '2024-12-10 15:32:11.115615'),
+	(4, 'Bandai Namco', '2024-12-10 15:32:11.115615'),
+	(5, 'Microsoft', '2024-12-10 15:32:11.115615');
 
 
 --
@@ -208,9 +214,15 @@ INSERT INTO "public"."publishers" ("id", "name", "created_at") VALUES
 
 INSERT INTO "public"."game_publishers" ("game_id", "publisher_id") VALUES
 	(1, 2),
+	(1, 4),
 	(2, 4),
+	(2, 2),
 	(3, 1),
-	(4, 2);
+	(3, 2),
+	(4, 2),
+	(4, 3),
+	(5, 2),
+	(5, 4);
 
 
 --
@@ -226,7 +238,9 @@ INSERT INTO "storage"."buckets" ("id", "name", "owner", "created_at", "updated_a
 --
 
 INSERT INTO "storage"."objects" ("id", "bucket_id", "name", "owner", "created_at", "updated_at", "last_accessed_at", "metadata", "version", "owner_id", "user_metadata") VALUES
-	('76626e00-d857-4c7f-8ee9-ab1f56e06ebf', 'won-games', 'vote-card.png', NULL, '2024-12-08 14:45:53.675467+00', '2024-12-08 14:45:53.675467+00', '2024-12-08 14:45:53.675467+00', '{"eTag": "\"105dcf85fe67731774d2cc9db0b48f3c-1\"", "size": 1734107, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-12-08T14:45:54.000Z", "contentLength": 1734107, "httpStatusCode": 200}', '5ff47618-9a0e-46bf-a3cc-25993327d0e4', NULL, NULL);
+	('76626e00-d857-4c7f-8ee9-ab1f56e06ebf', 'won-games', 'vote-card.png', NULL, '2024-12-08 14:45:53.675467+00', '2024-12-08 14:45:53.675467+00', '2024-12-08 14:45:53.675467+00', '{"eTag": "\"105dcf85fe67731774d2cc9db0b48f3c-1\"", "size": 1734107, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-12-08T14:45:54.000Z", "contentLength": 1734107, "httpStatusCode": 200}', '5ff47618-9a0e-46bf-a3cc-25993327d0e4', NULL, NULL),
+	('f818ab30-6524-40d8-96c4-076e83c56d52', 'won-games', 'Games Cover/elden-ring-cover-art.webp', NULL, '2024-12-10 15:23:19.422787+00', '2024-12-10 15:23:19.422787+00', '2024-12-10 15:23:19.422787+00', '{"eTag": "\"84a756e2788118842972493babb7b5bd-1\"", "size": 909372, "mimetype": "image/webp", "cacheControl": "max-age=3600", "lastModified": "2024-12-10T15:23:19.000Z", "contentLength": 909372, "httpStatusCode": 200}', '914a66ec-58b8-482d-9b29-4b94c138ef8f', NULL, NULL),
+	('86eddfa1-87ce-4cab-b612-e349e12b0e93', 'won-games', 'Games Cover/c75e674590b8947542c809924df30bbef2190341163dd08668e243c266be70c5.png', NULL, '2024-12-10 15:27:04.713113+00', '2024-12-10 15:27:04.713113+00', '2024-12-10 15:27:04.713113+00', '{"eTag": "\"fa51f8579a59692bcbbf998035fd85d2-1\"", "size": 2199241, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2024-12-10T15:27:04.000Z", "contentLength": 2199241, "httpStatusCode": 200}', '419db986-deb6-4f73-9ad7-432dce90b6d3', NULL, NULL);
 
 
 --
@@ -279,7 +293,7 @@ SELECT pg_catalog.setval('"public"."classifications_id_seq"', 3, true);
 -- Name: games_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."games_id_seq"', 4, true);
+SELECT pg_catalog.setval('"public"."games_id_seq"', 5, true);
 
 
 --
