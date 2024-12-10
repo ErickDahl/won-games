@@ -5,18 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-primary: '#F231A5';
-  --color-secondary: '#3CD3C1';
-  --color-mainBg: '#06092B';
-  --color-white: '#FAFAFA';
-  --color-black: '#030517';
-  --color-lightGray: '#EAEAEA';
-  --color-gray: '#8F8F8F';
-  --color-darkGray: '#2E2F42';
+  --color-primary: #f231a5;
+  --color-secondary: #3cd3c1;
+  --color-mainBg: #06092b;
+  --color-white: #fafafa;
+  --color-black: #030517;
+  --color-lightGray: #eaeaea;
+  --color-gray: #8f8f8f;
+  --color-darkGray: #2e2f42;
 }
 
 .theme-light {
-  --color-mainBg: '#707';
+  --color-mainBg: #707;
 }
 
 @media (prefers-color-scheme: dark) {
