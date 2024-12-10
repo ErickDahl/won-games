@@ -1,4 +1,4 @@
-import Main from '@/components'
+import Logo from '@/components/Logo'
 import { createClient } from '@/utils/supabase/server'
 import Image from 'next/image'
 
@@ -10,8 +10,8 @@ export default async function Home() {
 
   return (
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
-      <Main />
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+        <Logo variant="white" />
         <Image
           className="dark:invert"
           src="/next.svg"
