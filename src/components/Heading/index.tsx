@@ -8,18 +8,24 @@ const headingClasses = tv({
       white: 'text-white',
       black: 'text-black'
     },
-    linePosition: {
-      left: 'border-l-8 border-solid pl-3',
-      bottom: 'border-b-8 border-solid pb-3'
-    },
     lineColor: {
       primary: 'border-primary',
       secondary: 'border-secondary'
+    },
+    linePosition: {
+      left: 'border-l-8 border-solid pl-3',
+      bottom:
+        'relative after:absolute after:-bottom-2 after:left-0 after:w-20 after:border-b-8 after:border-solid after:content-[""]'
+    },
+    lineBottomColor: {
+      primary: 'after:border-primary',
+      secondary: 'after:border-secondary'
     }
   },
   defaultVariants: {
     color: 'white',
-    lineColor: 'primary'
+    lineColor: 'primary',
+    lineBottomColor: 'primary'
   }
 })
 
@@ -33,13 +39,20 @@ const Heading = ({
   color,
   lineColor,
   linePosition,
+  lineBottomColor,
   className,
   ...rest
 }: HeadingProps) => {
   return (
     <h2
       data-testid="heading"
-      className={headingClasses({ color, lineColor, linePosition, className })}
+      className={headingClasses({
+        color,
+        lineColor,
+        linePosition,
+        lineBottomColor,
+        className
+      })}
       {...rest}
     >
       {children}

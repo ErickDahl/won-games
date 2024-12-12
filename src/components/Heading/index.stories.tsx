@@ -15,6 +15,11 @@ const meta: Meta = {
       options: ['primary', 'secondary'],
       description: 'Color of the decorative line'
     },
+    lineBottomColor: {
+      control: 'radio',
+      options: ['primary', 'secondary'],
+      description: 'Color of the decorative line'
+    },
     linePosition: {
       control: 'radio',
       options: ['left', 'bottom'],
