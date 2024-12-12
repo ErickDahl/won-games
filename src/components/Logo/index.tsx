@@ -1,35 +1,38 @@
-import Image from 'next/image'
+import Image, { ImageProps } from 'next/image'
 import LogoBlack from '@/assets/logoBlack.svg'
 import LogoCompact from '@/assets/logoCompact.svg'
 import LogoWhite from '@/assets/logoWhite.svg'
 
-type logoProps = {
+interface LogoProps
+  extends Omit<ImageProps, 'src' | 'width' | 'height' | 'alt'> {
   variant?: 'black' | 'compact' | 'white'
   size?: 'large' | 'small'
 }
 
-const logoMap = {
+const logoMap: Record<NonNullable<LogoProps['variant']>, typeof LogoBlack> = {
   black: LogoBlack,
   compact: LogoCompact,
   white: LogoWhite
 }
 
-const sizeMap = {
+const sizeMap: Record<NonNullable<LogoProps['size']>, number> = {
   large: 200,
   small: 110
 }
 
-const Logo = ({ variant = 'black', size = 'large' }: logoProps) => {
-  const logo = logoMap[variant] || LogoBlack
-  const width = sizeMap[size] || sizeMap.small
+const Logo = ({ variant = 'black', size = 'large', ...rest }: LogoProps) => {
+  const logo = logoMap[variant]
+  const width = sizeMap[size]
+  const height = (logo.height / logo.width) * width
 
   return (
     <Image
       data-testid="svg-element-logo"
       src={logo.src}
-      alt={'won games'}
+      alt="won games"
       width={width}
-      height={0}
+      height={height}
+      {...rest}
     />
   )
 }

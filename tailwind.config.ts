@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
+import { withTV } from 'tailwind-variants/transformer'
 
-export default {
+const config: Config = withTV({
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,21 +14,20 @@ export default {
         foreground: 'var(--foreground)',
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
-        mainBg: 'var( --color-mainBg)',
+        mainBg: 'var(--color-mainBg)',
         white: 'var(--color-white)',
         black: 'var(--color-black)',
-        lightGray: 'var( --color-lightGray)',
+        lightGray: 'var(--color-lightGray)',
         gray: 'var(--color-gray)',
         darkGray: 'var(--color-darkGray)'
       },
-      spacing: {
-        xxsmall: '0.8rem',
-        xsmall: '1.6rem',
-        small: '2.4rem',
-        medium: '3.2rem',
-        large: '4.0rem',
-        xlarge: '4.8rem',
-        xxlarge: '5.6rem'
+      fontSize: {
+        xsmall: '1.2rem',
+        small: '1.4rem',
+        medium: '1.6rem',
+        large: '1.8rem',
+        xlarge: '2.0rem',
+        xxlarge: '2.8rem'
       },
       borderRadius: {
         radius: '0.4rem'
@@ -38,4 +38,6 @@ export default {
     }
   },
   plugins: []
-} satisfies Config
+})
+
+export default config
