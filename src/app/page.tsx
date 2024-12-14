@@ -1,6 +1,8 @@
-import Heading from '@/components/Heading'
-import Logo from '@/components/Logo'
 import { createClient } from '@/utils/supabase/server'
+import { MdAddShoppingCart } from 'react-icons/md'
+import Button from '@/components/Atoms/Button'
+import Heading from '@/components/Atoms/Heading'
+import Logo from '@/components/Atoms/Logo'
 import Image from 'next/image'
 
 export default async function Home() {
@@ -13,13 +15,10 @@ export default async function Home() {
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <Logo variant="white" />
-        <Heading
-          lineColor="secondary"
-          linePosition="left"
-          lineBottomColor="primary"
-        >
+        <Heading lineColor="secondary" linePosition="left">
           test
         </Heading>
+        <Button icon={<MdAddShoppingCart size={17} />}>teste</Button>
         <Image
           className="border-b dark:invert"
           src="/next.svg"

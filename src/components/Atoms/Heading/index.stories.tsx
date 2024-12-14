@@ -41,6 +41,7 @@ export const Default: Story = {
     children: 'Default Heading',
     color: 'black',
     lineColor: 'primary',
-    linePosition: 'left'
+    linePosition: 'left',
+    lineBottomColor: 'primary'
   }
 }

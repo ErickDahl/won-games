@@ -34,6 +34,16 @@ const config: Config = withTV({
       },
       fontFamily: {
         default: ['var(--font-poppins)']
+      },
+      borderWidth: {
+        '5': '5px',
+        '7': '7px',
+        '3': '3px'
+      },
+      height: {
+        small: '30px',
+        medium: '40px',
+        large: '50px'
       }
     }
   },

@@ -2,7 +2,7 @@ import { HTMLAttributes, ReactNode } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const headingClasses = tv({
-  base: `text-xlarge lg:text-xxlarge`,
+  base: `font-default text-xlarge lg:text-xxlarge`,
   variants: {
     color: {
       white: 'text-white',
@@ -13,9 +13,9 @@ const headingClasses = tv({
       secondary: 'border-secondary'
     },
     linePosition: {
-      left: 'border-l-8 border-solid pl-3',
+      left: 'border-l-7 border-solid pl-3',
       bottom:
-        'relative after:absolute after:-bottom-2 after:left-0 after:w-20 after:border-b-8 after:border-solid after:content-[""]'
+        'after:border-b-5 relative after:absolute after:-bottom-2 after:left-0 after:w-20 after:border-solid after:content-[""]'
     },
     lineBottomColor: {
       primary: 'after:border-primary',
@@ -45,7 +45,6 @@ const Heading = ({
 }: HeadingProps) => {
   return (
     <h2
-      data-testid="heading"
       className={headingClasses({
         color,
         lineColor,

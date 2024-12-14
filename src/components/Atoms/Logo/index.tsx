@@ -27,7 +27,6 @@ const Logo = ({ variant = 'black', size = 'large', ...rest }: LogoProps) => {
 
   return (
     <Image
-      data-testid="svg-element-logo"
       src={logo.src}
       alt="won games"
       width={width}
