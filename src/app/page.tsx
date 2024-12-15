@@ -1,5 +1,5 @@
 import { createClient } from '@/utils/supabase/server'
-import { MdAddShoppingCart } from 'react-icons/md'
+import { AddCartIcon } from '@/assets/iconst'
 import Button from '@/components/Atoms/Button'
 import Heading from '@/components/Atoms/Heading'
 import Logo from '@/components/Atoms/Logo'
@@ -18,7 +18,7 @@ export default async function Home() {
         <Heading lineColor="secondary" linePosition="left">
           test
         </Heading>
-        <Button icon={<MdAddShoppingCart size={17} />}>teste</Button>
+        <Button icon={<AddCartIcon size={17} />}>teste</Button>
         <Image
           className="border-b dark:invert"
           src="/next.svg"
