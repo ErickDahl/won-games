@@ -4,6 +4,12 @@ import Button from '@/components/Atoms/Button'
 import Heading from '@/components/Atoms/Heading'
 import Logo from '@/components/Atoms/Logo'
 import Image from 'next/image'
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTrigger
+} from '@/components/Atoms/Drawer'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -18,6 +24,14 @@ export default async function Home() {
         <Heading lineColor="secondary" linePosition="left">
           test
         </Heading>
+        <Drawer>
+          <DrawerTrigger>test1</DrawerTrigger>
+          <DrawerContent>
+            content1
+            <DrawerClose>test1</DrawerClose>
+          </DrawerContent>
+        </Drawer>
+
         <Button icon={<AddCartIcon size={17} />}>teste</Button>
         <Image
           className="border-b dark:invert"

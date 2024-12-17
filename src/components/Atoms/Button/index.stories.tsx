@@ -4,7 +4,7 @@ import { MdAddShoppingCart } from 'react-icons/md'
 import Button from '.'
 
 export default {
-  title: 'Button',
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     size: {

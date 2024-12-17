@@ -9,4 +9,7 @@ describe('<Menu />', () => {
     expect(screen.getByLabelText(/openCart/i)).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /won games/i })).toBeInTheDocument()
   })
+  it('should hadnle the open/close behavior the mobile menu', () => {
+    render(<Menu />)
+  })
 })

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import Heading from '.'
 
 const meta: Meta = {
-  title: 'Heading',
+  title: 'Atoms/Heading',
   component: Heading,
   argTypes: {
     color: {
