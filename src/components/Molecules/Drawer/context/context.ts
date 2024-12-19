@@ -5,10 +5,14 @@ interface DrawerContextValue {
   openDrawer: () => void
   toggleDrawer: () => void
   closeDrawer: () => void
+  from: 'left' | 'bottom' | 'right' | 'top' | undefined
+  size: number | undefined
 }
 
 export const DrawerContext = React.createContext<DrawerContextValue>({
   isOpen: false,
+  from: 'left',
+  size: 100,
   openDrawer: () => {},
   toggleDrawer: () => {},
   closeDrawer: () => {}

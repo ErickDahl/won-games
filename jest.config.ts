@@ -14,6 +14,7 @@ const config: Config = {
     'src/**/*.ts(x)?',
     '!src/**/*.stories.tsx',
     '!src/assets/**',
+    '!src/components/**/context/**',
     '!src/utils/supabase/**',
     '!src/app/**' // should be tested in e2e
   ],

@@ -1,5 +1,5 @@
 import { createClient } from '@/utils/supabase/server'
-import { AddCartIcon } from '@/assets/iconst'
+import { AddCartIcon, CloseIcon } from '@/assets/icons'
 import Button from '@/components/Atoms/Button'
 import Heading from '@/components/Atoms/Heading'
 import Logo from '@/components/Atoms/Logo'
@@ -9,7 +9,8 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerTrigger
-} from '@/components/Atoms/Drawer'
+} from '@/components/Molecules/Drawer'
+import StoreLink from '@/components/Atoms/Link'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -21,14 +22,17 @@ export default async function Home() {
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <Logo variant="white" />
+        <StoreLink href={'/'}>Link</StoreLink>
         <Heading lineColor="secondary" linePosition="left">
-          test
+          Heading
         </Heading>
-        <Drawer>
-          <DrawerTrigger>test1</DrawerTrigger>
+        <Drawer from="left" size={50}>
+          <DrawerTrigger>Open Drawer</DrawerTrigger>
           <DrawerContent>
-            content1
-            <DrawerClose>test1</DrawerClose>
+            content
+            <DrawerClose className="absolute right-0 top-3 mr-4 cursor-pointer">
+              <CloseIcon color="#000000" size={30} />
+            </DrawerClose>
           </DrawerContent>
         </Drawer>
 

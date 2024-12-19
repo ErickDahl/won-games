@@ -1,11 +1,11 @@
-import { CartIcon, MenuIcon, SearchIcon } from '@/assets/iconst'
+import { CartIcon, MenuIcon, SearchIcon } from '@/assets/icons'
 import Logo from '../../Atoms/Logo'
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerTrigger
-} from '@/components/Atoms/Drawer'
+} from '@/components/Molecules/Drawer'
 
 const Menu = () => {
   const iconSize = 24
