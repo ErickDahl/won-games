@@ -15,6 +15,11 @@ const drawerClasses = tv({
     close: 'cursor-pointer'
   },
   variants: {
+    haveOverlay: {
+      false: {
+        overlay: 'hidden'
+      }
+    },
     isOpen: {
       true: {
         overlay: 'opacity-50'
@@ -42,7 +47,7 @@ const drawerClasses = tv({
       isOpen: false,
       from: 'left',
       className: {
-        content: '-translate-x-full'
+        content: '-translate-x-[101%]'
       }
     },
     {
@@ -56,7 +61,7 @@ const drawerClasses = tv({
       isOpen: false,
       from: 'right',
       className: {
-        content: 'translate-x-[100%]'
+        content: 'translate-x-[101%]'
       }
     },
     {
@@ -70,7 +75,7 @@ const drawerClasses = tv({
       isOpen: false,
       from: 'top',
       className: {
-        content: 'translate-y-[-100%]'
+        content: 'translate-y-[-101%]'
       }
     },
     {
@@ -84,13 +89,14 @@ const drawerClasses = tv({
       isOpen: false,
       from: 'bottom',
       className: {
-        content: 'translate-y-[100%]'
+        content: 'translate-y-[101%]'
       }
     }
   ],
   defaultVariants: {
     from: 'left',
-    isOpen: false
+    isOpen: false,
+    haveOverlay: true
   }
 })
 
@@ -100,7 +106,13 @@ type DrawerProps = HTMLAttributes<HTMLDivElement> &
     size?: number
   }
 
-export const Drawer = ({ children, from, size, ...rest }: DrawerProps) => {
+export const Drawer = ({
+  children,
+  from,
+  size,
+  haveOverlay,
+  ...rest
+}: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const openDrawer = () => setIsOpen(true)
   const toggleDrawer = () => setIsOpen(!isOpen)
@@ -109,12 +121,22 @@ export const Drawer = ({ children, from, size, ...rest }: DrawerProps) => {
 
   return (
     <DrawerContext.Provider
-      value={{ isOpen, openDrawer, closeDrawer, toggleDrawer, from, size }}
+      value={{
+        isOpen,
+        openDrawer,
+        closeDrawer,
+        toggleDrawer,
+        from,
+        size
+      }}
     >
       <div className={root()} {...rest}>
         {children}
       </div>
-      <div className={overlay({ isOpen })} onClick={closeDrawer}></div>
+      <div
+        className={overlay({ isOpen, haveOverlay })}
+        onClick={closeDrawer}
+      ></div>
     </DrawerContext.Provider>
   )
 }

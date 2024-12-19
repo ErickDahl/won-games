@@ -3,7 +3,7 @@ import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from '.'
 import { CloseIcon } from '@/assets/icons'
 
 export default {
-  title: 'Atoms/Drawer',
+  title: 'Molecules/Drawer',
   component: Drawer,
   argTypes: {
     children: {
@@ -18,6 +18,18 @@ export default {
       control: 'radio',
       options: ['left', 'right', 'top', 'bottom'],
       description: 'Direction from which the drawer will appear'
+    },
+    haveOverlay: {
+      control: 'boolean',
+      description: 'If the drawer will have overlay'
+    }
+  },
+  args: {
+    haveOverlay: true
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
     }
   },
   decorators: [
@@ -74,10 +86,27 @@ export const BottomDrawer: StoryObj = {
   }
 }
 
+export const TopDrawer: StoryObj = {
+  ...Template,
+  args: {
+    size: 50,
+    from: 'top'
+  }
+}
+
 export const LargeDrawer: StoryObj = {
   ...Template,
   args: {
     size: 90,
     from: 'left'
+  }
+}
+
+export const DisableOverlay: StoryObj = {
+  ...Template,
+  args: {
+    size: 50,
+    from: 'left',
+    haveOverlay: false
   }
 }

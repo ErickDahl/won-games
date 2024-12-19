@@ -13,7 +13,7 @@ describe('<Drawer />', () => {
 
     const drawerContent = screen.getByText('Drawer Content')
 
-    expect(drawerContent).toHaveClass('-translate-x-full')
+    expect(drawerContent).toHaveClass('-translate-x-[101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
 
     fireEvent.click(screen.getByText('Open Drawer'))
@@ -21,7 +21,7 @@ describe('<Drawer />', () => {
     expect(drawerContent).toHaveAttribute('aria-hidden', 'false')
 
     fireEvent.click(screen.getByText('Close Drawer'))
-    expect(drawerContent).toHaveClass('-translate-x-full')
+    expect(drawerContent).toHaveClass('-translate-x-[101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
   })
 
@@ -36,7 +36,7 @@ describe('<Drawer />', () => {
 
     const drawerContent = screen.getByText('Drawer Content')
 
-    expect(drawerContent).toHaveClass('translate-x-[100%]')
+    expect(drawerContent).toHaveClass('translate-x-[101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
 
     fireEvent.click(screen.getByText('Open Drawer'))
@@ -44,7 +44,7 @@ describe('<Drawer />', () => {
     expect(drawerContent).toHaveAttribute('aria-hidden', 'false')
 
     fireEvent.click(screen.getByText('Close Drawer'))
-    expect(drawerContent).toHaveClass('translate-x-[100%]')
+    expect(drawerContent).toHaveClass('translate-x-[101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
   })
 
@@ -59,7 +59,7 @@ describe('<Drawer />', () => {
 
     const drawerContent = screen.getByText('Drawer Content')
 
-    expect(drawerContent).toHaveClass('translate-y-[-100%]')
+    expect(drawerContent).toHaveClass('translate-y-[-101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
 
     fireEvent.click(screen.getByText('Open Drawer'))
@@ -67,7 +67,7 @@ describe('<Drawer />', () => {
     expect(drawerContent).toHaveAttribute('aria-hidden', 'false')
 
     fireEvent.click(screen.getByText('Close Drawer'))
-    expect(drawerContent).toHaveClass('translate-y-[-100%]')
+    expect(drawerContent).toHaveClass('translate-y-[-101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
   })
 
@@ -82,7 +82,7 @@ describe('<Drawer />', () => {
 
     const drawerContent = screen.getByText('Drawer Content')
 
-    expect(drawerContent).toHaveClass('translate-y-[100%]')
+    expect(drawerContent).toHaveClass('translate-y-[101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
 
     fireEvent.click(screen.getByText('Open Drawer'))
@@ -90,7 +90,7 @@ describe('<Drawer />', () => {
     expect(drawerContent).toHaveAttribute('aria-hidden', 'false')
 
     fireEvent.click(screen.getByText('Close Drawer'))
-    expect(drawerContent).toHaveClass('translate-y-[100%]')
+    expect(drawerContent).toHaveClass('translate-y-[101%]')
     expect(drawerContent).toHaveAttribute('aria-hidden', 'true')
   })
 
