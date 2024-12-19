@@ -1,4 +1,4 @@
-import React from 'react'
+import { createContext, useContext } from 'react'
 
 interface DrawerContextValue {
   isOpen: boolean
@@ -9,7 +9,7 @@ interface DrawerContextValue {
   size: number | undefined
 }
 
-export const DrawerContext = React.createContext<DrawerContextValue>({
+export const DrawerContext = createContext<DrawerContextValue>({
   isOpen: false,
   from: 'left',
   size: 100,
@@ -19,7 +19,7 @@ export const DrawerContext = React.createContext<DrawerContextValue>({
 })
 
 export const useDrawerContext = () => {
-  const context = React.useContext(DrawerContext)
+  const context = useContext(DrawerContext)
   if (!context) {
     throw new Error('useDrawerContext must be used within a Drawer.Root')
   }
