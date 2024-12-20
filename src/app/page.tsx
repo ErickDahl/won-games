@@ -1,16 +1,11 @@
 import { createClient } from '@/utils/supabase/server'
-import { AddCartIcon, CloseIcon } from '@/assets/icons'
+import { AddCartIcon } from '@/assets/icons'
 import Button from '@/components/Atoms/Button'
 import Heading from '@/components/Atoms/Heading'
 import Logo from '@/components/Atoms/Logo'
 import Image from 'next/image'
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerTrigger
-} from '@/components/Molecules/Drawer'
 import StoreLink from '@/components/Atoms/Link'
+import Menu from '@/components/Molecules/Menu'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -26,17 +21,13 @@ export default async function Home() {
         <Heading lineColor="secondary" linePosition="left">
           Heading
         </Heading>
-        <Drawer from="left" size={50}>
-          <DrawerTrigger>Open Drawer</DrawerTrigger>
-          <DrawerContent>
-            content
-            <DrawerClose className="absolute right-0 top-3 mr-4 cursor-pointer">
-              <CloseIcon color="#000000" size={30} />
-            </DrawerClose>
-          </DrawerContent>
-        </Drawer>
-
-        <Button icon={<AddCartIcon size={17} />}>teste</Button>
+        <Menu />
+        <Button clickAnimation icon={<AddCartIcon size={17} />}>
+          teste
+        </Button>
+        <Button loading icon={<AddCartIcon size={17} />}>
+          teste
+        </Button>
         <Image
           className="border-b dark:invert"
           src="/next.svg"

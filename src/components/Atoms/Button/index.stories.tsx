@@ -19,7 +19,26 @@ export default {
     icon: {
       control: false,
       description: 'Icon of the button'
+    },
+    loading: {
+      control: 'boolean',
+      description: 'Loading state of the button'
+    },
+    click: {
+      table: {
+        disable: true
+      }
+    },
+    clickAnimation: {
+      control: 'boolean',
+      description: 'Set the clickAnimation'
     }
+  },
+  args: {
+    loading: false,
+    clickAnimation: true,
+    click: false,
+    iconPosition: 'left'
   }
 } as Meta
 
@@ -37,5 +56,15 @@ export const WithIcon: StoryObj = {
     fullWidth: false,
     size: 'medium',
     icon: <MdAddShoppingCart size={17} />
+  }
+}
+
+export const Loading: StoryObj = {
+  args: {
+    children: 'Default Button',
+    fullWidth: false,
+    size: 'medium',
+    icon: <MdAddShoppingCart size={17} />,
+    loading: true
   }
 }

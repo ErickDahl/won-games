@@ -11,7 +11,7 @@ const drawerClasses = tv({
     overlay:
       'fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300',
     content:
-      'fixed z-50 flex w-full items-center justify-center bg-white text-black transition-transform duration-300',
+      'fixed z-50 flex w-full flex-col items-center justify-center gap-2 bg-white p-4 text-black transition-transform duration-300',
     close: 'cursor-pointer'
   },
   variants: {
@@ -111,13 +111,18 @@ export const Drawer = ({
   from,
   size,
   haveOverlay,
+  className,
   ...rest
 }: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const openDrawer = () => setIsOpen(true)
   const toggleDrawer = () => setIsOpen(!isOpen)
   const closeDrawer = () => setIsOpen(false)
-  const { root, overlay } = drawerClasses({ isOpen })
+  const { root, overlay } = drawerClasses({
+    isOpen,
+    haveOverlay,
+    from
+  })
 
   return (
     <DrawerContext.Provider
@@ -130,13 +135,10 @@ export const Drawer = ({
         size
       }}
     >
-      <div className={root()} {...rest}>
+      <div className={root({ className })} {...rest}>
         {children}
       </div>
-      <div
-        className={overlay({ isOpen, haveOverlay })}
-        onClick={closeDrawer}
-      ></div>
+      <div className={overlay()} onClick={closeDrawer}></div>
     </DrawerContext.Provider>
   )
 }
@@ -145,7 +147,11 @@ type DrawerTriggerProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
 }
 
-export const DrawerTrigger = ({ children, ...rest }: DrawerTriggerProps) => {
+export const DrawerTrigger = ({
+  children,
+  className,
+  ...rest
+}: DrawerTriggerProps) => {
   const { openDrawer, isOpen } = useDrawerContext()
   const { trigger } = drawerClasses({ isOpen })
 
@@ -153,7 +159,7 @@ export const DrawerTrigger = ({ children, ...rest }: DrawerTriggerProps) => {
     <div
       onClick={openDrawer}
       aria-label="Open Drawer"
-      className={trigger()}
+      className={trigger({ className })}
       {...rest}
     >
       {children}
@@ -165,7 +171,11 @@ type DrawerCloseProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
 }
 
-export const DrawerClose = ({ children, ...rest }: DrawerCloseProps) => {
+export const DrawerClose = ({
+  children,
+  className,
+  ...rest
+}: DrawerCloseProps) => {
   const { closeDrawer, isOpen } = useDrawerContext()
   const { close } = drawerClasses({ isOpen })
 
@@ -174,7 +184,7 @@ export const DrawerClose = ({ children, ...rest }: DrawerCloseProps) => {
       onClick={closeDrawer}
       aria-hidden={!isOpen}
       aria-label="Close Drawer"
-      className={close()}
+      className={close({ className })}
       {...rest}
     >
       {children}
@@ -186,20 +196,26 @@ type DrawerContentProps = HTMLAttributes<HTMLElement> & {
   children: ReactNode
 }
 
-export const DrawerContent = ({ children, ...rest }: DrawerContentProps) => {
+export const DrawerContent = ({
+  children,
+  className,
+  ...rest
+}: DrawerContentProps) => {
   const { isOpen, from, size } = useDrawerContext()
   const { content } = drawerClasses({ isOpen, from })
 
-  const dynamicStyle =
-    from === 'left' || from === 'right'
-      ? { width: `${size}vw` }
-      : { height: `${size}vh` }
+  const dynamicStyle = {
+    ['left']: { width: `${size}vw` },
+    ['right']: { width: `${size}vw` },
+    ['top']: { height: `${size}vh` },
+    ['bottom']: { height: `${size}vh` }
+  }
 
   return (
     <aside
       aria-hidden={!isOpen}
-      className={content()}
-      style={dynamicStyle}
+      className={content({ className })}
+      style={from ? dynamicStyle[from] : {}}
       {...rest}
     >
       {children}

@@ -62,7 +62,7 @@ const Template: StoryObj = {
   )
 }
 
-export const Default: StoryObj = {
+export const LeftDrawer: StoryObj = {
   ...Template,
   args: {
     size: 50,
