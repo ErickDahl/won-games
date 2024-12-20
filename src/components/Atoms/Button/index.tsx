@@ -1,5 +1,5 @@
 'use client'
-import { HTMLAttributes, ReactNode, useState } from 'react'
+import { HTMLAttributes, ReactNode, useState, FC } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 import ClipLoader from 'react-spinners/ClipLoader'
 
@@ -69,7 +69,7 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> &
     loading?: boolean
   }
 
-const Button = ({
+const Button: FC<ButtonProps> = ({
   size,
   fullWidth,
   icon,
@@ -88,7 +88,8 @@ const Button = ({
     click: isClicked
   })
 
-  console.log(clickAnimation, isClicked)
+  const handleMouseEvents = (isActive: boolean) => () => setIsClicked(isActive)
+  const handleTouchEvents = (isActive: boolean) => () => setIsClicked(isActive)
 
   const LoadingState = () => (
     <>
@@ -99,9 +100,9 @@ const Button = ({
 
   const ButtonContent = () => (
     <>
-      {icon && iconPosition === 'left' && icon}
+      {!!icon && iconPosition === 'left' && icon}
       {children && <span>{children}</span>}
-      {icon && iconPosition === 'right' && icon}
+      {!!icon && iconPosition === 'right' && icon}
     </>
   )
 
@@ -109,9 +110,11 @@ const Button = ({
     <button
       className={button({ className })}
       disabled={loading}
-      onMouseDown={() => setIsClicked(true)}
-      onMouseUp={() => setIsClicked(false)}
-      onMouseLeave={() => setIsClicked(false)}
+      onMouseDown={handleMouseEvents(true)}
+      onMouseUp={handleMouseEvents(false)}
+      onMouseLeave={handleMouseEvents(false)}
+      onTouchStart={handleTouchEvents(true)}
+      onTouchEnd={handleTouchEvents(false)}
       {...rest}
     >
       <div className={div({ className })}>

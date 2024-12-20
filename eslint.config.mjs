@@ -14,6 +14,7 @@ export default [
   {
     rules: {
       'react/react-in-jsx-scope': 'off',
+      'no-duplicate-imports': 'error',
       ...pluginNext.configs.recommended.rules,
       ...pluginNext.configs['core-web-vitals'].rules
     }
