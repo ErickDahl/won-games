@@ -5,7 +5,7 @@ import Heading from '@/components/Atoms/Heading'
 import Logo from '@/components/Atoms/Logo'
 import Image from 'next/image'
 import StoreLink from '@/components/Atoms/Link'
-import Menu from '@/components/Molecules/Menu'
+import Menu from '@/components/Organisms/Menu'
 
 export default async function Home() {
   const supabase = await createClient()
