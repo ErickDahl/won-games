@@ -11,7 +11,7 @@ const drawerClasses = tv({
     overlay:
       'fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300',
     content:
-      'fixed z-50 flex w-full flex-col items-center justify-center gap-2 bg-white p-4 text-black transition-transform duration-300',
+      'fixed z-50 flex w-full flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
     close: 'cursor-pointer'
   },
   variants: {

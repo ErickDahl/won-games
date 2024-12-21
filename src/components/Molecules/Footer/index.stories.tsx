@@ -1,10 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Menu from '.'
+import Footer from '.'
 export default {
-  title: 'Molecules/Menu',
-  component: Menu,
-  args: {
-    isLogged: false
-  }
+  title: 'Footer',
+  component: Footer
 } as Meta
 export const Default: StoryObj = {}
