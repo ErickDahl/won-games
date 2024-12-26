@@ -45,13 +45,6 @@ const buttonClasses = tv({
       className: {
         div: 'scale-[.97]'
       }
-    },
-    {
-      clickAnimation: true,
-      click: false,
-      className: {
-        div: 'scale-[1]'
-      }
     }
   ],
   defaultVariants: {
@@ -93,7 +86,7 @@ const Button: FC<ButtonProps> = ({
 
   const LoadingState = () => (
     <>
-      <ClipLoader size={20} color="#fff" />
+      <ClipLoader size={20} color="var(--color-white)" />
       <span className="text-sm">Loading...</span>
     </>
   )

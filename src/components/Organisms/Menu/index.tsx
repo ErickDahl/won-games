@@ -30,7 +30,7 @@ type MenuProps = VariantProps<typeof MenuClasses> & {
 }
 
 const iconSize = 24
-const iconsColor = '#fafafa'
+const iconsColor = 'var(--color-white)'
 
 export const LoggedInLinks = () => (
   <>
@@ -46,11 +46,17 @@ export const DefaultLinks = () => (
   </>
 )
 
-const MenuIcons = ({ className }: { className?: string }) => (
+const MenuIcons = ({
+  className,
+  isMobile
+}: {
+  className?: string
+  isMobile: boolean
+}) => (
   <div className={className}>
     <SearchIcon aria-label="Search" size={iconSize} color={iconsColor} />
     <CartIcon aria-label="openCart" size={iconSize} color={iconsColor} />
-    <Button>Sign in</Button>
+    {!isMobile && <Button>Sign in</Button>}
   </div>
 )
 
@@ -88,7 +94,7 @@ const Menu = ({ isLogged }: MenuProps) => {
         />
         {!isMobile && <MenuLinks className={links()} isLogged={isLogged} />}
       </div>
-      <MenuIcons className={icons()} />
+      <MenuIcons className={icons()} isMobile={isMobile} />
     </menu>
   )
 }

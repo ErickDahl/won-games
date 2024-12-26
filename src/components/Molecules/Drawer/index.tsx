@@ -11,7 +11,7 @@ const drawerClasses = tv({
     overlay:
       'fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300',
     content:
-      'fixed z-50 flex w-full flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
+      'fixed z-50 flex h-screen w-screen flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
     close: 'cursor-pointer'
   },
   variants: {
@@ -29,10 +29,10 @@ const drawerClasses = tv({
       }
     },
     from: {
-      left: { content: 'left-0 top-0 h-screen w-screen' },
-      right: { content: 'right-0 top-0 h-screen w-screen' },
-      top: { content: 'left-0 top-0 h-screen w-screen' },
-      bottom: { content: 'bottom-0 left-0 h-screen w-screen' }
+      left: { content: 'left-0 top-0' },
+      right: { content: 'right-0 top-0' },
+      top: { content: 'left-0 top-0' },
+      bottom: { content: 'bottom-0 left-0' }
     }
   },
   compoundVariants: [
@@ -95,7 +95,6 @@ const drawerClasses = tv({
   ],
   defaultVariants: {
     from: 'left',
-    isOpen: false,
     haveOverlay: true
   }
 })

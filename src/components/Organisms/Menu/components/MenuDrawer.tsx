@@ -55,7 +55,11 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({
       <DrawerContent className="justify-evenly">
         {renderLoggedMenu(isLogged)}
         <DrawerClose className="absolute right-0 top-3 mr-4">
-          <CloseIcon color="#000000" size={30} aria-label="CloseDrawer" />
+          <CloseIcon
+            color="var(--color-black)"
+            size={30}
+            aria-label="CloseDrawer"
+          />
         </DrawerClose>
       </DrawerContent>
     </Drawer>
