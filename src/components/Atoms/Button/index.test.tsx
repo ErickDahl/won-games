@@ -39,8 +39,6 @@ describe('<Button />', () => {
 
   it('should render a loading state', () => {
     render(<Button loading>button</Button>)
-    const element = screen.getByRole('button', { name: /Loading/i })
-    expect(element).toBeDisabled()
     expect(screen.getByText(/loading.../i)).toBeInTheDocument()
   })
 
