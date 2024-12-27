@@ -22,7 +22,7 @@ export default async function Home() {
           Heading
         </Heading>
         <Menu />
-        <Button clickAnimation icon={<AddCartIcon size={17} />}>
+        <Button disabled clickAnimation icon={<AddCartIcon size={17} />}>
           teste
         </Button>
         <Button loading icon={<AddCartIcon size={17} />}>

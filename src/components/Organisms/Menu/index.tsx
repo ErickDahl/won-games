@@ -56,7 +56,7 @@ const MenuIcons = ({
   <div className={className}>
     <SearchIcon aria-label="Search" size={iconSize} color={iconsColor} />
     <CartIcon aria-label="openCart" size={iconSize} color={iconsColor} />
-    {!isMobile && <Button>Sign in</Button>}
+    {!isMobile && <Button onClick={() => console.log('teste')}>Sign in</Button>}
   </div>
 )
 

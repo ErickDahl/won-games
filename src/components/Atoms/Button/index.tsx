@@ -21,6 +21,12 @@ const buttonClasses = tv({
         button: 'h-large px-14 text-base'
       }
     },
+    disabled: {
+      true: {
+        button:
+          'bg-[linear-gradient(180deg,_#A03E3E_0%,_#B04398_50%)] hover:bg-[linear-gradient(180deg,_#A03E3E_0%,_#B04398_50%)]'
+      }
+    },
     fullWidth: {
       true: {
         button: 'w-full'
@@ -62,6 +68,30 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> &
     loading?: boolean
   }
 
+type ButtonContentProps = Pick<
+  ButtonProps,
+  'icon' | 'iconPosition' | 'children'
+>
+
+const LoadingState = () => (
+  <>
+    <ClipLoader size={20} color="var(--color-white)" />
+    <span className="text-sm">Loading...</span>
+  </>
+)
+
+const ButtonContent = ({
+  icon,
+  iconPosition,
+  children
+}: ButtonContentProps) => (
+  <>
+    {!!icon && iconPosition === 'left' && icon}
+    {children && <span>{children}</span>}
+    {!!icon && iconPosition === 'right' && icon}
+  </>
+)
+
 const Button: FC<ButtonProps> = ({
   size,
   fullWidth,
@@ -69,40 +99,30 @@ const Button: FC<ButtonProps> = ({
   iconPosition = 'left',
   clickAnimation,
   loading = false,
+  disabled,
   children,
   className,
+  onClick,
   ...rest
 }: ButtonProps) => {
   const [isClicked, setIsClicked] = useState(false)
+  const isDisabled = disabled
   const { button, div } = buttonClasses({
     size,
     fullWidth,
     clickAnimation,
-    click: isClicked
+    click: isClicked,
+    disabled: isDisabled
   })
 
   const handleMouseEvents = (isActive: boolean) => () => setIsClicked(isActive)
   const handleTouchEvents = (isActive: boolean) => () => setIsClicked(isActive)
 
-  const LoadingState = () => (
-    <>
-      <ClipLoader size={20} color="var(--color-white)" />
-      <span className="text-sm">Loading...</span>
-    </>
-  )
-
-  const ButtonContent = () => (
-    <>
-      {!!icon && iconPosition === 'left' && icon}
-      {children && <span>{children}</span>}
-      {!!icon && iconPosition === 'right' && icon}
-    </>
-  )
-
   return (
     <button
       className={button({ className })}
-      disabled={loading}
+      disabled={isDisabled}
+      onClick={loading ? () => void 0 : onClick}
       onMouseDown={handleMouseEvents(true)}
       onMouseUp={handleMouseEvents(false)}
       onMouseLeave={handleMouseEvents(false)}
@@ -111,7 +131,13 @@ const Button: FC<ButtonProps> = ({
       {...rest}
     >
       <div className={div({ className })}>
-        {loading ? <LoadingState /> : <ButtonContent />}
+        {loading ? (
+          <LoadingState />
+        ) : (
+          <ButtonContent icon={icon} iconPosition={iconPosition}>
+            {children}
+          </ButtonContent>
+        )}
       </div>
     </button>
   )

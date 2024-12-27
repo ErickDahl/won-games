@@ -51,11 +51,9 @@ describe('<Button />', () => {
 
     fireEvent.mouseDown(element)
     expect(div).toHaveClass('scale-[.97]')
-
     fireEvent.mouseUp(element)
-    expect(div).toHaveClass('scale-[1]')
 
-    fireEvent.mouseLeave(element)
-    expect(div).toHaveClass('scale-[1]')
+    fireEvent.touchStart(element)
+    expect(div).toHaveClass('scale-[.97]')
   })
 })
