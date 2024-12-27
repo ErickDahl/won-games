@@ -73,7 +73,7 @@
     "typescript-eslint": "^8.17.0"
   },
   "lint-staged": {
-    "src/**.{js, jsx, ts, tsx}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "yarn run lint --fix",
       "yarn test -- --findRelatedTests",
       "prettier --write"
@@ -86,6 +86,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint --edit $1",
       "pre-commit": "lint-staged"
     }
   },
