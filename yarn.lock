@@ -1434,7 +1434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^19.6.0":
+"@commitlint/cli@npm:^19.6.1":
   version: 19.6.1
   resolution: "@commitlint/cli@npm:19.6.1"
   dependencies:
@@ -14491,7 +14491,7 @@ __metadata:
   resolution: "won-games@workspace:."
   dependencies:
     "@chromatic-com/storybook": "npm:3.2.2"
-    "@commitlint/cli": "npm:^19.6.0"
+    "@commitlint/cli": "npm:^19.6.1"
     "@commitlint/config-conventional": "npm:^19.6.0"
     "@eslint/js": "npm:^9.16.0"
     "@storybook/addon-essentials": "npm:8.4.7"
