@@ -68,3 +68,14 @@ export const Loading: StoryObj = {
     loading: true
   }
 }
+
+export const Disabled: StoryObj = {
+  args: {
+    children: 'Default Button',
+    fullWidth: false,
+    disabled: true,
+    size: 'medium',
+    icon: <MdAddShoppingCart size={17} />,
+    loading: false
+  }
+}

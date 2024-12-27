@@ -15,7 +15,7 @@ const headingClasses = tv({
     linePosition: {
       left: 'border-l-7 border-solid pl-3',
       bottom:
-        'after:border-b-5 relative after:absolute after:-bottom-2 after:left-0 after:w-20 after:border-solid after:content-[""]'
+        'relative after:absolute after:-bottom-2 after:left-0 after:w-20 after:border-b-5 after:border-solid after:content-[""]'
     },
     lineBottomColor: {
       primary: 'after:border-primary',
