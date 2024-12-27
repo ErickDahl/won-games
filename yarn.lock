@@ -9894,7 +9894,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.2.10":
+"lint-staged@npm:^15.2.11":
   version: 15.2.11
   resolution: "lint-staged@npm:15.2.11"
   dependencies:
@@ -14523,7 +14523,7 @@ __metadata:
     husky: "npm:4"
     jest: "npm:29.7.0"
     jest-environment-jsdom: "npm:29.7.0"
-    lint-staged: "npm:^15.2.10"
+    lint-staged: "npm:^15.2.11"
     next: "npm:15.0.4"
     plop: "npm:^4.0.1"
     postcss: "npm:^8"
