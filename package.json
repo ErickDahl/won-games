@@ -80,6 +80,11 @@
       "plugin:storybook/recommended"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
