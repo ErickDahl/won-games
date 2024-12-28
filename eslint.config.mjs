@@ -31,5 +31,13 @@ export default [
       }
     }
   },
-  { ignores: ['.storybook', '.jest', 'generators', 'commitlint.config.js'] }
+  {
+    ignores: [
+      '.storybook',
+      '.jest',
+      'generators',
+      'commitlint.config.js',
+      'src/utils/colorHelper.js'
+    ]
+  }
 ]

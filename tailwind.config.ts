@@ -19,7 +19,8 @@ const config: Config = withTV({
         black: 'var(--color-black)',
         lightGray: 'var(--color-lightGray)',
         gray: 'var(--color-gray)',
-        darkGray: 'var(--color-darkGray)'
+        darkGray: 'var(--color-darkGray)',
+        primaryDark: 'var(--color-primaryDark)'
       },
       fontSize: {
         xsmall: '1.2rem',
