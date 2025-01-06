@@ -24,6 +24,10 @@ export default {
       description: 'Color of the hover effect'
     },
     border: {
+      control: 'boolean',
+      description: 'Whether to show the border or not'
+    },
+    borderColor: {
       control: 'radio',
       options: ['primary', 'secondary'],
       description: 'Color of the border'
@@ -40,7 +44,8 @@ export const Default: StoryObj = {
     children: 'Link',
     href: '#',
     hoverEffect: true,
-    hoverEffectColor: 'primary'
+    hoverEffectColor: 'primary',
+    border: false
   },
   parameters: {
     backgrounds: {
@@ -55,6 +60,20 @@ export const WithBorder: StoryObj = {
     href: '#',
     hoverEffect: false,
     border: 'primary'
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+}
+export const AsButtonBorder: StoryObj = {
+  args: {
+    children: 'Link',
+    href: '#',
+    hoverEffect: false,
+    border: 'primary',
+    button: true
   },
   parameters: {
     backgrounds: {

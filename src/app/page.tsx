@@ -18,17 +18,25 @@ export default async function Home() {
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 pb-20 sm:p-20">
       <main className="row-start-2 flex w-full flex-col items-center gap-8 sm:items-start">
         <Logo variant="white" />
-        <StoreLink href={'/'}>Link</StoreLink>
+
+        <StoreLink button hoverEffect={false} href={'/'}>
+          Link
+        </StoreLink>
+
         <Heading lineColor="secondary" linePosition="left">
           Heading
         </Heading>
+
         <Menu />
+
         <Button disabled clickAnimation icon={<AddCartIcon size={17} />}>
           teste
         </Button>
+
         <Button loading icon={<AddCartIcon size={17} />}>
           teste
         </Button>
+
         <Image
           className="border-b dark:invert"
           src="/next.svg"

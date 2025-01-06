@@ -6,19 +6,28 @@ const LinkClasses = tv({
   base: 'relative text-center text-2xl font-bold text-black',
   variants: {
     hoverEffect: {
-      true: 'after:absolute after:left-1/2 after:block after:h-[0.3rem] after:w-0 after:transition-all after:duration-200 after:content-[""] hover:after:left-0 hover:after:w-full'
+      true: 'after:absolute after:left-1/2 after:block after:h-[0.3rem] after:w-0 after:transition-all after:duration-200 after:content-[""] hover:after:left-0 hover:after:w-full',
+      false: 'after:hidden'
     },
     hoverEffectColor: {
       primary: 'after:bg-primary',
       secondary: 'after:bg-secondary'
     },
     border: {
-      primary: 'border-b-2 border-primary',
-      secondary: 'border-b-2 border-secondary'
+      true: 'border-b-2'
+    },
+    borderColor: {
+      primary: 'border-primary',
+      secondary: 'border-secondary'
+    },
+    button: {
+      true: 'inline-flex h-medium cursor-pointer items-center justify-center gap-2 rounded-radius bg-primary p-2 px-8 font-default text-sm text-white hover:bg-primaryDark'
     }
   },
   defaultVariants: {
     hoverEffect: true,
+    border: false,
+    borderColor: 'primary',
     hoverEffectColor: 'primary'
   }
 })
@@ -33,7 +42,9 @@ const StoreLink = ({
   children,
   className,
   border,
+  borderColor,
   hoverEffect,
+  button,
   hoverEffectColor,
   ...rest
 }: StoreLinkProps) => (
@@ -42,6 +53,8 @@ const StoreLink = ({
       hoverEffect,
       hoverEffectColor,
       border,
+      borderColor,
+      button,
       className
     })}
     {...rest}

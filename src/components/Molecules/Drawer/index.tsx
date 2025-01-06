@@ -92,11 +92,7 @@ const drawerClasses = tv({
         content: 'translate-y-[101%]'
       }
     }
-  ],
-  defaultVariants: {
-    from: 'left',
-    haveOverlay: true
-  }
+  ]
 })
 
 type DrawerProps = HTMLAttributes<HTMLDivElement> &
@@ -107,9 +103,9 @@ type DrawerProps = HTMLAttributes<HTMLDivElement> &
 
 export const Drawer = ({
   children,
-  from,
-  size,
-  haveOverlay,
+  from = 'left',
+  size = 100,
+  haveOverlay = true,
   className,
   ...rest
 }: DrawerProps) => {

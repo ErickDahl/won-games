@@ -82,7 +82,7 @@ describe('<StoreLink />', () => {
     const href = '/no-hover'
 
     render(
-      <StoreLink href={href} hoverEffect={false} border="primary">
+      <StoreLink href={href} hoverEffect={false} border borderColor="primary">
         {text}
       </StoreLink>
     )
@@ -98,7 +98,7 @@ describe('<StoreLink />', () => {
     const href = '/no-hover'
 
     render(
-      <StoreLink href={href} hoverEffect={false} border="secondary">
+      <StoreLink href={href} hoverEffect={false} border borderColor="secondary">
         {text}
       </StoreLink>
     )
