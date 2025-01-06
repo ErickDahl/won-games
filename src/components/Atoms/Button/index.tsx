@@ -6,7 +6,7 @@ import ClipLoader from 'react-spinners/ClipLoader'
 const buttonClasses = tv({
   slots: {
     button:
-      'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius bg-[linear-gradient(180deg,_#FF5F5F_0%,_#F062C0_50%)] p-2 font-default text-white hover:bg-[linear-gradient(180deg,_#E04E4E_0%,_#D053A8_50%)]',
+      'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius bg-primary p-2 font-default text-white hover:bg-primaryDark',
     div: 'flex items-center justify-center gap-2'
   },
   variants: {
@@ -23,8 +23,7 @@ const buttonClasses = tv({
     },
     disabled: {
       true: {
-        button:
-          'bg-[linear-gradient(180deg,_#A03E3E_0%,_#B04398_50%)] hover:bg-[linear-gradient(180deg,_#A03E3E_0%,_#B04398_50%)]'
+        button: 'bg-primaryDark hover:bg-primaryDark'
       }
     },
     fullWidth: {
@@ -34,8 +33,7 @@ const buttonClasses = tv({
     },
     click: {
       true: {
-        button:
-          'transform bg-[linear-gradient(180deg,_#E04E4E_0%,_#D053A8_50%)]'
+        button: 'transform bg-primaryDark'
       }
     },
     clickAnimation: {
@@ -115,8 +113,17 @@ const Button: FC<ButtonProps> = ({
     disabled: isDisabled
   })
 
-  const handleMouseEvents = (isActive: boolean) => () => setIsClicked(isActive)
-  const handleTouchEvents = (isActive: boolean) => () => setIsClicked(isActive)
+  const handleMouseEvents = (isActive: boolean) => () => {
+    if (!isDisabled) {
+      setIsClicked(isActive)
+    }
+  }
+
+  const handleTouchEvents = (isActive: boolean) => () => {
+    if (!isDisabled) {
+      setIsClicked(isActive)
+    }
+  }
 
   return (
     <button

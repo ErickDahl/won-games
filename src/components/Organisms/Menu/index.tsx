@@ -14,7 +14,8 @@ const MenuClasses = tv({
     logo: '',
     icons: 'flex items-center justify-center gap-5',
     links: 'flex items-center justify-center gap-5',
-    logoLinks: 'flex items-center justify-center gap-8'
+    logoLinks: 'flex items-center justify-center gap-8',
+    storeLinks: 'text-white'
   },
   variants: {
     isMobile: {
@@ -32,19 +33,35 @@ type MenuProps = VariantProps<typeof MenuClasses> & {
 const iconSize = 24
 const iconsColor = 'var(--color-white)'
 
-export const LoggedInLinks = () => (
-  <>
-    <StoreLink href={'#'}>My account</StoreLink>
-    <StoreLink href={'#'}>Wishlist</StoreLink>
-  </>
-)
+export const LoggedInLinks = ({ className }: { className?: string }) => {
+  const { storeLinks } = MenuClasses()
 
-export const DefaultLinks = () => (
-  <>
-    <StoreLink href={'#'}>Home</StoreLink>
-    <StoreLink href={'#'}>Explore</StoreLink>
-  </>
-)
+  return (
+    <>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
+        My account
+      </StoreLink>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
+        Wishlist
+      </StoreLink>
+    </>
+  )
+}
+
+export const DefaultLinks = ({ className }: { className?: string }) => {
+  const { storeLinks } = MenuClasses()
+
+  return (
+    <>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
+        Home
+      </StoreLink>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
+        Explore
+      </StoreLink>
+    </>
+  )
+}
 
 const MenuIcons = ({
   className,
