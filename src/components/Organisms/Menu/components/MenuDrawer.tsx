@@ -23,7 +23,8 @@ const AuthButtons = () => (
     <StoreLink
       href={'#'}
       className="text-base text-primary"
-      border="primary"
+      border
+      borderColor="primary"
       hoverEffect={false}
     >
       Sign up
@@ -34,8 +35,8 @@ const AuthButtons = () => (
 const renderLoggedMenu = (isLogged: boolean) => (
   <>
     <div className="flex flex-col gap-7">
-      <DefaultLinks />
-      {isLogged && <LoggedInLinks />}
+      <DefaultLinks className="text-black" />
+      {isLogged && <LoggedInLinks className="text-black" />}
     </div>
     {!isLogged && <AuthButtons />}
   </>
@@ -48,7 +49,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({
   isLogged = false
 }: MenuDrawerProps) => {
   return (
-    <Drawer className={className} haveOverlay={false} size={50}>
+    <Drawer className={className} size={75}>
       <DrawerTrigger>
         <MenuIcon aria-label="openDrawer" size={iconSize} color={iconsColor} />
       </DrawerTrigger>

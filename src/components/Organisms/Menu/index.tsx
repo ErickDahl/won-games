@@ -33,30 +33,30 @@ type MenuProps = VariantProps<typeof MenuClasses> & {
 const iconSize = 24
 const iconsColor = 'var(--color-white)'
 
-export const LoggedInLinks = () => {
+export const LoggedInLinks = ({ className }: { className?: string }) => {
   const { storeLinks } = MenuClasses()
 
   return (
     <>
-      <StoreLink className={storeLinks()} href={'#'}>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
         My account
       </StoreLink>
-      <StoreLink className={storeLinks()} href={'#'}>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
         Wishlist
       </StoreLink>
     </>
   )
 }
 
-export const DefaultLinks = () => {
+export const DefaultLinks = ({ className }: { className?: string }) => {
   const { storeLinks } = MenuClasses()
 
   return (
     <>
-      <StoreLink className={storeLinks()} href={'#'}>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
         Home
       </StoreLink>
-      <StoreLink className={storeLinks()} href={'#'}>
+      <StoreLink className={storeLinks({ className })} href={'#'}>
         Explore
       </StoreLink>
     </>
