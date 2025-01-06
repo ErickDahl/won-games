@@ -22,14 +22,6 @@ const config: Config = withTV({
         darkGray: 'var(--color-darkGray)',
         primaryDark: 'var(--color-primaryDark)'
       },
-      fontSize: {
-        xsmall: '1.2rem',
-        small: '1.4rem',
-        medium: '1.6rem',
-        large: '1.8rem',
-        xlarge: '2.0rem',
-        xxlarge: '2.8rem'
-      },
       borderRadius: {
         radius: '0.4rem'
       },

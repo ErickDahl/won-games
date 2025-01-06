@@ -6,6 +6,7 @@ import Logo from '@/components/Atoms/Logo'
 import Image from 'next/image'
 import StoreLink from '@/components/Atoms/Link'
 import Menu from '@/components/Organisms/Menu'
+import Footer from '@/components/Molecules/Footer'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -14,8 +15,8 @@ export default async function Home() {
   console.log(data)
 
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 pb-20 sm:p-20">
+      <main className="row-start-2 flex w-full flex-col items-center gap-8 sm:items-start">
         <Logo variant="white" />
         <StoreLink href={'/'}>Link</StoreLink>
         <Heading lineColor="secondary" linePosition="left">
@@ -36,6 +37,7 @@ export default async function Home() {
           height={38}
           priority
         />
+
         <ol className="list-inside list-decimal text-center text-sm sm:text-left">
           <li className="mb-2">
             Get started by editing{' '}
@@ -71,6 +73,7 @@ export default async function Home() {
             Read our docs
           </a>
         </div>
+        <Footer />
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
         <a

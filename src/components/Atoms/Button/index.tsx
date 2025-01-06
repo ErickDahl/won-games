@@ -113,8 +113,17 @@ const Button: FC<ButtonProps> = ({
     disabled: isDisabled
   })
 
-  const handleMouseEvents = (isActive: boolean) => () => setIsClicked(isActive)
-  const handleTouchEvents = (isActive: boolean) => () => setIsClicked(isActive)
+  const handleMouseEvents = (isActive: boolean) => () => {
+    if (!isDisabled) {
+      setIsClicked(isActive)
+    }
+  }
+
+  const handleTouchEvents = (isActive: boolean) => () => {
+    if (!isDisabled) {
+      setIsClicked(isActive)
+    }
+  }
 
   return (
     <button

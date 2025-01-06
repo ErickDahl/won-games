@@ -20,7 +20,7 @@ describe('<Heading />', () => {
     render(<Heading linePosition="bottom">lorem ipsum</Heading>)
     const element = screen.getByRole('heading', { name: /lorem ipsum/i })
     expect(element).toHaveClass(
-      'after:border-b-5 relative after:absolute after:-bottom-2 after:left-0 after:w-20 after:border-solid after:content-[""]'
+      'after:border-b-5 relative after:absolute after:-bottom-2 after:left-0 after:w-5 after:border-solid after:content-[""]'
     )
   })
 })
