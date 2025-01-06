@@ -85,7 +85,7 @@ const MenuLinks = ({
   className?: string
 }) => (
   <div className={className}>
-    <DefaultLinks />
+    <DefaultLinks className="text-base font-medium" />
     {isLogged && <LoggedInLinks />}
   </div>
 )

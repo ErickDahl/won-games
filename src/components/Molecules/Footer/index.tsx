@@ -15,7 +15,7 @@ const footerClasses = tv({
     headingClass: 'text-base uppercase text-black',
     contentContainer: 'flex flex-col gap-4',
     link: 'text-sm font-normal text-gray',
-    copyRight: 'text-center font-default text-xs font-normal text-gray'
+    copyRight: 'text-center text-xs font-normal text-gray'
   }
 })
 

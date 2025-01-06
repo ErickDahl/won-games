@@ -20,7 +20,8 @@ const config: Config = withTV({
         lightGray: 'var(--color-lightGray)',
         gray: 'var(--color-gray)',
         darkGray: 'var(--color-darkGray)',
-        primaryDark: 'var(--color-primaryDark)'
+        primaryDark: 'var(--color-primaryDark)',
+        transparentBlack: 'var(--color-transparentBlack)'
       },
       borderRadius: {
         radius: '0.4rem'

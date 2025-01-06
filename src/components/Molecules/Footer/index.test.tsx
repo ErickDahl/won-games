@@ -10,7 +10,7 @@ describe('<Footer />', () => {
   it('should render all links', () => {
     render(<Footer />)
     const links = screen.getAllByRole('link')
-    expect(links).toHaveLength(13) // Assuming there are 12 links in total
+    expect(links).toHaveLength(13)
   })
 
   it('should render the copyright text', () => {

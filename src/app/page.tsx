@@ -7,6 +7,8 @@ import Image from 'next/image'
 import StoreLink from '@/components/Atoms/Link'
 import Menu from '@/components/Organisms/Menu'
 import Footer from '@/components/Molecules/Footer'
+import Banner from '@/components/Molecules/Banner'
+import BannerImage from '@/assets/banner.png'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -28,6 +30,14 @@ export default async function Home() {
         </Heading>
 
         <Menu />
+
+        <Banner
+          img={BannerImage}
+          title="Banner Title"
+          subtitle="Banner Subtitle"
+          buttonLabel="Click Here"
+          buttonLink="/"
+        />
 
         <Button disabled clickAnimation icon={<AddCartIcon size={17} />}>
           teste
