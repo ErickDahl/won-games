@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Colors */
   --color-primary: #f231a5;
   --color-secondary: #3cd3c1;
   --color-mainBg: #06092b;
@@ -12,8 +14,13 @@
   --color-black: #030517;
   --color-lightGray: #eaeaea;
   --color-gray: #8f8f8f;
+
+  /* Dark Colors */
   --color-darkGray: #2e2f42;
   --color-primaryDark: #ca298a;
+  --color-secondaryDark: #00a3a1;
+
+  /* Transparent Colors */
   --color-transparentBlack: rgba(0, 0, 0, 0.7);
 }
 

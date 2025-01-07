@@ -15,7 +15,7 @@ const MenuClasses = tv({
     icons: 'flex items-center justify-center gap-5',
     links: 'flex items-center justify-center gap-5',
     logoLinks: 'flex items-center justify-center gap-8',
-    storeLinks: 'text-white'
+    storeLinks: 'text-base font-medium text-white'
   },
   variants: {
     isMobile: {
@@ -85,7 +85,7 @@ const MenuLinks = ({
   className?: string
 }) => (
   <div className={className}>
-    <DefaultLinks className="text-base font-medium" />
+    <DefaultLinks />
     {isLogged && <LoggedInLinks />}
   </div>
 )

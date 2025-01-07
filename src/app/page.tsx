@@ -9,6 +9,7 @@ import Menu from '@/components/Organisms/Menu'
 import Footer from '@/components/Molecules/Footer'
 import Banner from '@/components/Molecules/Banner'
 import BannerImage from '@/assets/banner.png'
+import Ribbon from '@/components/Atoms/Ribbon'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -30,6 +31,8 @@ export default async function Home() {
         </Heading>
 
         <Menu />
+
+        <Ribbon backGroundColor="secondary">teste</Ribbon>
 
         <Banner
           img={BannerImage}
