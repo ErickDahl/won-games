@@ -6,7 +6,7 @@ import ClipLoader from 'react-spinners/ClipLoader'
 const buttonClasses = tv({
   slots: {
     button:
-      'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius bg-primary p-2 font-default text-white hover:bg-primaryDark',
+      'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius bg-primary p-2 text-white hover:bg-primaryDark',
     div: 'flex items-center justify-center gap-2'
   },
   variants: {
