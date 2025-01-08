@@ -32,9 +32,16 @@ export default async function Home() {
 
         <Menu />
 
-        <Ribbon backGroundColor="secondary">teste</Ribbon>
+        <Banner
+          img={BannerImage}
+          title="Banner Title"
+          subtitle="Banner Subtitle"
+          buttonLabel="Click Here"
+          buttonLink="/"
+        />
 
         <Banner
+          ribbon={<Ribbon backGroundColor="secondary">teste</Ribbon>}
           img={BannerImage}
           title="Banner Title"
           subtitle="Banner Subtitle"
