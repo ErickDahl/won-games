@@ -35,12 +35,13 @@ const Ribbon = ({
   children,
   className,
   backGroundColor = 'primary',
-  size = 'normal'
+  size = 'normal',
+  ...rest
 }: PropsWithChildren<RibbonProps>) => {
   const { base, text } = ribbonClasses({ backGroundColor, size })
 
   return (
-    <div className={base({ className })}>
+    <div className={base({ className })} {...rest}>
       <span className={text()}>{children}</span>
     </div>
   )
