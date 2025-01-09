@@ -13,6 +13,9 @@ const ribbonClasses = tv({
       },
       secondary: {
         base: 'bg-secondary after:border-secondaryDark after:border-b-transparent after:border-r-transparent'
+      },
+      tertiary: {
+        base: 'bg-tertiary after:border-tertiaryDark after:border-b-transparent after:border-r-transparent'
       }
     },
     size: {

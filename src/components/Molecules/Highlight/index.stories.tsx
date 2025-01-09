@@ -2,8 +2,6 @@ import { Meta, StoryObj } from '@storybook/react'
 import Highlight from '.'
 import BannerImage from '@/assets/hightlightBanner.png'
 import highlightImageBackground from '@/assets/hightlightBannerBackground.png'
-import StoreLink from '@/components/Atoms/Link'
-import Image from 'next/image'
 
 export default {
   title: 'Molecules/Highlight',
@@ -23,12 +21,9 @@ export default {
     title: 'Highlight Title',
     subtitle: 'Highlight Subtitle',
     backgroundImage: highlightImageBackground.src,
-    button: (
-      <StoreLink button hoverEffect={false} href={'/'}>
-        Highlight Button
-      </StoreLink>
-    ),
-    image: <Image src={BannerImage} alt="Highlight Image" />
+    buttonLabel: 'Click Here',
+    buttonLink: '/',
+    image: BannerImage
   }
 } as Meta
 

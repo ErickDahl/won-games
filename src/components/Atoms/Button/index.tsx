@@ -60,7 +60,7 @@ const buttonClasses = tv({
 
 type ButtonProps = HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonClasses> & {
-    children: ReactNode
+    children?: ReactNode
     icon?: JSX.Element
     iconPosition?: 'left' | 'right'
     loading?: boolean
