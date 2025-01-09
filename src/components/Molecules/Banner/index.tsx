@@ -1,8 +1,9 @@
 'use client'
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactElement, useEffect, useRef, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
 import StoreLink from '../../Atoms/Link'
+import Ribbon from '@/components/Atoms/Ribbon'
 
 const bannerClasses = tv({
   slots: {
@@ -23,7 +24,7 @@ type BannerProps = VariantProps<typeof bannerClasses> & {
   subtitle: string
   buttonLabel: string
   buttonLink: string
-  ribbon?: ReactNode
+  ribbon?: ReactElement<typeof Ribbon>
 }
 
 const Banner = ({
@@ -32,7 +33,8 @@ const Banner = ({
   title = 'title',
   subtitle = 'subtitle',
   buttonLabel = 'button label',
-  buttonLink = '#'
+  buttonLink = '#',
+  ...rest
 }: BannerProps) => {
   const {
     base,
@@ -54,7 +56,7 @@ const Banner = ({
   }, [])
 
   return (
-    <div className={base()} style={{ maxWidth: imgWidth }}>
+    <div className={base()} style={{ maxWidth: imgWidth }} {...rest}>
       <Image className={image()} ref={imgRef} src={img} alt={'game banner'} />
       {!!ribbon && ribbon}
       <div className={containerInformation()}>

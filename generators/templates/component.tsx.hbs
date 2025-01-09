@@ -1,6 +1,25 @@
-const {{pascalCase name}} = () => (
-<main>
-  <h1>{{pascalCase name}}</h1>
-</main>
-)
+import { tv, VariantProps } from 'tailwind-variants'
+
+const {{name}}Classes = tv({
+  slots: {
+    base: 'flex'
+  }
+})
+
+type {{pascalCase name}}Props = VariantProps<typeof {{name}}Classes> & {
+  title?: string
+  subtitle?: string
+}
+
+const {{pascalCase name}} = ({ title, subtitle }: {{pascalCase name}}Props) => {
+  const { base } = {{name}}Classes()
+
+  return (
+    <main className={base()}>
+      <h1>{title}</h1>
+      <h2>{subtitle}</h2>
+    </main>
+  )
+}
+
 export default {{pascalCase name}}

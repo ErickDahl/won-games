@@ -21,7 +21,7 @@ const LinkClasses = tv({
       secondary: 'border-secondary'
     },
     button: {
-      true: 'inline-flex h-medium cursor-pointer items-center justify-center gap-2 rounded-radius bg-primary p-2 px-8 text-sm text-white hover:bg-primaryDark'
+      true: 'inline-flex h-medium cursor-pointer items-center justify-center gap-2 rounded-radius bg-primary p-2 px-4 text-sm font-normal text-white hover:bg-primaryDark'
     }
   },
   defaultVariants: {
