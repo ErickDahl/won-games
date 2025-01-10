@@ -5,6 +5,24 @@ import {
   MdMenu as MenuIcon,
   MdOutlineClose as CloseIcon
 } from 'react-icons/md'
-import { PiHeartStraight as WishListIcon } from 'react-icons/pi'
+import {
+  PiHeartStraight as WishListIcon,
+  PiHeartStraightFill as WishListFullIcon
+} from 'react-icons/pi'
 
-export { SearchIcon, AddCartIcon, CartIcon, MenuIcon, CloseIcon, WishListIcon }
+import {
+  TbShoppingCartCheck as InCartIcon,
+  TbShoppingCartPlus as AddToCartIcon
+} from 'react-icons/tb'
+
+export {
+  SearchIcon,
+  AddCartIcon,
+  CartIcon,
+  MenuIcon,
+  CloseIcon,
+  WishListIcon,
+  WishListFullIcon,
+  InCartIcon,
+  AddToCartIcon
+}

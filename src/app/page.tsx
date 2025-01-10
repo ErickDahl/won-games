@@ -46,13 +46,26 @@ export default async function Home() {
           buttonLink="/"
         />
 
-        <GameCard
-          title={'test'}
-          developer={'test'}
-          image={GameCardImage}
-          listPrice={100}
-          price={150}
-        />
+        <div className="flex gap-10">
+          <GameCard
+            title={'test'}
+            developer={'test'}
+            image={GameCardImage}
+            listPrice={100}
+            price={150}
+            isInCart={true}
+            isInWishlist={true}
+          />
+
+          <GameCard
+            title={'test'}
+            developer={'test'}
+            image={GameCardImage}
+            listPrice={100}
+            price={150}
+            isInCart={false}
+          />
+        </div>
 
         <Highlight
           title={'Highlight Title'}
