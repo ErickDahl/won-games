@@ -104,7 +104,7 @@ describe('<Drawer />', () => {
     )
 
     const drawerContent = screen.getByText('Drawer Content')
-    expect(drawerContent).toHaveStyle({ width: '50vw' })
+    expect(drawerContent).toHaveStyle({ width: '50%' })
   })
 
   it('should render the correct drawer width from right', () => {
@@ -117,7 +117,7 @@ describe('<Drawer />', () => {
     )
 
     const drawerContent = screen.getByText('Drawer Content')
-    expect(drawerContent).toHaveStyle({ width: '50vw' })
+    expect(drawerContent).toHaveStyle({ width: '50%' })
   })
 
   it('should render the correct drawer height from bottom', () => {
@@ -130,7 +130,7 @@ describe('<Drawer />', () => {
     )
 
     const drawerContent = screen.getByText('Drawer Content')
-    expect(drawerContent).toHaveStyle({ height: '50vh' })
+    expect(drawerContent).toHaveStyle({ height: '50%' })
   })
 
   it('should render the correct drawer height from top', () => {
@@ -143,6 +143,6 @@ describe('<Drawer />', () => {
     )
 
     const drawerContent = screen.getByText('Drawer Content')
-    expect(drawerContent).toHaveStyle({ height: '50vh' })
+    expect(drawerContent).toHaveStyle({ height: '50%' })
   })
 })

@@ -13,12 +13,68 @@ import highlightImage from '@/assets/hightlightBanner.png'
 import highlightImageBackground from '@/assets/hightlightBannerBackground.png'
 import GameCard from '@/components/Molecules/GameCard'
 import GameCardImage from '@/assets/gameCard.png'
+import BannerSlider from '@/components/Molecules/BannerSlider'
+import GameCardSlider from '@/components/Molecules/GameCardSlider'
 
 export default async function Home() {
   const supabase = await createClient()
   const { data } = await supabase.from('games').select('*')
 
   console.log(data)
+
+  const banners = [
+    {
+      img: BannerImage,
+      title: 'Banner Title',
+      subtitle: 'Banner Subtitle',
+      buttonLabel: 'Click Here',
+      buttonLink: '/'
+    },
+    {
+      img: BannerImage,
+      title: 'Banner Title',
+      subtitle: 'Banner Subtitle',
+      buttonLabel: 'Click Here',
+      buttonLink: '/'
+    },
+    {
+      img: BannerImage,
+      title: 'Banner Title',
+      subtitle: 'Banner Subtitle',
+      buttonLabel: 'Click Here',
+      buttonLink: '/'
+    }
+  ]
+
+  const cards = [
+    {
+      title: 'test',
+      developer: 'test',
+      image: GameCardImage,
+      listPrice: 100,
+      price: 150,
+      isInCart: true,
+      isInWishlist: true
+    },
+    {
+      title: 'test',
+      developer: 'test',
+      image: GameCardImage,
+      listPrice: 100,
+      price: 150,
+      isInCart: true,
+      isInWishlist: true
+    },
+    {
+      title: 'test',
+      developer: 'test',
+      image: GameCardImage,
+      listPrice: 100,
+      price: 150,
+      isInCart: true,
+      isInWishlist: true
+    }
+  ]
 
   return (
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 pb-20 sm:p-20">
@@ -36,6 +92,9 @@ export default async function Home() {
         </Heading>
 
         <Menu />
+
+        <BannerSlider banners={banners} />
+        <GameCardSlider cards={cards} />
 
         <Banner
           ribbon={<Ribbon backGroundColor="secondary">teste</Ribbon>}

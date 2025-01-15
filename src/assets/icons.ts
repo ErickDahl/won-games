@@ -15,6 +15,11 @@ import {
   TbShoppingCartPlus as AddToCartIcon
 } from 'react-icons/tb'
 
+import {
+  IoIosArrowForward as ArrowRightIcon,
+  IoIosArrowBack as ArrowLeftIcon
+} from 'react-icons/io'
+
 export {
   SearchIcon,
   AddCartIcon,
@@ -24,5 +29,7 @@ export {
   WishListIcon,
   WishListFullIcon,
   InCartIcon,
-  AddToCartIcon
+  AddToCartIcon,
+  ArrowRightIcon,
+  ArrowLeftIcon
 }

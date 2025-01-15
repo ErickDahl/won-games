@@ -26,10 +26,6 @@
   --color-transparentBlack: rgba(0, 0, 0, 0.7);
 }
 
-.theme-light {
-  --color-mainBg: #707;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

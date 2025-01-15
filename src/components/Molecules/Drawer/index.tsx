@@ -200,10 +200,10 @@ export const DrawerContent = ({
   const { content } = drawerClasses({ isOpen, from })
 
   const dynamicStyle = {
-    ['left']: { width: `${size}vw` },
-    ['right']: { width: `${size}vw` },
-    ['top']: { height: `${size}vh` },
-    ['bottom']: { height: `${size}vh` }
+    ['left']: { width: `${size}%`, height: '100%' },
+    ['right']: { width: `${size}%`, height: '100%' },
+    ['top']: { height: `${size}%`, width: '100%' },
+    ['bottom']: { height: `${size}%`, width: '100%' }
   }
 
   return (

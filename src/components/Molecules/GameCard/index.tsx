@@ -1,3 +1,5 @@
+'use client'
+
 import {
   AddCartIcon,
   InCartIcon,
@@ -6,7 +8,9 @@ import {
 } from '@/assets/icons'
 import Button from '@/components/Atoms/Button'
 import Ribbon from '@/components/Atoms/Ribbon'
+import useIsMobile from '@/hooks/useIsMobile'
 import Image, { StaticImageData } from 'next/image'
+import { HTMLAttributes } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const gameCardClasses = tv({
@@ -19,26 +23,32 @@ const gameCardClasses = tv({
     developerClass:
       'block w-full text-start text-xs font-medium capitalize text-gray',
     button: 'bg-transparent p-0 hover:bg-transparent',
-    divPriceClass: 'flex items-center justify-end',
+    divPriceClass: 'mb-2 flex items-center justify-end',
     priceClass: 'text-sm font-semibold text-gray line-through',
     listPriceClass:
-      'ml-4 mr-1 flex h-6 items-center justify-center rounded-sm bg-secondary px-5 text-sm font-semibold text-white',
+      'ml-3 flex h-6 items-center justify-center rounded-sm bg-secondary px-3 text-sm font-semibold text-white',
     ribbonClass: 'top-[3%] max-w-20 font-bold',
-    buyButton: 'h-6 w-7 rounded-sm p-0'
+    buyButton: 'flex h-6 rounded-sm p-0'
   }
 })
 
-type GameCardProps = VariantProps<typeof gameCardClasses> & {
-  title: string
-  developer: string
-  image: StaticImageData
-  listPrice: number
-  price?: number
-  isInCart?: boolean
-  isInWishlist?: boolean
+export type GameCardProps = VariantProps<typeof gameCardClasses> &
+  HTMLAttributes<HTMLElement> & {
+    title: string
+    developer: string
+    image: StaticImageData
+    listPrice: number
+    price?: number
+    isInCart?: boolean
+    isInWishlist?: boolean
+    disableRibbon?: boolean
+  }
+
+type RenderBuyButtonProps = Pick<GameCardProps, 'isInCart'> & {
+  isMobile: boolean
 }
 
-const RenderBuyButton = ({ isInCart }: Pick<GameCardProps, 'isInCart'>) => {
+const RenderBuyButton = ({ isInCart, isMobile }: RenderBuyButtonProps) => {
   const { buyButton } = gameCardClasses()
   const variation = isInCart ? 'secondary' : 'primary'
   const iconsProps = {
@@ -55,6 +65,11 @@ const RenderBuyButton = ({ isInCart }: Pick<GameCardProps, 'isInCart'>) => {
   return (
     <Button
       className={buyButton()}
+      style={
+        isMobile
+          ? { marginLeft: 'auto', width: '2.5rem' }
+          : { marginLeft: '0.3rem', width: '1.8rem' }
+      }
       size="xsmall"
       variation={variation}
       icon={icon}
@@ -89,7 +104,9 @@ const GameCard = ({
   listPrice,
   price,
   isInCart = false,
-  isInWishlist = false
+  isInWishlist = false,
+  disableRibbon = false,
+  className
 }: GameCardProps) => {
   const {
     base,
@@ -103,11 +120,12 @@ const GameCard = ({
     ribbonClass
   } = gameCardClasses()
 
+  const isMobile = useIsMobile()
   const discount = !!price && Math.round(100 - (listPrice / price) * 100)
 
   return (
-    <article className={base()}>
-      {!!price && (
+    <article className={base({ className })}>
+      {!!price && !disableRibbon && (
         <Ribbon
           backGroundColor="tertiary"
           className={ribbonClass()}
@@ -131,8 +149,13 @@ const GameCard = ({
         <div className={divPriceClass()}>
           {!!price && <span className={priceClass()}>${price}</span>}
           <span className={listPriceClass()}>${listPrice}</span>
-          <RenderBuyButton isInCart={isInCart} />
+          {!isMobile && (
+            <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />
+          )}
         </div>
+        {isMobile && (
+          <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />
+        )}
       </div>
     </article>
   )

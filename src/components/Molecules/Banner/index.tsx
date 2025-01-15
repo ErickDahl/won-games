@@ -18,7 +18,7 @@ const bannerClasses = tv({
   }
 })
 
-type BannerProps = VariantProps<typeof bannerClasses> & {
+export type BannerProps = VariantProps<typeof bannerClasses> & {
   img: string | StaticImageData
   title: string
   subtitle: string
