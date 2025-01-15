@@ -1,6 +1,5 @@
 import StoreLink from '@/components/Atoms/Link'
-import { StaticImageData } from 'next/image'
-import { ReactElement } from 'react'
+import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const highlightClasses = tv({
@@ -31,8 +30,9 @@ type HighlightProps = VariantProps<typeof highlightClasses> & {
   title: string
   subtitle: string
   backgroundImage: string | StaticImageData
-  button: ReactElement<typeof StoreLink>
-  image: ReactElement
+  buttonLabel: string
+  buttonLink: string
+  image: StaticImageData
 }
 
 const Highlight = ({
@@ -40,7 +40,8 @@ const Highlight = ({
   subtitle,
   backgroundImage,
   align = 'left',
-  button,
+  buttonLabel,
+  buttonLink,
   image
 }: HighlightProps) => {
   const {
@@ -63,9 +64,24 @@ const Highlight = ({
         <div className={titles()}>
           <h2 className={titleClass()}>{title}</h2>
           <h3 className={subtitleClass()}>{subtitle}</h3>
-          <div className={buttonClass()}>{button}</div>
+          <div className={buttonClass()}>
+            {
+              <StoreLink button hoverEffect={false} href={buttonLink}>
+                {buttonLabel}
+              </StoreLink>
+            }
+          </div>
         </div>
-        <div className={imageClass()}>{!!image && image}</div>
+        <div className={imageClass()}>
+          {!!image && (
+            <Image
+              src={image.src}
+              width={image.width}
+              height={image.height}
+              alt="Highlight Image"
+            />
+          )}
+        </div>
       </div>
     </div>
   )

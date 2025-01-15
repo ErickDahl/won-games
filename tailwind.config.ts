@@ -14,6 +14,7 @@ const config: Config = withTV({
         foreground: 'var(--foreground)',
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
         mainBg: 'var(--color-mainBg)',
         white: 'var(--color-white)',
         black: 'var(--color-black)',
@@ -22,6 +23,7 @@ const config: Config = withTV({
         darkGray: 'var(--color-darkGray)',
         primaryDark: 'var(--color-primaryDark)',
         secondaryDark: 'var(--color-secondaryDark)',
+        tertiaryDark: 'var(--color-tertiaryDark)',
         transparentBlack: 'var(--color-transparentBlack)'
       },
       borderRadius: {

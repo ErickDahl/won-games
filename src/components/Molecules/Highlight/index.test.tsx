@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import Highlight from './index'
 import highlightImage from '@/assets/hightlightBanner.png'
-import StoreLink from '@/components/Atoms/Link'
-import Image from 'next/image'
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -18,12 +16,9 @@ describe('<Highlight />', () => {
     title: 'Highlight Title',
     subtitle: 'Highlight Subtitle',
     backgroundImage: highlightImage.src,
-    button: (
-      <StoreLink button hoverEffect={false} href="/link">
-        Click Here
-      </StoreLink>
-    ),
-    image: <Image src={highlightImage} alt="Highlight Image" />
+    buttonLabel: 'Click Here',
+    buttonLink: '/link',
+    image: highlightImage
   }
 
   it('should render the title and subtitle', () => {
@@ -50,6 +45,7 @@ describe('<Highlight />', () => {
 
     const image = screen.getByAltText('Highlight Image')
     expect(image).toBeInTheDocument()
+    expect(image).toHaveAttribute('src', highlightImage.src)
   })
 
   it('should apply the correct background image', () => {

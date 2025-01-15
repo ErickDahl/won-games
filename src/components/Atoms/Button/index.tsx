@@ -6,11 +6,14 @@ import ClipLoader from 'react-spinners/ClipLoader'
 const buttonClasses = tv({
   slots: {
     button:
-      'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius bg-primary p-2 text-white hover:bg-primaryDark',
+      'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius p-2 text-white',
     div: 'flex items-center justify-center gap-2'
   },
   variants: {
     size: {
+      xsmall: {
+        button: 'h-5'
+      },
       small: {
         button: 'h-small px-7 text-xs'
       },
@@ -19,6 +22,14 @@ const buttonClasses = tv({
       },
       large: {
         button: 'h-large px-14 text-base'
+      }
+    },
+    variation: {
+      primary: {
+        button: 'bg-primary hover:bg-primaryDark'
+      },
+      secondary: {
+        button: 'bg-secondary hover:bg-secondaryDark'
       }
     },
     disabled: {
@@ -60,7 +71,7 @@ const buttonClasses = tv({
 
 type ButtonProps = HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonClasses> & {
-    children: ReactNode
+    children?: ReactNode
     icon?: JSX.Element
     iconPosition?: 'left' | 'right'
     loading?: boolean
@@ -92,6 +103,7 @@ const ButtonContent = ({
 
 const Button: FC<ButtonProps> = ({
   size,
+  variation = 'primary',
   fullWidth,
   icon,
   iconPosition = 'left',
@@ -107,6 +119,7 @@ const Button: FC<ButtonProps> = ({
   const isDisabled = disabled
   const { button, div } = buttonClasses({
     size,
+    variation,
     fullWidth,
     clickAnimation,
     click: isClicked,
