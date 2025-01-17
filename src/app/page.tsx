@@ -13,8 +13,8 @@ import highlightImage from '@/assets/hightlightBanner.png'
 import highlightImageBackground from '@/assets/hightlightBannerBackground.png'
 import GameCard from '@/components/Molecules/GameCard'
 import GameCardImage from '@/assets/gameCard.png'
-import BannerSlider from '@/components/Molecules/BannerSlider'
-import GameCardSlider from '@/components/Molecules/GameCardSlider'
+import BannerCarousel from '@/components/Molecules/BannerCarousel'
+import GameCardCarousel from '@/components/Molecules/GameCardCarousel'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -93,8 +93,8 @@ export default async function Home() {
 
         <Menu />
 
-        <BannerSlider banners={banners} />
-        <GameCardSlider cards={cards} />
+        <BannerCarousel banners={banners} />
+        <GameCardCarousel cards={cards} />
 
         <Banner
           ribbon={<Ribbon backGroundColor="secondary">teste</Ribbon>}

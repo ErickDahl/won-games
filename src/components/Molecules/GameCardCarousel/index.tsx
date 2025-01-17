@@ -6,16 +6,19 @@ import {
   CarouselDots,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
+  CarouselProps
 } from '@/components/ui/carousel'
 import GameCard, { GameCardProps } from '../GameCard'
 import useIsMobile from '@/hooks/useIsMobile'
+import { HTMLAttributes } from 'react'
 
-type GameCardSliderProps = {
-  cards?: GameCardProps[]
-}
+type GameCardCarouselProps = HTMLAttributes<HTMLDivElement> &
+  CarouselProps & {
+    cards: GameCardProps[]
+  }
 
-const GameCardSlider = ({ cards, ...rest }: GameCardSliderProps) => {
+const GameCardCarousel = ({ cards, ...rest }: GameCardCarouselProps) => {
   const isMobile = useIsMobile()
 
   return (
@@ -42,4 +45,4 @@ const GameCardSlider = ({ cards, ...rest }: GameCardSliderProps) => {
   )
 }
 
-export default GameCardSlider
+export default GameCardCarousel

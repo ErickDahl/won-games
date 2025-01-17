@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
 import BannerImage from '@/assets/banner.png'
-import BannerSlider from '.'
+import BannerCarousel from '.'
 export default {
-  title: 'Molecules/BannerSlider',
-  component: BannerSlider,
+  title: 'Molecules/BannerCarousel',
+  component: BannerCarousel,
   argTypes: {
     banners: {
       control: false
@@ -11,9 +11,7 @@ export default {
     className: {
       control: false
     }
-  }
-} as Meta
-export const Default: StoryObj = {
+  },
   args: {
     banners: [
       {
@@ -32,4 +30,11 @@ export const Default: StoryObj = {
       }
     ]
   }
+} as Meta
+export const Default: StoryObj = {
+  render: (args) => (
+    <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+      <BannerCarousel banners={[]} {...args} />
+    </div>
+  )
 }
