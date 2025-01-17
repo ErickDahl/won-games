@@ -101,7 +101,7 @@ const Home = ({
         <GameCardCarousel cards={freeGames} />
       </Container>
 
-      <div className="bg-lightBg m-0 max-w-full pb-4 pt-16 [clip-path:polygon(0_5%,_100%_0%,_100%_100%,_0_100%)] lg:[clip-path:polygon(0_15%,_100%_0%,_100%_100%,_0_100%)]">
+      <div className="m-0 max-w-full bg-lightBg pb-4 pt-16 [clip-path:polygon(0_5%,_100%_0%,_100%_100%,_0_100%)] lg:[clip-path:polygon(0_15%,_100%_0%,_100%_100%,_0_100%)]">
         <Container className={base() + ' mb-0'}>
           <Footer />
         </Container>
