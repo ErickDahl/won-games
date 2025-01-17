@@ -1,5 +1,6 @@
 import StoreLink from '@/components/Atoms/Link'
 import Image, { StaticImageData } from 'next/image'
+import { HTMLAttributes } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const highlightClasses = tv({
@@ -26,14 +27,15 @@ const highlightClasses = tv({
   }
 })
 
-type HighlightProps = VariantProps<typeof highlightClasses> & {
-  title: string
-  subtitle: string
-  backgroundImage: string | StaticImageData
-  buttonLabel: string
-  buttonLink: string
-  image: StaticImageData
-}
+export type HighlightProps = VariantProps<typeof highlightClasses> &
+  HTMLAttributes<HTMLDivElement> & {
+    title: string
+    subtitle: string
+    backgroundImage: string | StaticImageData
+    buttonLabel: string
+    buttonLink: string
+    image: StaticImageData
+  }
 
 const Highlight = ({
   title,
@@ -42,7 +44,8 @@ const Highlight = ({
   align = 'left',
   buttonLabel,
   buttonLink,
-  image
+  image,
+  className
 }: HighlightProps) => {
   const {
     base,
@@ -56,7 +59,7 @@ const Highlight = ({
 
   return (
     <div
-      className={base()}
+      className={base({ className })}
       data-testid="highlight"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >

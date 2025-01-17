@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import BannerImage from '@/assets/banner.png'
 import BannerCarousel from '.'
+import bannersMock from './mock'
+
 export default {
   title: 'Molecules/BannerCarousel',
   component: BannerCarousel,
@@ -13,22 +14,7 @@ export default {
     }
   },
   args: {
-    banners: [
-      {
-        img: BannerImage,
-        title: 'Banner Title',
-        subtitle: 'Banner Subtitle',
-        buttonLabel: 'Click Here',
-        buttonLink: '/'
-      },
-      {
-        img: BannerImage,
-        title: 'Banner Title',
-        subtitle: 'Banner Subtitle',
-        buttonLabel: 'Click Here',
-        buttonLink: '/'
-      }
-    ]
+    banners: bannersMock
   }
 } as Meta
 export const Default: StoryObj = {

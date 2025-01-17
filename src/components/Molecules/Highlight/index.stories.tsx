@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import Highlight from '.'
-import BannerImage from '@/assets/hightlightBanner.png'
-import highlightImageBackground from '@/assets/hightlightBannerBackground.png'
+import highlight from './mock'
 
 export default {
   title: 'Molecules/Highlight',
@@ -18,12 +17,7 @@ export default {
     }
   },
   args: {
-    title: 'Highlight Title',
-    subtitle: 'Highlight Subtitle',
-    backgroundImage: highlightImageBackground.src,
-    buttonLabel: 'Click Here',
-    buttonLink: '/',
-    image: BannerImage
+    ...highlight
   }
 } as Meta
 

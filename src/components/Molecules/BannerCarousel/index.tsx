@@ -32,8 +32,6 @@ const BannerCarousel = ({
 }: BannerCarouselProps) => {
   const { base } = BannerSliderClasses()
 
-  console.log(banners)
-
   return (
     <Carousel
       plugins={[

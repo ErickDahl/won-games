@@ -8,6 +8,19 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i
       }
+    },
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: 'var(--color-white)'
+        },
+        {
+          name: 'dark',
+          value: 'var(--color-mainBg)'
+        }
+      ]
     }
   },
   tags: ['autodocs']

@@ -7,6 +7,7 @@ import useIsMobile from '@/hooks/useIsMobile'
 import { tv, VariantProps } from 'tailwind-variants'
 import StoreLink from '@/components/Atoms/Link'
 import Button from '@/components/Atoms/Button'
+import { HTMLAttributes } from 'react'
 
 const MenuClasses = tv({
   slots: {
@@ -26,9 +27,10 @@ const MenuClasses = tv({
   }
 })
 
-type MenuProps = VariantProps<typeof MenuClasses> & {
-  isLogged?: boolean
-}
+type MenuProps = VariantProps<typeof MenuClasses> &
+  HTMLAttributes<HTMLMenuElement> & {
+    isLogged?: boolean
+  }
 
 const iconSize = 24
 const iconsColor = 'var(--color-white)'
@@ -90,12 +92,12 @@ const MenuLinks = ({
   </div>
 )
 
-const Menu = ({ isLogged }: MenuProps) => {
+const Menu = ({ isLogged, className, ...rest }: MenuProps) => {
   const isMobile = useIsMobile()
   const { logo, menu, logoLinks, links, icons } = MenuClasses({ isMobile })
 
   return (
-    <menu className={menu()}>
+    <menu className={menu({ className })} {...rest}>
       {isMobile && (
         <MenuDrawer
           isLogged={isLogged}

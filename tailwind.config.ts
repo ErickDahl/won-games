@@ -16,6 +16,7 @@ const config: Config = withTV({
         secondary: 'var(--color-secondary)',
         tertiary: 'var(--color-tertiary)',
         mainBg: 'var(--color-mainBg)',
+        lightBg: 'var(--color-lightBg)',
         white: 'var(--color-white)',
         black: 'var(--color-black)',
         lightGray: 'var(--color-lightGray)',
@@ -38,9 +39,12 @@ const config: Config = withTV({
         '3': '3px'
       },
       height: {
-        small: '30px',
-        medium: '40px',
-        large: '50px'
+        small: '1.875rem',
+        medium: '2.5rem',
+        large: '3.125rem'
+      },
+      maxWidth: {
+        container: '100rem'
       }
     }
   },
