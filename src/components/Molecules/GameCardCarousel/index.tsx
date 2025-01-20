@@ -6,24 +6,31 @@ import {
   CarouselDots,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
+  CarouselProps
 } from '@/components/ui/carousel'
 import GameCard, { GameCardProps } from '../GameCard'
 import useIsMobile from '@/hooks/useIsMobile'
+import { HTMLAttributes } from 'react'
 
-type GameCardSliderProps = {
-  cards?: GameCardProps[]
-}
+type GameCardCarouselProps = HTMLAttributes<HTMLDivElement> &
+  CarouselProps & {
+    cards: GameCardProps[]
+  }
 
-const GameCardSlider = ({ cards, ...rest }: GameCardSliderProps) => {
+const GameCardCarousel = ({ cards, ...rest }: GameCardCarouselProps) => {
   const isMobile = useIsMobile()
 
   return (
-    <Carousel opts={{ align: 'start' }} {...rest}>
+    <Carousel
+      className="mx-auto max-w-[90%]"
+      opts={{ align: 'start' }}
+      {...rest}
+    >
       <CarouselContent>
         {cards?.map((card) => (
           <CarouselItem
-            className={isMobile ? 'flex-[0_0_80%]' : 'flex-[0_0_40%]'}
+            className={isMobile ? 'flex-[0_0_70%]' : 'flex-[0_0_33%]'}
             key={uuidv4()}
           >
             <GameCard className="m-auto" {...card} />
@@ -42,4 +49,4 @@ const GameCardSlider = ({ cards, ...rest }: GameCardSliderProps) => {
   )
 }
 
-export default GameCardSlider
+export default GameCardCarousel

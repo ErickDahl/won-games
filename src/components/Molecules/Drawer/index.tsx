@@ -9,9 +9,9 @@ const drawerClasses = tv({
     root: 'relative',
     trigger: 'cursor-pointer',
     overlay:
-      'fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300',
+      'fixed inset-0 z-40 h-screen bg-black bg-opacity-50 transition-opacity duration-300',
     content:
-      'fixed z-50 flex h-screen w-screen flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
+      'fixed z-50 flex flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
     close: 'cursor-pointer'
   },
   variants: {
@@ -22,7 +22,7 @@ const drawerClasses = tv({
     },
     isOpen: {
       true: {
-        overlay: 'opacity-50'
+        overlay: 'opacity-80'
       },
       false: {
         overlay: 'pointer-events-none opacity-0'
@@ -200,10 +200,10 @@ export const DrawerContent = ({
   const { content } = drawerClasses({ isOpen, from })
 
   const dynamicStyle = {
-    ['left']: { width: `${size}%`, height: '100%' },
-    ['right']: { width: `${size}%`, height: '100%' },
-    ['top']: { height: `${size}%`, width: '100%' },
-    ['bottom']: { height: `${size}%`, width: '100%' }
+    ['left']: { width: `${size}%`, height: '100vh' },
+    ['right']: { width: `${size}%`, height: '100vh' },
+    ['top']: { height: `${size}%`, width: '100vw' },
+    ['bottom']: { height: `${size}%`, width: '100vw' }
   }
 
   return (

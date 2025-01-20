@@ -5,10 +5,12 @@ import {
   Carousel,
   CarouselContent,
   CarouselDots,
-  CarouselItem
+  CarouselItem,
+  CarouselProps
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import Banner, { BannerProps } from '../Banner'
+import { HTMLAttributes } from 'react'
 
 const BannerSliderClasses = tv({
   slots: {
@@ -16,12 +18,18 @@ const BannerSliderClasses = tv({
   }
 })
 
-type BannerSliderProps = VariantProps<typeof BannerSliderClasses> & {
-  className?: string
-  banners?: BannerProps[]
-}
+type BannerCarouselProps = VariantProps<typeof BannerSliderClasses> &
+  HTMLAttributes<HTMLDivElement> &
+  CarouselProps & {
+    banners: BannerProps[]
+    className?: string
+  }
 
-const BannerSlider = ({ className, banners, ...rest }: BannerSliderProps) => {
+const BannerCarousel = ({
+  className,
+  banners,
+  ...rest
+}: BannerCarouselProps) => {
   const { base } = BannerSliderClasses()
 
   return (
@@ -39,7 +47,7 @@ const BannerSlider = ({ className, banners, ...rest }: BannerSliderProps) => {
       <CarouselContent>
         {banners?.map((banner) => (
           <CarouselItem key={uuidv4()}>
-            <Banner {...banner} />
+            <Banner className="mx-auto" {...banner} />
           </CarouselItem>
         ))}
       </CarouselContent>
@@ -48,4 +56,4 @@ const BannerSlider = ({ className, banners, ...rest }: BannerSliderProps) => {
   )
 }
 
-export default BannerSlider
+export default BannerCarousel

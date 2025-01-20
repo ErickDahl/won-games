@@ -1,16 +1,17 @@
 import StoreLink from '@/components/Atoms/Link'
 import Image, { StaticImageData } from 'next/image'
+import { HTMLAttributes } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const highlightClasses = tv({
   slots: {
-    base: 'relative flex w-full bg-cover bg-center after:absolute after:h-full after:w-full after:bg-transparentBlack',
+    base: 'relative flex w-full bg-cover bg-center after:absolute after:h-full after:w-full after:bg-black/60',
     content: 'z-10 flex w-full justify-between',
     titles: 'flex w-1/2 flex-col p-4 lg:justify-end lg:p-8',
     titleClass: 'mb-1 text-lg font-semibold text-white lg:text-3xl',
     subtitleClass: 'mb-8 text-sm font-light text-white lg:text-lg',
     buttonClass: '',
-    imageClass: 'flex h-full w-1/3'
+    imageClass: 'flex h-full w-1/3 items-end'
   },
   variants: {
     align: {
@@ -26,14 +27,15 @@ const highlightClasses = tv({
   }
 })
 
-type HighlightProps = VariantProps<typeof highlightClasses> & {
-  title: string
-  subtitle: string
-  backgroundImage: string | StaticImageData
-  buttonLabel: string
-  buttonLink: string
-  image: StaticImageData
-}
+export type HighlightProps = VariantProps<typeof highlightClasses> &
+  HTMLAttributes<HTMLDivElement> & {
+    title: string
+    subtitle: string
+    backgroundImage: string | StaticImageData
+    buttonLabel: string
+    buttonLink: string
+    image: StaticImageData
+  }
 
 const Highlight = ({
   title,
@@ -42,7 +44,8 @@ const Highlight = ({
   align = 'left',
   buttonLabel,
   buttonLink,
-  image
+  image,
+  className
 }: HighlightProps) => {
   const {
     base,
@@ -56,7 +59,7 @@ const Highlight = ({
 
   return (
     <div
-      className={base()}
+      className={base({ className })}
       data-testid="highlight"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
@@ -78,6 +81,11 @@ const Highlight = ({
               src={image.src}
               width={image.width}
               height={image.height}
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                objectFit: 'contain'
+              }}
               alt="Highlight Image"
             />
           )}

@@ -53,7 +53,7 @@ const RenderBuyButton = ({ isInCart, isMobile }: RenderBuyButtonProps) => {
   const variation = isInCart ? 'secondary' : 'primary'
   const iconsProps = {
     size: 14,
-    color: 'var(--color-white)'
+    color: 'rgb(var(--color-white))'
   }
 
   const icon = isInCart ? (
@@ -81,7 +81,7 @@ const RenderWishListButton = ({
   isInWishlist
 }: Pick<GameCardProps, 'isInWishlist'>) => {
   const { button } = gameCardClasses()
-  const iconColor = 'var(--color-primary)'
+  const iconColor = 'rgb(var(--color-primary))'
 
   const iconProps = {
     color: iconColor,

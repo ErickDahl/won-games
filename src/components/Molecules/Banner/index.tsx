@@ -1,5 +1,11 @@
 'use client'
-import { ReactElement, useEffect, useRef, useState } from 'react'
+import {
+  HTMLAttributes,
+  ReactElement,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
 import StoreLink from '../../Atoms/Link'
@@ -10,7 +16,7 @@ const bannerClasses = tv({
     base: 'relative flex w-full flex-col',
     image: 'rounded-md',
     containerInformation:
-      'bottom-0 left-0 w-full bg-darkGray p-5 lg:absolute lg:rounded-b-md lg:bg-transparentBlack',
+      'bottom-0 left-0 w-full bg-darkGray p-5 lg:absolute lg:rounded-b-md lg:bg-black/60',
     containerTitles: 'mb-3',
     titleClassName: 'text-xl font-semibold text-white',
     subtitleClassName: 'text-sm font-normal text-white',
@@ -18,14 +24,15 @@ const bannerClasses = tv({
   }
 })
 
-export type BannerProps = VariantProps<typeof bannerClasses> & {
-  img: string | StaticImageData
-  title: string
-  subtitle: string
-  buttonLabel: string
-  buttonLink: string
-  ribbon?: ReactElement<typeof Ribbon>
-}
+export type BannerProps = VariantProps<typeof bannerClasses> &
+  HTMLAttributes<HTMLDivElement> & {
+    img: string | StaticImageData
+    title: string
+    subtitle: string
+    buttonLabel: string
+    buttonLink: string
+    ribbon?: ReactElement<typeof Ribbon>
+  }
 
 const Banner = ({
   img,
@@ -34,6 +41,7 @@ const Banner = ({
   subtitle = 'subtitle',
   buttonLabel = 'button label',
   buttonLink = '#',
+  className,
   ...rest
 }: BannerProps) => {
   const {
@@ -56,7 +64,11 @@ const Banner = ({
   }, [])
 
   return (
-    <div className={base()} style={{ maxWidth: imgWidth }} {...rest}>
+    <div
+      className={base({ className })}
+      style={{ maxWidth: imgWidth }}
+      {...rest}
+    >
       <Image className={image()} ref={imgRef} src={img} alt={'game banner'} />
       {!!ribbon && ribbon}
       <div className={containerInformation()}>

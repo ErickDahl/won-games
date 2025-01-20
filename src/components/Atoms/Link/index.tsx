@@ -3,10 +3,10 @@ import { tv, VariantProps } from 'tailwind-variants'
 import { ReactNode } from 'react'
 
 const LinkClasses = tv({
-  base: 'relative text-center text-2xl font-bold text-black',
+  base: 'text-center text-2xl font-bold text-black',
   variants: {
     hoverEffect: {
-      true: 'after:absolute after:left-1/2 after:block after:h-[0.3rem] after:w-0 after:transition-all after:duration-200 after:content-[""] hover:after:left-0 hover:after:w-full',
+      true: 'relative after:absolute after:left-1/2 after:block after:h-[0.3rem] after:w-0 after:transition-all after:duration-200 after:content-[""] hover:after:left-0 hover:after:w-full',
       false: 'after:hidden'
     },
     hoverEffectColor: {

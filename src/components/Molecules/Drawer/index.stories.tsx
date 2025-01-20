@@ -55,7 +55,7 @@ const Template: StoryObj = {
       <DrawerContent>
         <p>Drawer content goes here</p>
         <DrawerClose className="absolute right-0 top-3 mr-4 cursor-pointer">
-          <CloseIcon color="var(--color-black)" size={30} />
+          <CloseIcon color="rgb(var(--color-black))" size={30} />
         </DrawerClose>
       </DrawerContent>
     </Drawer>

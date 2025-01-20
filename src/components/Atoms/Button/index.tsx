@@ -44,7 +44,7 @@ const buttonClasses = tv({
     },
     click: {
       true: {
-        button: 'transform bg-primaryDark'
+        button: 'transform'
       }
     },
     clickAnimation: {
@@ -60,9 +60,24 @@ const buttonClasses = tv({
       className: {
         div: 'scale-[.97]'
       }
+    },
+    {
+      click: true,
+      variation: 'primary',
+      className: {
+        button: 'bg-primaryDark'
+      }
+    },
+    {
+      click: true,
+      variation: 'secondary',
+      className: {
+        button: 'bg-secondaryDark'
+      }
     }
   ],
   defaultVariants: {
+    variation: 'primary',
     size: 'medium',
     clickAnimation: true,
     fullWidth: false
@@ -84,7 +99,7 @@ type ButtonContentProps = Pick<
 
 const LoadingState = () => (
   <>
-    <ClipLoader size={20} color="var(--color-white)" />
+    <ClipLoader size={20} color="rgb(var(--color-white))" />
     <span className="text-sm">Loading...</span>
   </>
 )
@@ -103,7 +118,7 @@ const ButtonContent = ({
 
 const Button: FC<ButtonProps> = ({
   size,
-  variation = 'primary',
+  variation,
   fullWidth,
   icon,
   iconPosition = 'left',

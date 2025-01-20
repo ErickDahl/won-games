@@ -7,10 +7,11 @@ import useIsMobile from '@/hooks/useIsMobile'
 import { tv, VariantProps } from 'tailwind-variants'
 import StoreLink from '@/components/Atoms/Link'
 import Button from '@/components/Atoms/Button'
+import { HTMLAttributes } from 'react'
 
 const MenuClasses = tv({
   slots: {
-    menu: 'relative inline-flex w-full items-center justify-between p-2',
+    menu: 'relative inline-flex w-full items-center justify-between p-4',
     logo: '',
     icons: 'flex items-center justify-center gap-5',
     links: 'flex items-center justify-center gap-5',
@@ -26,12 +27,13 @@ const MenuClasses = tv({
   }
 })
 
-type MenuProps = VariantProps<typeof MenuClasses> & {
-  isLogged?: boolean
-}
+type MenuProps = VariantProps<typeof MenuClasses> &
+  HTMLAttributes<HTMLMenuElement> & {
+    isLogged?: boolean
+  }
 
 const iconSize = 24
-const iconsColor = 'var(--color-white)'
+const iconsColor = 'rgb(var(--color-white))'
 
 export const LoggedInLinks = ({ className }: { className?: string }) => {
   const { storeLinks } = MenuClasses()
@@ -90,12 +92,12 @@ const MenuLinks = ({
   </div>
 )
 
-const Menu = ({ isLogged }: MenuProps) => {
+const Menu = ({ isLogged, className, ...rest }: MenuProps) => {
   const isMobile = useIsMobile()
   const { logo, menu, logoLinks, links, icons } = MenuClasses({ isMobile })
 
   return (
-    <menu className={menu()}>
+    <menu className={menu({ className })} {...rest}>
       {isMobile && (
         <MenuDrawer
           isLogged={isLogged}
