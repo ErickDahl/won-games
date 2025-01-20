@@ -12,7 +12,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 const homeClasses = tv({
   slots: {
     base: 'mx-auto mb-8 flex flex-col gap-8',
-    header: 'sticky top-0 z-20 mx-auto bg-mainBg/80 backdrop-blur-lg',
+    header: 'bg-mainBg/80 sticky top-0 z-20 mx-auto backdrop-blur-lg',
     headingClass: '',
     noPadding: 'p-0',
     menuClass: 'mt-4',

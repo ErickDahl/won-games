@@ -17,8 +17,8 @@ const cardsMock: GameCardProps[] = [
     image: GameCardImage,
     listPrice: 100,
     price: 150,
-    isInCart: true,
-    isInWishlist: true
+    isInCart: false,
+    isInWishlist: false
   },
   {
     title: 'test',
@@ -27,7 +27,7 @@ const cardsMock: GameCardProps[] = [
     listPrice: 100,
     price: 150,
     isInCart: true,
-    isInWishlist: true
+    isInWishlist: false
   },
   {
     title: 'test',
@@ -35,7 +35,7 @@ const cardsMock: GameCardProps[] = [
     image: GameCardImage,
     listPrice: 100,
     price: 150,
-    isInCart: true,
+    isInCart: false,
     isInWishlist: true
   }
 ]
