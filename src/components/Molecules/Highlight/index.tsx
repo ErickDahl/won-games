@@ -11,7 +11,7 @@ const highlightClasses = tv({
     titleClass: 'mb-1 text-lg font-semibold text-white lg:text-3xl',
     subtitleClass: 'mb-8 text-sm font-light text-white lg:text-lg',
     buttonClass: '',
-    imageClass: 'flex h-full w-1/3'
+    imageClass: 'flex h-full w-1/3 items-end'
   },
   variants: {
     align: {
@@ -81,6 +81,11 @@ const Highlight = ({
               src={image.src}
               width={image.width}
               height={image.height}
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                objectFit: 'contain'
+              }}
               alt="Highlight Image"
             />
           )}

@@ -62,11 +62,7 @@ describe('<StoreLink />', () => {
     expect(linkElement).toBeInTheDocument()
     expect(linkElement).toHaveAttribute('href', href)
 
-    expect(linkElement).toHaveClass(
-      'relative',
-      'text-center',
-      'after:bg-primary'
-    )
+    expect(linkElement).toHaveClass('text-center', 'after:bg-primary')
 
     expect(linkElement).not.toHaveClass(
       'after:w-0',

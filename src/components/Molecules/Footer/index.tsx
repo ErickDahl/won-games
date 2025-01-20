@@ -41,7 +41,7 @@ const Content = ({ heading, content }: ContentProps) => {
       </Heading>
       <ul>
         {content.map((item) => (
-          <li key={uuidv4()}>
+          <li key={uuidv4()} className="break-words">
             <StoreLink className={link()} hoverEffect={false} href={item.link}>
               {item.text}
             </StoreLink>
