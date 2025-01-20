@@ -2,7 +2,7 @@ import { HTMLAttributes, ReactNode } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const headingClasses = tv({
-  base: 'inline-block cursor-default text-3xl',
+  base: 'ml-[4.8%] inline-block cursor-default text-3xl',
   variants: {
     color: {
       white: 'text-white',
