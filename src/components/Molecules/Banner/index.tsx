@@ -16,7 +16,7 @@ const bannerClasses = tv({
     base: 'relative flex w-full flex-col',
     image: 'rounded-md',
     containerInformation:
-      'lg:bg-black/60 bottom-0 left-0 w-full bg-darkGray p-5 lg:absolute lg:rounded-b-md',
+      'bottom-0 left-0 w-full bg-darkGray p-5 lg:absolute lg:rounded-b-md lg:bg-black/60',
     containerTitles: 'mb-3',
     titleClassName: 'text-xl font-semibold text-white',
     subtitleClassName: 'text-sm font-normal text-white',
