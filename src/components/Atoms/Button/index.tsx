@@ -99,7 +99,7 @@ type ButtonContentProps = Pick<
 
 const LoadingState = () => (
   <>
-    <ClipLoader size={20} color="var(--color-white)" />
+    <ClipLoader size={20} color="rgb(var(--color-white))" />
     <span className="text-sm">Loading...</span>
   </>
 )

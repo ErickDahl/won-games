@@ -57,7 +57,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({
         {renderLoggedMenu(isLogged)}
         <DrawerClose className="absolute right-0 top-3 mr-4">
           <CloseIcon
-            color="var(--color-black)"
+            color="rgb(var(--color-black))"
             size={30}
             aria-label="CloseDrawer"
           />

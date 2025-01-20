@@ -14,11 +14,11 @@ const preview: Preview = {
       values: [
         {
           name: 'light',
-          value: 'var(--color-white)'
+          value: 'rbg(var(--color-white))'
         },
         {
           name: 'dark',
-          value: 'var(--color-mainBg)'
+          value: 'rgb(var(--color-mainBg))'
         }
       ]
     }

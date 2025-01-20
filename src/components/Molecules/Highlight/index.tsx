@@ -5,7 +5,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const highlightClasses = tv({
   slots: {
-    base: 'relative flex w-full bg-cover bg-center after:absolute after:h-full after:w-full after:bg-transparentBlack',
+    base: 'after:bg-black/60 relative flex w-full bg-cover bg-center after:absolute after:h-full after:w-full',
     content: 'z-10 flex w-full justify-between',
     titles: 'flex w-1/2 flex-col p-4 lg:justify-end lg:p-8',
     titleClass: 'mb-1 text-lg font-semibold text-white lg:text-3xl',

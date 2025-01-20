@@ -11,7 +11,7 @@ import { HTMLAttributes } from 'react'
 
 const MenuClasses = tv({
   slots: {
-    menu: 'relative inline-flex w-full items-center justify-between p-2',
+    menu: 'relative inline-flex w-full items-center justify-between p-4',
     logo: '',
     icons: 'flex items-center justify-center gap-5',
     links: 'flex items-center justify-center gap-5',
@@ -33,7 +33,7 @@ type MenuProps = VariantProps<typeof MenuClasses> &
   }
 
 const iconSize = 24
-const iconsColor = 'var(--color-white)'
+const iconsColor = 'rgb(var(--color-white))'
 
 export const LoggedInLinks = ({ className }: { className?: string }) => {
   const { storeLinks } = MenuClasses()

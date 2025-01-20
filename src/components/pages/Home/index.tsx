@@ -12,7 +12,15 @@ import { tv, VariantProps } from 'tailwind-variants'
 const homeClasses = tv({
   slots: {
     base: 'mx-auto mb-8 flex flex-col gap-8',
-    headingClass: ''
+    header: 'bg-mainBg/80 sticky top-0 z-20 mx-auto backdrop-blur-lg',
+    headingClass: '',
+    noPadding: 'p-0',
+    menuClass: 'mt-4',
+    BannerCarouselClass: 'z-10 lg:top-14',
+    clipPathTop:
+      'bg-lightBg pb-20 pt-16 [clip-path:polygon(0_0,_100%_15%,_100%_100%,_0_85%)]',
+    clipPathFooter:
+      'm-0 max-w-full bg-lightBg pb-4 pt-16 [clip-path:polygon(0_5%,_100%_0%,_100%_100%,_0_100%)] lg:[clip-path:polygon(0_15%,_100%_0%,_100%_100%,_0_100%)]'
   }
 })
 
@@ -39,18 +47,31 @@ const Home = ({
   freeGames,
   freeHighligth
 }: HomeTemplateProps) => {
-  const { base, headingClass } = homeClasses()
+  const {
+    base,
+    header,
+    headingClass,
+    menuClass,
+    noPadding,
+    BannerCarouselClass,
+    clipPathTop,
+    clipPathFooter
+  } = homeClasses()
 
   return (
     <section>
-      <Container className="p-0">
-        <header className={base()}>
-          <Menu className="mt-4 p-2" />
-        </header>
-        <BannerCarousel className="z-10 lg:top-14" banners={banners} />
+      <div className={header()}>
+        <Container>
+          <header>
+            <Menu className={menuClass()} />
+          </header>
+        </Container>
+      </div>
+      <Container className={noPadding()}>
+        <BannerCarousel className={BannerCarouselClass()} banners={banners} />
       </Container>
 
-      <div className="bg-lightBg pb-20 pt-16 [clip-path:polygon(0_0,_100%_15%,_100%_100%,_0_85%)]">
+      <div className={clipPathTop()}>
         <Container className={base()}>
           <Heading
             className={headingClass()}
@@ -58,7 +79,7 @@ const Home = ({
             linePosition="left"
             lineColor="secondary"
           >
-            News
+            New
           </Heading>
           <GameCardCarousel cards={newGames} />
         </Container>
@@ -101,7 +122,7 @@ const Home = ({
         <GameCardCarousel cards={freeGames} />
       </Container>
 
-      <div className="m-0 max-w-full bg-lightBg pb-4 pt-16 [clip-path:polygon(0_5%,_100%_0%,_100%_100%,_0_100%)] lg:[clip-path:polygon(0_15%,_100%_0%,_100%_100%,_0_100%)]">
+      <div className={clipPathFooter()}>
         <Container className={base() + ' mb-0'}>
           <Footer />
         </Container>
