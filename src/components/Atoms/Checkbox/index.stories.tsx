@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import Checkbox from '.'
 export default {
-  title: 'Checkbox',
+  title: 'Atoms/Checkbox',
   component: Checkbox,
   args: {
     label: 'checkbox label',
