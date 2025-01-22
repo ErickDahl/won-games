@@ -34,7 +34,7 @@ const buttonClasses = tv({
     },
     disabled: {
       true: {
-        button: 'bg-primaryDark hover:bg-primaryDark'
+        button: 'cursor-default bg-primaryDark hover:bg-primaryDark'
       }
     },
     fullWidth: {
@@ -87,7 +87,7 @@ const buttonClasses = tv({
 type ButtonProps = HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonClasses> & {
     children?: ReactNode
-    icon?: JSX.Element
+    icon?: ReactNode
     iconPosition?: 'left' | 'right'
     loading?: boolean
   }
