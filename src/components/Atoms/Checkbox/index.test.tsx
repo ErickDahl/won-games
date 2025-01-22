@@ -24,18 +24,48 @@ describe('<Checkbox />', () => {
   })
 
   it('should dispatch onCheck when the status change', async () => {
-    const onChange = jest.fn()
+    const onCheck = jest.fn()
 
     render(
-      <Checkbox label="checkbox label" labelFor="action" onChange={onChange} />
+      <Checkbox label="checkbox label" labelFor="action" onCheck={onCheck} />
     )
 
-    expect(onChange).not.toHaveBeenCalled()
+    expect(onCheck).not.toHaveBeenCalled()
 
     userEvent.click(screen.getByRole('checkbox'))
 
     await waitFor(() => {
-      expect(onChange).toHaveBeenCalledTimes(1)
+      expect(onCheck).toHaveBeenCalledTimes(1)
+      expect(onCheck).toHaveBeenCalledWith(true)
     })
+  })
+
+  it('should dispatch onCheck when the status change', async () => {
+    const onCheck = jest.fn()
+
+    render(
+      <Checkbox
+        label="checkbox label"
+        labelFor="action"
+        onCheck={onCheck}
+        isChecked
+      />
+    )
+
+    expect(onCheck).not.toHaveBeenCalled()
+
+    userEvent.click(screen.getByRole('checkbox'))
+
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1)
+      expect(onCheck).toHaveBeenCalledWith(false)
+    })
+  })
+
+  it('should be accessible with tab', async () => {
+    render(<Checkbox label="Checkbox" labelFor="Checkbox" />)
+    expect(document.body).toHaveFocus()
+    await userEvent.tab()
+    expect(screen.getByLabelText(/checkbox/i)).toHaveFocus()
   })
 })

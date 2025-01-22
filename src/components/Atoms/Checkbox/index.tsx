@@ -1,4 +1,5 @@
-import { HTMLAttributes } from 'react'
+'use client'
+import { HTMLAttributes, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const checkboxClasses = tv({
@@ -29,20 +30,42 @@ type CheckboxProps = VariantProps<typeof checkboxClasses> &
   HTMLAttributes<HTMLInputElement> & {
     label?: string
     labelFor?: string
+    isChecked?: boolean
+    onCheck?: (value: boolean) => void
   }
 
 const Checkbox = ({
   label,
   labelFor = '',
+  isChecked = false,
   labelColor,
+  onCheck,
   className,
+
   ...rest
 }: CheckboxProps) => {
   const { base, labelClass, inputClass } = checkboxClasses({ labelColor })
+  const [checked, setChecked] = useState(isChecked)
+
+  const onChange = () => {
+    const value = !checked
+    setChecked(value)
+
+    if (onCheck) {
+      onCheck(value)
+    }
+  }
 
   return (
     <div className={base({ className })}>
-      <input className={inputClass()} id={labelFor} type="checkbox" {...rest} />
+      <input
+        className={inputClass()}
+        id={labelFor}
+        type="checkbox"
+        checked={checked}
+        onChange={onChange}
+        {...rest}
+      />
       {!!label && (
         <label className={labelClass()} htmlFor={labelFor}>
           {label}

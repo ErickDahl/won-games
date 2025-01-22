@@ -12,7 +12,7 @@ const footerClasses = tv({
     logoClass: 'pl-5',
     contentsContainers:
       'grid grid-cols-2 gap-6 pl-6 pr-2 lg:grid-cols-4 lg:gap-8',
-    headingClass: 'text-base uppercase text-black',
+    headingClass: 'm-0 text-base uppercase text-black',
     contentContainer: 'flex flex-col gap-4',
     link: 'text-sm font-normal text-gray',
     copyRight: 'text-center text-xs font-normal text-gray'

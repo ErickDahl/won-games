@@ -7,6 +7,11 @@ export default {
     label: 'checkbox label',
     labelFor: 'action',
     labelColor: 'black'
+  },
+  argTypes: {
+    isChecked: {
+      description: 'only controls the inital state'
+    }
   }
 } as Meta
 export const Default: StoryObj = {}
