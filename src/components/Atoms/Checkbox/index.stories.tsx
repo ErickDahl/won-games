@@ -11,7 +11,8 @@ export default {
   argTypes: {
     isChecked: {
       description: 'only controls the inital state'
-    }
+    },
+    onCheck: { action: 'changed' }
   }
 } as Meta
 export const Default: StoryObj = {}

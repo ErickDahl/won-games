@@ -2,7 +2,10 @@ import { Meta, StoryObj } from '@storybook/react'
 import Radio from '.'
 export default {
   title: 'Atoms/Radio',
-  component: Radio
+  component: Radio,
+  argTypes: {
+    onCheck: { action: 'changed' }
+  }
 } as Meta
 export const Default: StoryObj = {
   render: (args) => (
