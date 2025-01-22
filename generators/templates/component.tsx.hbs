@@ -8,16 +8,14 @@ const {{name}}Classes = tv({
 
 type {{pascalCase name}}Props = VariantProps<typeof {{name}}Classes> & {
   title?: string
-  subtitle?: string
 }
 
-const {{pascalCase name}} = ({ title, subtitle }: {{pascalCase name}}Props) => {
+const {{pascalCase name}} = ({ title }: {{pascalCase name}}Props) => {
   const { base } = {{name}}Classes()
 
   return (
     <main className={base()}>
       <h1>{title}</h1>
-      <h2>{subtitle}</h2>
     </main>
   )
 }

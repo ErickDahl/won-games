@@ -120,7 +120,7 @@ export const Drawer = ({
   })
 
   return (
-    <DrawerContext.Provider
+    <DrawerContext
       value={{
         isOpen,
         openDrawer,
@@ -134,7 +134,7 @@ export const Drawer = ({
         {children}
       </div>
       <div className={overlay()} onClick={closeDrawer}></div>
-    </DrawerContext.Provider>
+    </DrawerContext>
   )
 }
 

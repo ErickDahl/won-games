@@ -26,10 +26,10 @@
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
-    "next": "15.0.4",
+    "next": "15.1.5",
     "plop": "^4.0.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-icons": "^5.4.0",
     "react-spinners": "^0.15.0",
     "tailwind-merge": "^2.6.0",
@@ -52,15 +52,15 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "6.1.5",
     "@testing-library/react": "16.1.0",
-    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/user-event": "^14.6.0",
     "@types/jest": "29.5.11",
     "@types/node": "^20",
-    "@types/react": "18.2.45",
-    "@types/react-dom": "^19.0.1",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.16.0",
-    "eslint-config-next": "15.0.4",
+    "eslint-config-next": "15.1.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
@@ -89,5 +89,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "resolutions": {
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3"
   }
 }
