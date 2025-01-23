@@ -6,7 +6,6 @@ import {
 } from '@/components/Molecules/Drawer'
 import StoreLink from '@/components/Atoms/Link'
 import { CloseIcon, MenuIcon } from '@/assets/icons'
-import Button from '@/components/Atoms/Button'
 import { DefaultLinks, LoggedInLinks } from '..'
 
 interface MenuDrawerProps {
@@ -18,10 +17,12 @@ interface MenuDrawerProps {
 
 const AuthButtons = () => (
   <div className="flex w-4/6 flex-col items-center gap-4">
-    <Button fullWidth>Log in now</Button>
+    <StoreLink className="w-full" href={'/sign-in'} hoverEffect={false} button>
+      Log in now
+    </StoreLink>
     <span>or</span>
     <StoreLink
-      href={'#'}
+      href={'/sign-up'}
       className="text-base text-primary"
       border
       borderColor="primary"

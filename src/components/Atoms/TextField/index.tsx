@@ -1,3 +1,5 @@
+'use client'
+
 import { ChangeEvent, HTMLAttributes, ReactNode, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
@@ -6,7 +8,7 @@ const textFieldClasses = tv({
     base: 'flex flex-col items-start justify-center gap-1',
     labelClass: 'cursor-pointer text-black',
     inputDiv:
-      'flex items-center justify-center gap-2 rounded-md border border-solid border-lightGray bg-lightGray px-3 transition-all focus-within:shadow-md',
+      'flex w-full items-center justify-center gap-2 rounded-md border border-solid border-lightGray bg-lightGray px-3 transition-all focus-within:shadow-md',
     inputClass:
       'w-full border-none bg-transparent py-1 text-black outline-none',
     iconClass: 'flex max-w-4 text-gray',
@@ -51,6 +53,7 @@ type TextFieldProps = VariantProps<typeof textFieldClasses> &
     placeholder?: string
     icon?: ReactNode
     errorMessage?: string
+    className?: string
   }
 
 const TextField = ({
@@ -64,6 +67,7 @@ const TextField = ({
   disabled,
   error,
   errorMessage,
+  className,
   ...rest
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -80,7 +84,7 @@ const TextField = ({
   }
 
   return (
-    <section className={base()}>
+    <section className={base({ className })}>
       {!!label && (
         <label className={labelClass()} htmlFor={labelFor}>
           {label}

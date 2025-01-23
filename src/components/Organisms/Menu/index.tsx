@@ -1,12 +1,10 @@
 'use client'
-
 import { CartIcon, SearchIcon } from '@/assets/icons'
 import Logo from '@/components/Atoms/Logo'
 import MenuDrawer from './components/MenuDrawer'
 import useIsMobile from '@/hooks/useIsMobile'
 import { tv, VariantProps } from 'tailwind-variants'
 import StoreLink from '@/components/Atoms/Link'
-import Button from '@/components/Atoms/Button'
 import { HTMLAttributes } from 'react'
 
 const MenuClasses = tv({
@@ -75,7 +73,11 @@ const MenuIcons = ({
   <div className={className}>
     <SearchIcon aria-label="Search" size={iconSize} color={iconsColor} />
     <CartIcon aria-label="openCart" size={iconSize} color={iconsColor} />
-    {!isMobile && <Button onClick={() => console.log('teste')}>Sign in</Button>}
+    {!isMobile && (
+      <StoreLink href={'/sign-in'} hoverEffect={false} button>
+        Sign in
+      </StoreLink>
+    )}
   </div>
 )
 
@@ -106,11 +108,13 @@ const Menu = ({ isLogged, className, ...rest }: MenuProps) => {
         />
       )}
       <div className={logoLinks()}>
-        <Logo
-          className={logo()}
-          variant={isMobile ? 'compact' : 'white'}
-          size={'small'}
-        />
+        <StoreLink href={'/'} hoverEffect={false}>
+          <Logo
+            className={logo()}
+            variant={isMobile ? 'compact' : 'white'}
+            size={'small'}
+          />
+        </StoreLink>
         {!isMobile && <MenuLinks className={links()} isLogged={isLogged} />}
       </div>
       <MenuIcons className={icons()} isMobile={isMobile} />
