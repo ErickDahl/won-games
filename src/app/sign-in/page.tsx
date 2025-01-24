@@ -1,4 +1,4 @@
-import SignIn from '@/components/pages/Sign-in'
+import SignIn from '@/components/Pages/Sign-in'
 
 export default function Index() {
   return <SignIn />
