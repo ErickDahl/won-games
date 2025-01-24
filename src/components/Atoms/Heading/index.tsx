@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import { HTMLAttributes, PropsWithChildren } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const headingClasses = tv({
@@ -29,10 +29,8 @@ const headingClasses = tv({
   }
 })
 
-type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
-  VariantProps<typeof headingClasses> & {
-    children: ReactNode
-  }
+export type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
+  VariantProps<typeof headingClasses>
 
 const Heading = ({
   children,
@@ -42,7 +40,7 @@ const Heading = ({
   lineBottomColor,
   className,
   ...rest
-}: HeadingProps) => {
+}: PropsWithChildren<HeadingProps>) => {
   return (
     <h2
       className={headingClasses({

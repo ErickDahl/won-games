@@ -20,9 +20,9 @@ const Container = ({
   const { base } = containerClasses()
 
   return (
-    <div className={base({ className })} {...rest}>
+    <section className={base({ className })} {...rest}>
       {children}
-    </div>
+    </section>
   )
 }
 

@@ -1,13 +1,12 @@
 import { render, screen } from '@testing-library/react'
+import AuthPage from '.'
 
-import Auth from '.'
-
-describe('<Auth />', () => {
+describe('<AuthPage />', () => {
   it('should render all components and children', () => {
     render(
-      <Auth pageType={'signup'} onClick={() => {}}>
+      <AuthPage pageType={'signup'}>
         <input type="text" />
-      </Auth>
+      </AuthPage>
     )
 
     expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2)

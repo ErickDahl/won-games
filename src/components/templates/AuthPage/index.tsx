@@ -20,7 +20,7 @@ const authClasses = tv({
     footerText: 'w-full text-center text-sm font-normal text-white',
     strongClass: 'font-bold text-primary',
     rightDiv:
-      'flex h-screen w-full flex-col items-center justify-center bg-white p-8 px-[10%] md:w-1/2',
+      'flex h-screen w-full flex-col items-center justify-center bg-white px-[10%] md:w-1/2 lg:p-8 lg:px-[10%]',
     rightDivLogo: 'mb-[10%]',
     rightDivContent: 'flex w-full flex-col items-start justify-center gap-4',
     rightDivActionText: 'w-full text-center text-sm'
@@ -106,7 +106,9 @@ const AuthPage = ({
       )}
 
       <div className={rightDiv()}>
-        <Logo className={rightDivLogo()} variant="black" size="large" />
+        <StoreLink href={'/'} hoverEffect={false}>
+          <Logo className={rightDivLogo()} variant="black" size="large" />
+        </StoreLink>
         <div className={rightDivContent()}>
           <Heading
             className="m-0"
