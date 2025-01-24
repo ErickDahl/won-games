@@ -1,15 +1,15 @@
-import Container from '@/components/Atoms/Container'
-import { BannerProps } from '@/components/Molecules/Banner'
-import { GameCardProps } from '@/components/Molecules/GameCard'
-import { HighlightProps } from '@/components/Molecules/Highlight'
-import BannerCarousel from '@/components/Molecules/BannerCarousel'
+import Container from '@/components/atoms/Container'
+import { BannerProps } from '@/components/molecules/Banner'
+import { GameCardProps } from '@/components/molecules/GameCard'
+import { HighlightProps } from '@/components/molecules/Highlight'
+import BannerCarousel from '@/components/molecules/BannerCarousel'
 import { tv, VariantProps } from 'tailwind-variants'
-import PageTemplate from '@/components/Templates/PageTemplate'
-import ShowCase from '@/components/Templates/ShowCase'
+import PageTemplate from '@/components/templates/PageTemplate'
+import ShowCase from '@/components/templates/ShowCase'
 import {
   headingBlackMock,
   headingWhiteMock
-} from '@/components/Atoms/Heading/mock'
+} from '@/components/atoms/Heading/mock'
 
 const homeClasses = tv({
   slots: {

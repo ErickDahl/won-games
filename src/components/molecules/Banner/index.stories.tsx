@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import BannerImage from '@/assets/banner.png'
 import Banner from '.'
-import Ribbon from '@/components/Atoms/Ribbon'
+import Ribbon from '@/components/atoms/Ribbon'
 
 export default {
   title: 'Molecules/Banner',

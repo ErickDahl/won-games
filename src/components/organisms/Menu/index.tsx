@@ -1,6 +1,6 @@
 'use client'
 import { CartIcon, SearchIcon } from '@/assets/icons'
-import Logo from '@/components/Atoms/Logo'
+import Logo from '@/components/atoms/Logo'
 import MenuDrawer from './components/MenuDrawer'
 import useIsMobile from '@/hooks/useIsMobile'
 import { tv, VariantProps } from 'tailwind-variants'

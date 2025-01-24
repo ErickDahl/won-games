@@ -1,13 +1,12 @@
 'use client'
-
 import {
   AddCartIcon,
   InCartIcon,
   WishListFullIcon,
   WishListIcon
 } from '@/assets/icons'
-import Button from '@/components/Atoms/Button'
-import Ribbon from '@/components/Atoms/Ribbon'
+import Button from '@/components/atoms/Button'
+import Ribbon from '@/components/atoms/Ribbon'
 import useIsMobile from '@/hooks/useIsMobile'
 import Image, { StaticImageData } from 'next/image'
 import { HTMLAttributes } from 'react'

@@ -1,6 +1,6 @@
-import bannersMock from '@/components/Molecules/BannerCarousel/mock'
-import cardsMock from '@/components/Molecules/GameCardCarousel/mock'
-import highlightMock from '@/components/Molecules/Highlight/mock'
+import bannersMock from '@/components/molecules/BannerCarousel/mock'
+import cardsMock from '@/components/molecules/GameCardCarousel/mock'
+import highlightMock from '@/components/molecules/Highlight/mock'
 import { HomeTemplateProps } from '.'
 
 const homeMockData: HomeTemplateProps = {

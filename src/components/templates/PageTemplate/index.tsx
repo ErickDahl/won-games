@@ -1,8 +1,8 @@
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
-import Container from '../../Atoms/Container'
-import Menu from '../../Organisms/Menu'
-import Footer from '../../Molecules/Footer'
+import Container from '@/components/atoms/Container'
+import Menu from '../../organisms/Menu'
+import Footer from '../../molecules/Footer'
 
 const pageTemplateClasses = tv({
   slots: {

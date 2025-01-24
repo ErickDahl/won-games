@@ -8,8 +8,8 @@ import {
 } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
-import StoreLink from '../../Atoms/Link'
-import Ribbon from '@/components/Atoms/Ribbon'
+import StoreLink from '../../atoms/Link'
+import Ribbon from '@/components/atoms/Ribbon'
 
 const bannerClasses = tv({
   slots: {

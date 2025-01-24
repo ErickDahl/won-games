@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
 import ShowCase from '.'
-import highlightMock from '../../Molecules/Highlight/mock'
-import cardsMock from '../../Molecules/GameCardCarousel/mock'
-import { headingBlackMock } from '@/components/Atoms/Heading/mock'
+import highlightMock from '../../molecules/Highlight/mock'
+import cardsMock from '../../molecules/GameCardCarousel/mock'
+import { headingBlackMock } from '@/components/atoms/Heading/mock'
 
 export default {
   title: 'Templates/ShowCase',

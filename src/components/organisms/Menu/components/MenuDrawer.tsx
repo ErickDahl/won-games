@@ -3,7 +3,7 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerTrigger
-} from '@/components/Molecules/Drawer'
+} from '@/components/molecules/Drawer'
 import StoreLink from '@/components/Atoms/Link'
 import { CloseIcon, MenuIcon } from '@/assets/icons'
 import { DefaultLinks, LoggedInLinks } from '..'
