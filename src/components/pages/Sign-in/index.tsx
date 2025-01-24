@@ -1,9 +1,9 @@
 'use client'
 import { EmailIcon, PasswordIcon } from '@/assets/icons'
-import Button from '@/components/Atoms/Button'
-import StoreLink from '@/components/Atoms/Link'
-import TextField from '@/components/Atoms/TextField'
-import AuthPage from '@/components/Templates/AuthPage'
+import Button from '@/components/atoms/Button'
+import StoreLink from '@/components/atoms/Link'
+import TextField from '@/components/atoms/TextField'
+import AuthPage from '@/components/templates/AuthPage'
 import { tv } from 'tailwind-variants'
 
 const SignInClass = tv({

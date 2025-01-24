@@ -4,7 +4,7 @@ import Logo from '@/components/atoms/Logo'
 import MenuDrawer from './components/MenuDrawer'
 import useIsMobile from '@/hooks/useIsMobile'
 import { tv, VariantProps } from 'tailwind-variants'
-import StoreLink from '@/components/Atoms/Link'
+import StoreLink from '@/components/atoms/Link'
 import { HTMLAttributes } from 'react'
 
 const MenuClasses = tv({
