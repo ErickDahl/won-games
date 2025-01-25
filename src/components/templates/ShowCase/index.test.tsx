@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import cardsMock from '@/components/molecules/GameCardCarousel/mock'
 import highlightMock from '@/components/molecules/Highlight/mock'
-import Showcase from '.'
+import ShowCase from '.'
 import { headingWhiteMock } from '@/components/atoms/Heading/mock'
 
 const props = {
@@ -13,7 +13,7 @@ const props = {
 
 // Todo: fix cards prop
 
-describe('<Showcase />', () => {
+describe('<ShowCase />', () => {
   // it('should render full showcase', () => {
   //   render(<Showcase {...props} />)
   //   expect(
@@ -55,7 +55,7 @@ describe('<Showcase />', () => {
 
   it('should render without games', () => {
     render(
-      <Showcase
+      <ShowCase
         title={props.title}
         heading={props.heading}
         highlight={props.highlight}
