@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import homeMockData from './mock'
 import Home from '.'
 
-jest.mock('components/Templates/Showcase', () => {
+jest.mock('components/templates/Showcase', () => {
   return {
     __esModule: true,
     default: function Mock() {
@@ -10,7 +10,7 @@ jest.mock('components/Templates/Showcase', () => {
     }
   }
 })
-jest.mock('components/Molecules/BannerCarousel', () => {
+jest.mock('components/molecules/BannerCarousel', () => {
   return {
     __esModule: true,
     default: function Mock() {

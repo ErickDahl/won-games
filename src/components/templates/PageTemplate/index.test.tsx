@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import PageTemplate from '.'
 
-jest.mock('components/Organisms/Menu', () => {
+jest.mock('components/organisms/Menu', () => {
   return {
     __esModule: true,
     default: function Mock() {
@@ -9,7 +9,7 @@ jest.mock('components/Organisms/Menu', () => {
     }
   }
 })
-jest.mock('components/Molecules/Footer', () => {
+jest.mock('components/molecules/Footer', () => {
   return {
     __esModule: true,
     default: function Mock() {
