@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import homeMockData from './mock'
 import Home from '.'
 
-jest.mock('components/Templates/ShowCase', () => {
+jest.mock('components/templates/ShowCase', () => {
   return {
     __esModule: true,
     default: function Mock() {
