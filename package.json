@@ -13,10 +13,11 @@
     "test:watch": "jest --watch --maxWorkers=25%",
     "test:ci": "jest --runInBand",
     "generate": "npx plop --plopfile generators/plopfile.mjs",
-    "prepare": "husky && husky install",
+    "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
