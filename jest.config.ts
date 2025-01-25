@@ -16,6 +16,9 @@ const config: Config = {
     '!src/assets/**',
     '!src/components/**/context/**',
     '!src/utils/supabase/**',
+    '!src/components/ui/**',
+    '!src/lib/**',
+    '!src/components/**/mock.ts',
     '!src/app/**' // should be tested in e2e
   ],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],

@@ -31,5 +31,7 @@ export default [
       }
     }
   },
-  { ignores: ['.storybook', '.jest', 'generators', 'commitlint.config.js'] }
+  {
+    ignores: ['.storybook', '.jest', 'generators', 'commitlint.config.js']
+  }
 ]
