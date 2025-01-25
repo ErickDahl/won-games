@@ -1,19 +1,19 @@
-import Container from '@/components/Atoms/Container'
-import Heading from '@/components/Atoms/Heading'
-import { BannerProps } from '@/components/Molecules/Banner'
-import { GameCardProps } from '@/components/Molecules/GameCard'
-import Highlight, { HighlightProps } from '@/components/Molecules/Highlight'
-import BannerCarousel from '@/components/Molecules/BannerCarousel'
-import GameCardCarousel from '@/components/Molecules/GameCardCarousel'
+import Container from '@/components/atoms/Container'
+import { BannerProps } from '@/components/molecules/Banner'
+import { GameCardProps } from '@/components/molecules/GameCard'
+import { HighlightProps } from '@/components/molecules/Highlight'
+import BannerCarousel from '@/components/molecules/BannerCarousel'
 import { tv, VariantProps } from 'tailwind-variants'
 import PageTemplate from '@/components/templates/PageTemplate'
+import ShowCase from '@/components/templates/ShowCase'
+import {
+  headingBlackMock,
+  headingWhiteMock
+} from '@/components/atoms/Heading/mock'
 
 const homeClasses = tv({
   slots: {
     base: '',
-    container: 'mx-auto mb-8 flex flex-col gap-8',
-    headingClass: '',
-    noPadding: 'p-0',
     BannerCarouselClass: 'z-10 lg:top-14',
     clipPathTop:
       'bg-lightBg pb-20 pt-16 [clip-path:polygon(0_0,_100%_15%,_100%_100%,_0_85%)]'
@@ -38,76 +38,45 @@ const Home = ({
   mostPopularHighlight,
   mostPopularGames,
   upcommingGames,
-  upcommingHighligth,
   upcommingMoreGames,
+  upcommingHighligth,
   freeGames,
   freeHighligth
 }: HomeTemplateProps) => {
-  const {
-    base,
-    headingClass,
-    noPadding,
-    BannerCarouselClass,
-    clipPathTop,
-    container
-  } = homeClasses()
+  const { base, BannerCarouselClass, clipPathTop } = homeClasses()
 
   return (
     <PageTemplate className={base()}>
-      <Container className={noPadding() + ' ' + container()}>
+      <Container>
         <BannerCarousel className={BannerCarouselClass()} banners={banners} />
       </Container>
 
       <div className={clipPathTop()}>
-        <Container className={container()}>
-          <Heading
-            className={headingClass()}
-            color="black"
-            linePosition="left"
-            lineColor="secondary"
-          >
-            New
-          </Heading>
-          <GameCardCarousel cards={newGames} />
-        </Container>
+        <ShowCase title="New" heading={headingBlackMock} cards={newGames} />
       </div>
 
-      <Container className={container()}>
-        <Heading
-          className={headingClass()}
-          linePosition="left"
-          lineColor="secondary"
-        >
-          Most Popular
-        </Heading>
-        <Highlight {...mostPopularHighlight} />
-        <GameCardCarousel cards={mostPopularGames} />
-      </Container>
+      <ShowCase
+        title="Most Popular"
+        heading={headingWhiteMock}
+        highlight={mostPopularHighlight}
+        cards={mostPopularGames}
+      />
 
-      <Container className={container()}>
-        <Heading
-          className={headingClass()}
-          linePosition="left"
-          lineColor="secondary"
-        >
-          Upcoming
-        </Heading>
-        <GameCardCarousel cards={upcommingGames} />
-        <Highlight {...upcommingHighligth} />
-        <GameCardCarousel cards={upcommingMoreGames} />
-      </Container>
+      <ShowCase
+        title="Upcoming"
+        heading={headingWhiteMock}
+        highlight={upcommingHighligth}
+        cards={upcommingGames}
+      />
 
-      <Container className={container()}>
-        <Heading
-          className={headingClass()}
-          linePosition="left"
-          lineColor="secondary"
-        >
-          Free Games
-        </Heading>
-        <Highlight {...freeHighligth} />
-        <GameCardCarousel cards={freeGames} />
-      </Container>
+      <ShowCase highlight={upcommingHighligth} cards={upcommingMoreGames} />
+
+      <ShowCase
+        title="Free Games"
+        heading={headingWhiteMock}
+        highlight={freeHighligth}
+        cards={freeGames}
+      />
     </PageTemplate>
   )
 }
