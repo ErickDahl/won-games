@@ -3,6 +3,7 @@ import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginReact from 'eslint-plugin-react'
 import pluginNext from '@next/eslint-plugin-next'
+import pluginFormatjs from 'eslint-plugin-formatjs'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -16,12 +17,14 @@ export default [
       'react/react-in-jsx-scope': 'off',
       'no-duplicate-imports': 'error',
       ...pluginNext.configs.recommended.rules,
-      ...pluginNext.configs['core-web-vitals'].rules
+      ...pluginNext.configs['core-web-vitals'].rules,
+      'formatjs/no-offset': 'error'
     }
   },
   {
     plugins: {
-      '@next/next': pluginNext
+      '@next/next': pluginNext,
+      formatjs: pluginFormatjs
     }
   },
   {

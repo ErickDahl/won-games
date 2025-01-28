@@ -1,4 +1,3 @@
-'use client'
 import {
   AddCartIcon,
   InCartIcon,
@@ -7,9 +6,11 @@ import {
 } from '@/assets/icons'
 import Button from '@/components/atoms/Button'
 import Ribbon from '@/components/atoms/Ribbon'
+import { useCurrency } from '@/hooks/useCurrency'
 import useIsMobile from '@/hooks/useIsMobile'
 import Image, { StaticImageData } from 'next/image'
 import { HTMLAttributes } from 'react'
+import { FormattedNumber } from 'react-intl'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const gameCardClasses = tv({
@@ -146,8 +147,26 @@ const GameCard = ({
         </div>
         <h4 className={developerClass()}>{developer}</h4>
         <div className={divPriceClass()}>
-          {!!price && <span className={priceClass()}>${price}</span>}
-          <span className={listPriceClass()}>${listPrice}</span>
+          {!!price && (
+            <span className={priceClass()}>
+              {
+                <FormattedNumber
+                  value={price}
+                  style="currency"
+                  currency={useCurrency()}
+                />
+              }
+            </span>
+          )}
+          <span className={listPriceClass()}>
+            {
+              <FormattedNumber
+                value={listPrice}
+                style="currency"
+                currency={useCurrency()}
+              />
+            }
+          </span>
           {!isMobile && (
             <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />
           )}

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
-import GameCard from './index'
+import GameCard, { GameCardProps } from './index'
 import gameImage from '@/assets/gameImage.png'
+import { IntlProvider } from 'react-intl'
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -12,7 +13,7 @@ jest.mock('next/image', () => ({
 }))
 
 describe('<GameCard />', () => {
-  const props = {
+  const props: GameCardProps = {
     title: 'Game Title',
     developer: 'Game Developer',
     image: gameImage,
@@ -20,15 +21,23 @@ describe('<GameCard />', () => {
     price: 59.99
   }
 
+  const Component = (props: GameCardProps) => {
+    return (
+      <IntlProvider locale={'en'}>
+        <GameCard {...props} />
+      </IntlProvider>
+    )
+  }
+
   it('should render the title and developer', () => {
-    render(<GameCard {...props} />)
+    render(<Component {...props} />)
 
     expect(screen.getByText(/Game Title/i)).toBeInTheDocument()
     expect(screen.getByText(/Game Developer/i)).toBeInTheDocument()
   })
 
   it('should render the image with correct src and alt', () => {
-    render(<GameCard {...props} />)
+    render(<Component {...props} />)
 
     const image = screen.getByAltText('Game Title')
     expect(image).toBeInTheDocument()
@@ -36,14 +45,14 @@ describe('<GameCard />', () => {
   })
 
   it('should render the list price and price', () => {
-    render(<GameCard {...props} />)
+    render(<Component {...props} />)
 
     expect(screen.getByText('$59.99')).toBeInTheDocument()
     expect(screen.getByText('$29.99')).toBeInTheDocument()
   })
 
   it('should render the discount ribbon', () => {
-    render(<GameCard {...props} />)
+    render(<Component {...props} />)
 
     expect(screen.getByText('50% OFF')).toBeInTheDocument()
   })
@@ -51,8 +60,7 @@ describe('<GameCard />', () => {
   it('should not render the discount ribbon if no price is provided', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { price, ...restProps } = props
-    render(<GameCard {...restProps} />)
-
+    render(<Component {...restProps} />)
     expect(screen.queryByText('50% OFF')).not.toBeInTheDocument()
   })
 })

@@ -1,10 +1,21 @@
 import { Meta, StoryObj } from '@storybook/react'
-import GameCard from '.'
+import GameCard, { GameCardProps } from '.'
 import gameImage from '@/assets/gameCard.png'
+import { IntlProvider } from 'react-intl'
 
 export default {
   title: 'Molecules/GameCard',
   component: GameCard,
+  args: {
+    title: 'Game Title',
+    developer: 'Game Developer',
+    image: gameImage,
+    listPrice: 100,
+    price: 150,
+    isInCart: false,
+    isInWishlist: false,
+    disableRibbon: false
+  },
   argTypes: {
     image: {
       control: false
@@ -12,50 +23,34 @@ export default {
   }
 } as Meta
 
-export const Default: StoryObj = {
+const DefaultRender = (props: GameCardProps) => {
+  return (
+    <IntlProvider locale={'en'}>
+      <GameCard {...props} />
+    </IntlProvider>
+  )
+}
+
+export const Default: StoryObj<GameCardProps> = {
   render: (args) => (
     <div style={{ maxWidth: '18rem' }}>
-      <GameCard
-        title={'Game Title'}
-        developer={'Game Developer'}
-        image={gameImage}
-        listPrice={100}
-        price={150}
-        {...args}
-      />
+      <DefaultRender {...args} />
     </div>
   )
 }
 
-export const InCart: StoryObj = {
+export const InCart: StoryObj<GameCardProps> = {
   render: (args) => (
     <div style={{ maxWidth: '18rem' }}>
-      <GameCard
-        title={'Game Title'}
-        developer={'Game Developer'}
-        image={gameImage}
-        listPrice={100}
-        price={150}
-        isInCart={true}
-        {...args}
-      />
+      <DefaultRender isInCart={true} {...args} />
     </div>
   )
 }
 
-export const InWishlist: StoryObj = {
+export const InWishlist: StoryObj<GameCardProps> = {
   render: (args) => (
     <div style={{ maxWidth: '18rem' }}>
-      <GameCard
-        title={'Game Title'}
-        developer={'Game Developer'}
-        image={gameImage}
-        listPrice={100}
-        price={150}
-        isInCart={true}
-        isInWishlist={true}
-        {...args}
-      />
+      <DefaultRender isInCart={true} isInWishlist={true} {...args} />
     </div>
   )
 }

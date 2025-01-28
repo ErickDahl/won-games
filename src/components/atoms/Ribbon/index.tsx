@@ -45,7 +45,7 @@ const Ribbon = ({
 
   return (
     <div className={base({ className })} {...rest}>
-      <span className={text()}>{children}</span>
+      <p className={text()}>{children}</p>
     </div>
   )
 }

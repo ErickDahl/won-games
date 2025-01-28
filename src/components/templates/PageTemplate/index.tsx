@@ -1,8 +1,10 @@
+'use client'
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 import Container from '@/components/atoms/Container'
 import Menu from '../../organisms/Menu'
 import Footer from '../../molecules/Footer'
+import { IntlProvider } from 'react-intl'
 
 const pageTemplateClasses = tv({
   slots: {
@@ -27,23 +29,25 @@ const PageTemplate = ({
   const { base, header, menuClass, clipPathFooter } = pageTemplateClasses()
 
   return (
-    <section className={base({ className })} {...rest}>
-      <div className={header()}>
-        <Container>
-          <header>
-            <Menu className={menuClass()} />
-          </header>
-        </Container>
-      </div>
+    <IntlProvider locale={navigator.language} defaultLocale="en">
+      <section className={base({ className })} {...rest}>
+        <div className={header()}>
+          <Container>
+            <header>
+              <Menu className={menuClass()} />
+            </header>
+          </Container>
+        </div>
 
-      {children}
+        {children}
 
-      <div className={clipPathFooter()}>
-        <Container>
-          <Footer />
-        </Container>
-      </div>
-    </section>
+        <div className={clipPathFooter()}>
+          <Container>
+            <Footer />
+          </Container>
+        </div>
+      </section>
+    </IntlProvider>
   )
 }
 
