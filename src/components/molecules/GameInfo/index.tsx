@@ -9,12 +9,12 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const gameInfoClasses = tv({
   slots: {
-    base: 'relative flex w-full flex-col gap-8 bg-white p-3',
+    base: 'relative flex w-full flex-col gap-8 bg-white p-5',
     titleContainer: 'flex w-full justify-between',
     headingClass: 'm-0 max-w-[90%] break-words',
-    descriptionClass: 'text-sm font-normal text-gray',
-    ribbonClass: 'relative top-0 w-full max-w-28 rounded-sm lg:right-0',
-    buttonsDiv: 'flex flex-col gap-2 lg:flex-row lg:justify-end'
+    descriptionClass: 'max-w-[80%] text-sm font-normal text-gray',
+    ribbonClass: 'relative top-0 w-full max-w-24 rounded-sm lg:right-0',
+    buttonsDiv: 'flex flex-col gap-2 lg:flex-row-reverse'
   }
 })
 
@@ -61,11 +61,9 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => {
       <p className={descriptionClass()}>{description}</p>
 
       <div className={buttonsDiv()}>
-        <Button className="lg:order-last" icon={<AddToCartIcon />}>
-          Add to Cart
-        </Button>
+        <Button icon={<AddToCartIcon />}>Add to Cart</Button>
         <Button
-          className="text-primary lg:order-first"
+          className="text-primary"
           variation="noBackground"
           icon={<WishListIcon />}
         >
