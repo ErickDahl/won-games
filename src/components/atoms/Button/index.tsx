@@ -30,6 +30,9 @@ const buttonClasses = tv({
       },
       secondary: {
         button: 'bg-secondary hover:bg-secondaryDark'
+      },
+      noBackground: {
+        button: 'bg-transparent hover:bg-transparent'
       }
     },
     disabled: {
@@ -111,7 +114,7 @@ const ButtonContent = ({
 }: ButtonContentProps) => (
   <>
     {!!icon && iconPosition === 'left' && icon}
-    {children && <span>{children}</span>}
+    {children && <span className="leading-none">{children}</span>}
     {!!icon && iconPosition === 'right' && icon}
   </>
 )

@@ -1,10 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
 import GameCardCarousel from '.'
-import cardsMock from './mock'
+import { cardsMock } from './mock'
+import { IntlProvider } from 'react-intl'
 
 export default {
   title: 'Molecules/GameCardCarousel',
   component: GameCardCarousel,
+  args: {
+    cards: cardsMock
+  },
   argTypes: {
     cards: {
       control: false
@@ -13,11 +17,10 @@ export default {
 } as Meta
 export const Default: StoryObj = {
   render: (args) => (
-    <div style={{ maxWidth: '50rem', margin: '0 auto' }}>
-      <GameCardCarousel cards={[]} {...args} />
-    </div>
-  ),
-  args: {
-    cards: cardsMock
-  }
+    <IntlProvider locale={'en'}>
+      <div style={{ maxWidth: '60rem', margin: '0 auto' }}>
+        <GameCardCarousel cards={[]} {...args} />
+      </div>
+    </IntlProvider>
+  )
 }

@@ -1,14 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react'
 import GameInfo, { GameInfoProps } from '.'
 import { IntlProvider } from 'react-intl'
+import { gameInfoMock } from './mock'
+
 export default {
   title: 'Molecules/GameInfo',
   component: GameInfo,
-  args: {
-    title: 'My Game Title',
-    description: 'Game Description',
-    price: 210
-  }
+  args: gameInfoMock
 } as Meta
 
 const DefaultRender = (props: GameInfoProps) => {

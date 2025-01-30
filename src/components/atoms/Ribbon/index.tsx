@@ -27,7 +27,17 @@ const ribbonClasses = tv({
         base: 'h-8 after:top-8 after:border-r-[1.5rem] after:border-t-[0.75rem] lg:-right-6',
         text: 'text-sm'
       }
+    },
+    decoration: {
+      false: {
+        base: 'after:content-none'
+      }
     }
+  },
+  defaultVariants: {
+    backGroundColor: 'primary',
+    size: 'normal',
+    decoration: true
   }
 })
 
@@ -35,13 +45,14 @@ type RibbonProps = VariantProps<typeof ribbonClasses> &
   HTMLAttributes<HTMLDivElement>
 
 const Ribbon = ({
+  backGroundColor,
+  size,
+  decoration,
   children,
   className,
-  backGroundColor = 'primary',
-  size = 'normal',
   ...rest
 }: PropsWithChildren<RibbonProps>) => {
-  const { base, text } = ribbonClasses({ backGroundColor, size })
+  const { base, text } = ribbonClasses({ backGroundColor, size, decoration })
 
   return (
     <div className={base({ className })} {...rest}>

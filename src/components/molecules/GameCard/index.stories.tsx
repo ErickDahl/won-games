@@ -1,21 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react'
 import GameCard, { GameCardProps } from '.'
-import gameImage from '@/assets/gameCard.png'
 import { IntlProvider } from 'react-intl'
+import {
+  gameCardMock,
+  gameCardMockInCart,
+  gameCardMockInWishlist
+} from './mock'
 
 export default {
   title: 'Molecules/GameCard',
   component: GameCard,
-  args: {
-    title: 'Game Title',
-    developer: 'Game Developer',
-    image: gameImage,
-    listPrice: 100,
-    price: 150,
-    isInCart: false,
-    isInWishlist: false,
-    disableRibbon: false
-  },
+  args: gameCardMock,
   argTypes: {
     image: {
       control: false
@@ -40,17 +35,17 @@ export const Default: StoryObj<GameCardProps> = {
 }
 
 export const InCart: StoryObj<GameCardProps> = {
-  render: (args) => (
+  render: () => (
     <div style={{ maxWidth: '18rem' }}>
-      <DefaultRender isInCart={true} {...args} />
+      <DefaultRender {...gameCardMockInCart} />
     </div>
   )
 }
 
 export const InWishlist: StoryObj<GameCardProps> = {
-  render: (args) => (
+  render: () => (
     <div style={{ maxWidth: '18rem' }}>
-      <DefaultRender isInCart={true} isInWishlist={true} {...args} />
+      <DefaultRender {...gameCardMockInWishlist} />
     </div>
   )
 }
