@@ -10,6 +10,7 @@ import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
 import StoreLink from '../../atoms/Link'
 import Ribbon from '@/components/atoms/Ribbon'
+import { sanitize } from '@/utils/sanitize'
 
 const bannerClasses = tv({
   slots: {
@@ -76,9 +77,8 @@ const Banner = ({
           <h2 className={titleClassName()}>{title}</h2>
           <h3
             dangerouslySetInnerHTML={{
-              __html: subtitle.replace(
-                '<strong>',
-                '<strong class="text-primary">'
+              __html: sanitize(
+                subtitle.replace('<strong>', '<strong class="text-primary">')
               )
             }}
             className={subtitleClassName()}

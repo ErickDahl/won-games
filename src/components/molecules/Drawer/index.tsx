@@ -132,7 +132,7 @@ export const Drawer = ({
       <div className={root({ className })} {...rest}>
         {children}
       </div>
-      <div className={overlay()} onClick={closeDrawer}></div>
+      <div className={overlay()} onClick={closeDrawer} />
     </DrawerContext>
   )
 }

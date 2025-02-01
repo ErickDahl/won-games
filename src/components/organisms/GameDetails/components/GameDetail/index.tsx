@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from 'uuid'
 
 const gameDetailsClasses = tv({
   slots: {
-    base: '',
     titleClass: 'text-sm font-normal text-gray',
     detailContainer: 'flex flex-col text-base font-medium text-white',
     detailsClass: 'grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6'
@@ -35,13 +34,13 @@ const GetItemDetail = ({
 
   return (
     <div className={detailsClass()}>
-      {company && (
+      {!!company && (
         <div className={detailContainer()}>
           <h3 className={titleClass()}>Company</h3>
           <p> {company}</p>
         </div>
       )}
-      {date && (
+      {!!date && (
         <div className={detailContainer()}>
           <h3 className={titleClass()}>Release date</h3>
           <FormattedDate
@@ -52,7 +51,7 @@ const GetItemDetail = ({
           />
         </div>
       )}
-      {platforms && (
+      {!!platforms && (
         <div className={`${detailContainer()}`}>
           <h3 className={titleClass()}>Platforms</h3>
           <ul className="flex list-none gap-2">
@@ -62,19 +61,19 @@ const GetItemDetail = ({
           </ul>
         </div>
       )}
-      {editor && (
+      {!!editor && (
         <div className={detailContainer()}>
           <h3 className={titleClass()}>Editor</h3>
           <p>{editor}</p>
         </div>
       )}
-      {rating && (
+      {!!rating && (
         <div className={detailContainer()}>
           <h3 className={titleClass()}>Rating</h3>
           <p>{rating}</p>
         </div>
       )}
-      {genres && (
+      {!!genres && (
         <div className={detailContainer()}>
           <h3 className={titleClass()}>Genre</h3>
           <ul className={`inline-flex list-none gap-1`}>
@@ -98,13 +97,7 @@ const platformIcons: Record<'Windows' | 'Linux' | 'Mac', ReactNode> = {
 }
 
 const GameDetail = ({ ...rest }: GameDataProps) => {
-  const { base } = gameDetailsClasses()
-
-  return (
-    <div className={base()}>
-      <GetItemDetail {...rest} />
-    </div>
-  )
+  return <GetItemDetail {...rest} />
 }
 
 export default GameDetail

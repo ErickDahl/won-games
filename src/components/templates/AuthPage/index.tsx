@@ -9,7 +9,7 @@ import useIsMobile from '@/hooks/useIsMobile'
 
 const authClasses = tv({
   slots: {
-    base: 'flex',
+    base: 'flex h-screen w-screen',
     leftDiv:
       'relative z-0 h-screen w-1/2 bg-cover bg-center after:absolute after:top-0 after:h-full after:w-full after:bg-black/60',
     leftDivContent:
