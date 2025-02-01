@@ -1,7 +1,21 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Modal from '.'
+import { Modal, ModalContent, ModalTrigger } from '.'
+
 export default {
-  title: 'Modal',
-  component: Modal
+  title: 'Molecules/Modal',
+  component: Modal,
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
 } as Meta
-export const Default: StoryObj = {}
+
+export const Default: StoryObj = {
+  render: () => (
+    <Modal>
+      <ModalTrigger>Open</ModalTrigger>
+      <ModalContent>content</ModalContent>
+    </Modal>
+  )
+}
