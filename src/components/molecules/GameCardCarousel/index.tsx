@@ -30,7 +30,7 @@ const GameCardCarousel = ({ cards, ...rest }: GameCardCarouselProps) => {
       <CarouselContent>
         {cards?.map((card) => (
           <CarouselItem
-            className={isMobile ? 'flex-[0_0_70%]' : 'flex-[0_0_33%]'}
+            className={isMobile ? 'flex-[0_0_70%]' : 'flex-[0_0_33%]' + ' px-5'}
             key={uuidv4()}
           >
             <GameCard className="m-auto" {...card} />

@@ -6,7 +6,7 @@ import { GameCardProps } from '@/components/molecules/GameCard'
 
 const showCaseClasses = tv({
   slots: {
-    base: 'mx-auto mb-8 flex max-w-container flex-col gap-10 lg:px-6'
+    base: 'mx-auto my-8 flex max-w-container flex-col gap-10 lg:px-6'
   }
 })
 

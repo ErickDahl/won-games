@@ -10,7 +10,6 @@ import {
   headingBlackMock,
   headingWhiteMock
 } from '@/components/atoms/Heading/mock'
-import GameInfo from '@/components/molecules/GameInfo'
 
 const homeClasses = tv({
   slots: {
@@ -55,12 +54,6 @@ const Home = ({
       <div className={clipPathTop()}>
         <ShowCase title="New" heading={headingBlackMock} cards={newGames} />
       </div>
-
-      <GameInfo
-        title={'My Game Title'}
-        description={'jhefj jdhfjd'}
-        price={210}
-      />
 
       <ShowCase
         title="Most Popular"

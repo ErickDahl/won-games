@@ -6,7 +6,12 @@ import { gameInfoMock } from './mock'
 export default {
   title: 'Molecules/GameInfo',
   component: GameInfo,
-  args: gameInfoMock
+  args: gameInfoMock,
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
 } as Meta
 
 const DefaultRender = (props: GameInfoProps) => {

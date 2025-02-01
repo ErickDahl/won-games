@@ -5,6 +5,11 @@ export default {
   component: Radio,
   argTypes: {
     onCheck: { action: 'changed' }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 export const Default: StoryObj = {

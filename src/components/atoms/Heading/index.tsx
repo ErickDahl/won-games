@@ -25,7 +25,8 @@ const headingClasses = tv({
   defaultVariants: {
     color: 'white',
     lineColor: 'primary',
-    lineBottomColor: 'primary'
+    lineBottomColor: 'primary',
+    linePosition: 'left'
   }
 })
 

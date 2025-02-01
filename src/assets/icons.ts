@@ -22,7 +22,12 @@ import {
 } from 'react-icons/io'
 
 import { CiLock as PasswordIcon } from 'react-icons/ci'
-import { FaRegUserCircle as UserIcon } from 'react-icons/fa'
+import {
+  FaRegUserCircle as UserIcon,
+  FaWindows as WindowsIcon,
+  FaLinux as LixusIcon,
+  FaApple as AppleIcon
+} from 'react-icons/fa'
 
 export {
   SearchIcon,
@@ -38,5 +43,8 @@ export {
   ArrowRightIcon,
   ArrowLeftIcon,
   PasswordIcon,
-  UserIcon
+  UserIcon,
+  WindowsIcon,
+  LixusIcon,
+  AppleIcon
 }

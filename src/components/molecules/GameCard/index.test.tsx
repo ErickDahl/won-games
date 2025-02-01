@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import GameCard, { GameCardProps } from './index'
 import gameImage from '@/assets/gameImage.png'
 import { IntlProvider } from 'react-intl'
+import { gameCardMock } from './mock'
 
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -13,14 +14,6 @@ jest.mock('next/image', () => ({
 }))
 
 describe('<GameCard />', () => {
-  const props: GameCardProps = {
-    title: 'Game Title',
-    developer: 'Game Developer',
-    image: gameImage,
-    listPrice: 29.99,
-    price: 59.99
-  }
-
   const Component = (props: GameCardProps) => {
     return (
       <IntlProvider locale={'en'}>
@@ -30,14 +23,14 @@ describe('<GameCard />', () => {
   }
 
   it('should render the title and developer', () => {
-    render(<Component {...props} />)
+    render(<Component {...gameCardMock} />)
 
     expect(screen.getByText(/Game Title/i)).toBeInTheDocument()
     expect(screen.getByText(/Game Developer/i)).toBeInTheDocument()
   })
 
   it('should render the image with correct src and alt', () => {
-    render(<Component {...props} />)
+    render(<Component {...gameCardMock} />)
 
     const image = screen.getByAltText('Game Title')
     expect(image).toBeInTheDocument()
@@ -45,22 +38,22 @@ describe('<GameCard />', () => {
   })
 
   it('should render the list price and price', () => {
-    render(<Component {...props} />)
+    render(<Component {...gameCardMock} />)
 
-    expect(screen.getByText('$59.99')).toBeInTheDocument()
-    expect(screen.getByText('$29.99')).toBeInTheDocument()
+    expect(screen.getByText('$100.00')).toBeInTheDocument()
+    expect(screen.getByText('$150.00')).toBeInTheDocument()
   })
 
   it('should render the discount ribbon', () => {
-    render(<Component {...props} />)
+    render(<Component {...gameCardMock} />)
 
-    expect(screen.getByText('50% OFF')).toBeInTheDocument()
+    expect(screen.getByText('33% OFF')).toBeInTheDocument()
   })
 
   it('should not render the discount ribbon if no price is provided', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { price, ...restProps } = props
+    const { price, ...restProps } = gameCardMock
     render(<Component {...restProps} />)
-    expect(screen.queryByText('50% OFF')).not.toBeInTheDocument()
+    expect(screen.queryByText('33% OFF')).not.toBeInTheDocument()
   })
 })

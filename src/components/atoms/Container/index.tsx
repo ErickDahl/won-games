@@ -3,7 +3,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const containerClasses = tv({
   slots: {
-    base: 'mx-auto max-w-container lg:px-6'
+    base: 'mx-auto my-8 max-w-container lg:px-6'
   }
 })
 

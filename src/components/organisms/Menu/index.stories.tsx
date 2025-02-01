@@ -5,6 +5,11 @@ export default {
   component: Menu,
   args: {
     isLogged: false
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 export const Default: StoryObj = {}

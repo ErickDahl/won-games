@@ -36,6 +36,11 @@ export default {
       control: false,
       description: 'Class name'
     }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light'
+    }
   }
 } as Meta
 
