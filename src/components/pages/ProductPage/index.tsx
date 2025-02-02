@@ -5,12 +5,8 @@ import { GameDescription } from '@/components/molecules/GameDescription'
 import { gameDescriptionMock } from '@/components/molecules/GameDescription/mock'
 import { GameInfo } from '@/components/molecules/GameInfo'
 import { gameInfoMock } from '@/components/molecules/GameInfo/mock'
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger
-} from '@/components/molecules/Tabs'
+import { GameRequirements } from '@/components/molecules/GameRequirements'
+import { gameRequirementsMock } from '@/components/molecules/GameRequirements/mock'
 import { Gallery } from '@/components/organisms/Gallery'
 import { galleryMock } from '@/components/organisms/Gallery/mock'
 import { GameDetails } from '@/components/organisms/GameDetails'
@@ -32,23 +28,16 @@ const ProductPage = () => {
         <GameInfo {...gameInfoMock} />
       </Container>
       <Container className={container()}>
+        <Gallery {...galleryMock} />
+      </Container>
+      <Container className={container()}>
         <GameDescription {...gameDescriptionMock} />
       </Container>
       <Container className={container()}>
         <GameDetails {...gameDetailsMock} />
       </Container>
       <Container className={container()}>
-        <Gallery {...galleryMock} />
-      </Container>
-      <Container className={container()}>
-        <Tabs defaultTab="Windows">
-          <TabsList>
-            <TabsTrigger value="Windows">Windows</TabsTrigger>
-            <TabsTrigger value="MacOS">MacOS</TabsTrigger>
-          </TabsList>
-          <TabsContent value="Windows">Windows</TabsContent>
-          <TabsContent value="MacOS">MacOS</TabsContent>
-        </Tabs>
+        <GameRequirements {...gameRequirementsMock} />
       </Container>
     </PageTemplate>
   )

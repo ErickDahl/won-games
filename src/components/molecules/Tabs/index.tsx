@@ -1,6 +1,6 @@
 'use client'
 
-import {
+import React, {
   HTMLAttributes,
   PropsWithChildren,
   useEffect,
@@ -14,7 +14,7 @@ import { TabContext, useTabContext } from './context/context'
 const tabsClasses = tv({
   slots: {
     base: '',
-    tabsListClass: 'relative grid w-full grid-cols-3',
+    tabsListClass: 'relative grid w-full',
     tabsTriggerClass: 'relative py-2 text-white',
     tabsTriggerClassHide: 'py-2 text-gray',
     tabsContentClass: 'mt-4 text-white opacity-100 transition-all duration-300',
@@ -40,7 +40,7 @@ export const Tabs = ({
   const [currentTab, setCurrentTab] = useState(defaultTab)
 
   return (
-    <TabContext.Provider
+    <TabContext
       value={{
         currentTab,
         setCurrentTab
@@ -49,7 +49,7 @@ export const Tabs = ({
       <div className={base({ className })} {...rest}>
         {children}
       </div>
-    </TabContext.Provider>
+    </TabContext>
   )
 }
 
@@ -64,26 +64,29 @@ export const TabsList = ({
   const { currentTab } = useTabContext()
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 })
   const containerRef = useRef<HTMLElement>(null)
+  const tabsCount = React.Children.count(children)
 
   const updateIndicator = () => {
-    if (containerRef.current) {
-      const activeButton = containerRef.current.querySelector(
-        '[data-active="true"]'
-      ) as HTMLElement
-      if (activeButton) {
-        const activeButtonRect = activeButton.getBoundingClientRect()
-        const containerRect = containerRef.current.getBoundingClientRect()
+    requestAnimationFrame(() => {
+      if (containerRef.current) {
+        const activeButton = containerRef.current.querySelector(
+          '[data-active="true"]'
+        ) as HTMLElement
+        if (activeButton) {
+          const activeButtonRect = activeButton.getBoundingClientRect()
+          const containerRect = containerRef.current.getBoundingClientRect()
 
-        const left = activeButtonRect.left - containerRect.left
-        const width = activeButtonRect.width
-        const adjustedWidth = width / 3
+          const left = activeButtonRect.left - containerRect.left
+          const width = activeButtonRect.width
+          const adjustedWidth = width / 3
 
-        setIndicatorStyle({
-          left: left + (width - adjustedWidth) / 2,
-          width: adjustedWidth
-        })
+          setIndicatorStyle({
+            left: left + (width - adjustedWidth) / 2,
+            width: adjustedWidth
+          })
+        }
       }
-    }
+    })
   }
 
   useEffect(() => {
@@ -97,10 +100,19 @@ export const TabsList = ({
   }, [currentTab])
 
   return (
-    <nav ref={containerRef} className={tabsListClass({ className })} {...rest}>
+    <nav
+      ref={containerRef}
+      className={tabsListClass({ className })}
+      style={{
+        display: 'grid',
+        gridTemplateColumns: `repeat(${tabsCount}, minmax(0, 1fr))`
+      }}
+      {...rest}
+    >
       {children}
       <span
         className={borderClass()}
+        role="presentation"
         style={{
           left: indicatorStyle.left,
           width: indicatorStyle.width
