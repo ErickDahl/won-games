@@ -6,7 +6,12 @@ import { galleryMock } from './mock'
 export default {
   title: 'Organisms/Gallery',
   component: Gallery,
-  args: galleryMock
+  args: galleryMock,
+  argTypes: {
+    plugins: {
+      control: false
+    }
+  }
 } as Meta
 
 export const Default: StoryObj = {}

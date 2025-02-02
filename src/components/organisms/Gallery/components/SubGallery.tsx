@@ -20,7 +20,7 @@ const subGalleryClasses = tv({
     carouselItemClass:
       'flex w-full flex-[0_0_100%] items-center justify-center',
     modalContentClass:
-      'flex h-fit w-full items-center justify-center bg-transparent'
+      'flex h-fit w-full items-center justify-center bg-transparent shadow-none'
   }
 })
 
