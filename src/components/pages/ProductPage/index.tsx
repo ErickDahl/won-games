@@ -5,6 +5,12 @@ import { GameDescription } from '@/components/molecules/GameDescription'
 import { gameDescriptionMock } from '@/components/molecules/GameDescription/mock'
 import { GameInfo } from '@/components/molecules/GameInfo'
 import { gameInfoMock } from '@/components/molecules/GameInfo/mock'
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger
+} from '@/components/molecules/Tabs'
 import { Gallery } from '@/components/organisms/Gallery'
 import { galleryMock } from '@/components/organisms/Gallery/mock'
 import { GameDetails } from '@/components/organisms/GameDetails'
@@ -33,6 +39,16 @@ const ProductPage = () => {
       </Container>
       <Container className={container()}>
         <Gallery {...galleryMock} />
+      </Container>
+      <Container className={container()}>
+        <Tabs defaultTab="Windows">
+          <TabsList>
+            <TabsTrigger value="Windows">Windows</TabsTrigger>
+            <TabsTrigger value="MacOS">MacOS</TabsTrigger>
+          </TabsList>
+          <TabsContent value="Windows">Windows</TabsContent>
+          <TabsContent value="MacOS">MacOS</TabsContent>
+        </Tabs>
       </Container>
     </PageTemplate>
   )
