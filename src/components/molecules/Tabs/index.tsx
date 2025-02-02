@@ -14,7 +14,7 @@ import { TabContext, useTabContext } from './context/context'
 const tabsClasses = tv({
   slots: {
     base: '',
-    tabsListClass: 'relative grid w-full grid-cols-2',
+    tabsListClass: 'relative grid w-full grid-cols-3',
     tabsTriggerClass: 'relative py-2 text-white',
     tabsTriggerClassHide: 'py-2 text-gray',
     tabsContentClass: 'mt-4 text-white opacity-100 transition-all duration-300',
