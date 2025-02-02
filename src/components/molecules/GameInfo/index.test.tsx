@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
-import { GameInfoProps, GameInfo } from '.'
 import { IntlProvider } from 'react-intl'
+
+import { GameInfo, GameInfoProps } from '.'
 
 describe('<GameInfo />', () => {
   const props: GameInfoProps = {

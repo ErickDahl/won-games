@@ -1,5 +1,5 @@
-import { GameCardProps } from '.'
 import gameImage from '@/assets/gameCard.png'
+import { GameCardProps } from '.'
 
 const gameCardMock: GameCardProps = {
   title: 'Game Title',

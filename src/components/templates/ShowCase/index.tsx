@@ -1,8 +1,9 @@
-import { HeadingProps, Heading } from '@/components/atoms/Heading'
-import { HighlightProps, Highlight } from '@/components/molecules/Highlight'
 import { tv, VariantProps } from 'tailwind-variants'
-import { GameCardCarousel } from '@/components/molecules/GameCardCarousel'
+
+import { Heading, HeadingProps } from '@/components/atoms/Heading'
 import { GameCardProps } from '@/components/molecules/GameCard'
+import { GameCardCarousel } from '@/components/molecules/GameCardCarousel'
+import { Highlight, HighlightProps } from '@/components/molecules/Highlight'
 
 const showCaseClasses = tv({
   slots: {

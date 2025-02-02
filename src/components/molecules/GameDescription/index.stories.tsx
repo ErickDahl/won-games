@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { gameDescriptionMock } from './mock'
+
 import { GameDescription } from '.'
+import { gameDescriptionMock } from './mock'
 
 export default {
   title: 'Molecules/GameDescription',

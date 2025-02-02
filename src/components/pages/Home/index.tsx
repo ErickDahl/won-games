@@ -1,15 +1,16 @@
-import { Container } from '@/components/atoms/Container'
-import { BannerProps } from '@/components/molecules/Banner'
-import { GameCardProps } from '@/components/molecules/GameCard'
-import { HighlightProps } from '@/components/molecules/Highlight'
-import { BannerCarousel } from '@/components/molecules/BannerCarousel'
 import { tv, VariantProps } from 'tailwind-variants'
-import { PageTemplate } from '@/components/templates/PageTemplate'
-import { ShowCase } from '@/components/templates/ShowCase'
+
+import { Container } from '@/components/atoms/Container'
 import {
   headingBlackMock,
   headingWhiteMock
 } from '@/components/atoms/Heading/mock'
+import { BannerProps } from '@/components/molecules/Banner'
+import { BannerCarousel } from '@/components/molecules/BannerCarousel'
+import { GameCardProps } from '@/components/molecules/GameCard'
+import { HighlightProps } from '@/components/molecules/Highlight'
+import { PageTemplate } from '@/components/templates/PageTemplate'
+import { ShowCase } from '@/components/templates/ShowCase'
 
 const homeClasses = tv({
   slots: {

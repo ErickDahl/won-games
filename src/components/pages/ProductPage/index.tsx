@@ -1,15 +1,15 @@
+import { tv } from 'tailwind-variants'
+
 import { Container } from '@/components/atoms/Container'
-import { GameDetails } from '@/components/organisms/GameDetails'
-import { gameDetailsMock } from '@/components/organisms/GameDetails/mock'
-import { GameInfo } from '@/components/molecules/GameInfo'
-import { gameInfoMock } from '@/components/molecules/GameInfo/mock'
-import { PageTemplate } from '@/components/templates/PageTemplate'
 import { GameDescription } from '@/components/molecules/GameDescription'
 import { gameDescriptionMock } from '@/components/molecules/GameDescription/mock'
-import { tv } from 'tailwind-variants'
-import { Modal, ModalContent, ModalTrigger } from '@/components/molecules/Modal'
+import { GameInfo } from '@/components/molecules/GameInfo'
+import { gameInfoMock } from '@/components/molecules/GameInfo/mock'
 import { Gallery } from '@/components/organisms/Gallery'
 import { galleryMock } from '@/components/organisms/Gallery/mock'
+import { GameDetails } from '@/components/organisms/GameDetails'
+import { gameDetailsMock } from '@/components/organisms/GameDetails/mock'
+import { PageTemplate } from '@/components/templates/PageTemplate'
 
 const productPageClasses = tv({
   slots: {
@@ -33,12 +33,6 @@ const ProductPage = () => {
       </Container>
       <Container className={container()}>
         <Gallery {...galleryMock} />
-      </Container>
-      <Container className={container()}>
-        <Modal>
-          <ModalTrigger>Open</ModalTrigger>
-          <ModalContent>teste</ModalContent>
-        </Modal>
       </Container>
     </PageTemplate>
   )

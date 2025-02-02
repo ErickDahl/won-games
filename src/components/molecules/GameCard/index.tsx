@@ -1,3 +1,8 @@
+import { HTMLAttributes } from 'react'
+import Image, { StaticImageData } from 'next/image'
+import { FormattedNumber } from 'react-intl'
+import { tv, VariantProps } from 'tailwind-variants'
+
 import {
   AddCartIcon,
   InCartIcon,
@@ -8,10 +13,6 @@ import { Button } from '@/components/atoms/Button'
 import { Ribbon } from '@/components/atoms/Ribbon'
 import { useCurrency } from '@/hooks/useCurrency'
 import useIsMobile from '@/hooks/useIsMobile'
-import Image, { StaticImageData } from 'next/image'
-import { HTMLAttributes } from 'react'
-import { FormattedNumber } from 'react-intl'
-import { tv, VariantProps } from 'tailwind-variants'
 
 const gameCardClasses = tv({
   slots: {
@@ -121,6 +122,7 @@ const GameCard = ({
   } = gameCardClasses()
 
   const isMobile = useIsMobile()
+  const currency = useCurrency()
   const discount = !!price && Math.round(100 - (listPrice / price) * 100)
 
   return (
@@ -153,7 +155,7 @@ const GameCard = ({
                 <FormattedNumber
                   value={price}
                   style="currency"
-                  currency={useCurrency()}
+                  currency={currency}
                 />
               }
             </span>
@@ -163,7 +165,7 @@ const GameCard = ({
               <FormattedNumber
                 value={listPrice}
                 style="currency"
-                currency={useCurrency()}
+                currency={currency}
               />
             }
           </span>

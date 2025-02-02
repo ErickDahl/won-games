@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react'
+
+import { headingWhiteMock } from '@/components/atoms/Heading/mock'
 import { cardsMock } from '@/components/molecules/GameCardCarousel/mock'
 import { highlightMock } from '@/components/molecules/Highlight/mock'
 import { ShowCase } from '.'
-import { headingWhiteMock } from '@/components/atoms/Heading/mock'
 
 const props = {
   title: 'Most Popular',

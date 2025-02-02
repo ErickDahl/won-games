@@ -1,5 +1,6 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import { Drawer, DrawerTrigger, DrawerClose, DrawerContent } from '.'
+import { fireEvent, render, screen } from '@testing-library/react'
+
+import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from '.'
 
 describe('<Drawer />', () => {
   it('should open and close the drawer correctly from the left', () => {

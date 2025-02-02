@@ -1,6 +1,8 @@
 'use client'
-import { HTMLAttributes, PropsWithChildren, useState } from 'react'
+
+import { HTMLAttributes, PropsWithChildren, useEffect, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
+
 import { ModalContext, useModalContext } from './context/context'
 
 const modalClasses = tv({
@@ -28,14 +30,32 @@ const modalClasses = tv({
 })
 
 type ModalProps = HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof modalClasses>
+  VariantProps<typeof modalClasses> & {
+    closeOnEsc?: boolean
+  }
 
-export const Modal = ({ children }: PropsWithChildren<ModalProps>) => {
+export const Modal = ({
+  children,
+  closeOnEsc
+}: PropsWithChildren<ModalProps>) => {
   const [isOpen, setIsOpen] = useState(false)
   const openModal = () => setIsOpen(true)
   const toggleModal = () => setIsOpen(!isOpen)
   const closeModal = () => setIsOpen(false)
   const { overlay } = modalClasses()
+
+  useEffect(() => {
+    if (!closeOnEsc) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeModal()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [closeOnEsc])
 
   return (
     <ModalContext

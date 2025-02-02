@@ -1,10 +1,11 @@
-import { v4 as uuidv4 } from 'uuid'
-import { Heading } from '@/components/atoms/Heading'
-import { Logo } from '@/components/atoms/Logo'
-import { StoreLink } from '@/components/atoms/Link'
-import { content } from './mock'
-import { tv, VariantProps } from 'tailwind-variants'
 import { HTMLAttributes } from 'react'
+import { tv, VariantProps } from 'tailwind-variants'
+import { v4 as uuidv4 } from 'uuid'
+
+import { Heading } from '@/components/atoms/Heading'
+import { StoreLink } from '@/components/atoms/Link'
+import { Logo } from '@/components/atoms/Logo'
+import { content } from './mock'
 
 const footerClasses = tv({
   slots: {

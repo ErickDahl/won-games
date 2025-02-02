@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import { GameCardProps, GameCard } from './index'
-import gameImage from '@/assets/gameImage.png'
 import { IntlProvider } from 'react-intl'
+
+import gameImage from '@/assets/gameImage.png'
+import { GameCard, GameCardProps } from './index'
 import { gameCardMock } from './mock'
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: (props: any) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />
+    return <img alt="image" {...props} />
   }
 }))
 

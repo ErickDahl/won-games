@@ -1,11 +1,13 @@
 'use client'
+
+import { FormattedNumber } from 'react-intl'
+import { tv, VariantProps } from 'tailwind-variants'
+
 import { AddToCartIcon, WishListIcon } from '@/assets/icons'
 import { Button } from '@/components/atoms/Button'
 import { Heading } from '@/components/atoms/Heading'
 import { Ribbon } from '@/components/atoms/Ribbon'
 import { useCurrency } from '@/hooks/useCurrency'
-import { FormattedNumber } from 'react-intl'
-import { tv, VariantProps } from 'tailwind-variants'
 
 const gameInfoClasses = tv({
   slots: {

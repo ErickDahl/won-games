@@ -1,6 +1,10 @@
 'use client'
+
+import { HTMLAttributes } from 'react'
+import Autoplay from 'embla-carousel-autoplay'
 import { tv, VariantProps } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
+
 import {
   Carousel,
   CarouselContent,
@@ -8,9 +12,7 @@ import {
   CarouselItem,
   CarouselProps
 } from '@/components/ui/carousel'
-import Autoplay from 'embla-carousel-autoplay'
-import { BannerProps, Banner } from '../Banner'
-import { HTMLAttributes } from 'react'
+import { Banner, BannerProps } from '../Banner'
 
 const BannerSliderClasses = tv({
   slots: {
@@ -45,9 +47,13 @@ const BannerCarousel = ({
       {...rest}
     >
       <CarouselContent>
-        {banners?.map((banner) => (
-          <CarouselItem key={uuidv4()}>
-            <Banner className="mx-auto" {...banner} />
+        {banners?.map((banner, index) => (
+          <CarouselItem
+            className="flex items-center justify-center"
+            key={uuidv4()}
+            index={index}
+          >
+            <Banner {...banner} />
           </CarouselItem>
         ))}
       </CarouselContent>

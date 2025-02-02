@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
+
 import { Modal, ModalClose, ModalContent, ModalTrigger } from '.'
 
 describe('<Modal />', () => {

@@ -1,5 +1,6 @@
-import { screen, render, fireEvent } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { MdAddShoppingCart } from 'react-icons/md'
+
 import { Button } from '.'
 
 describe('<Button />', () => {

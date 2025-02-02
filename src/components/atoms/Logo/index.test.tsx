@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import { Logo } from '.'
+
 import logoBlack from '@/assets/logo-black.svg'
-import logoWhite from '@/assets/logoWhite.svg'
 import logoCompact from '@/assets/logo-compact.svg'
+import logoWhite from '@/assets/logoWhite.svg'
+import { Logo } from '.'
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: (props: any) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />
+    return <img alt="image" {...props} />
   }
 }))
 

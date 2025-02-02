@@ -1,9 +1,11 @@
 'use client'
+
 import { ReactNode } from 'react'
 import { FormattedDate } from 'react-intl'
 import { tv } from 'tailwind-variants'
-import { WindowsIcon, LixusIcon, AppleIcon } from '@/assets/icons'
 import { v4 as uuidv4 } from 'uuid'
+
+import { AppleIcon, LixusIcon, WindowsIcon } from '@/assets/icons'
 
 const gameDetailsClasses = tv({
   slots: {
@@ -20,6 +22,12 @@ export type GameDataProps = {
   editor?: string
   rating?: string
   genres?: string[]
+}
+
+const platformIcons: Record<'Windows' | 'Linux' | 'Mac', ReactNode> = {
+  Windows: <WindowsIcon aria-label="windows" title="windows" />,
+  Linux: <LixusIcon aria-label="linux" title="linux" />,
+  Mac: <AppleIcon aria-label="mac" title="mac" />
 }
 
 const GetItemDetail = ({
@@ -88,12 +96,6 @@ const GetItemDetail = ({
       )}
     </div>
   )
-}
-
-const platformIcons: Record<'Windows' | 'Linux' | 'Mac', ReactNode> = {
-  Windows: <WindowsIcon aria-label="windows" title="windows" />,
-  Linux: <LixusIcon aria-label="linux" title="linux" />,
-  Mac: <AppleIcon aria-label="mac" title="mac" />
 }
 
 const GameDetail = ({ ...rest }: GameDataProps) => {

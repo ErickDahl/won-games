@@ -1,11 +1,11 @@
+import { CloseIcon, MenuIcon } from '@/assets/icons'
+import { StoreLink } from '@/components/atoms/Link'
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerTrigger
 } from '@/components/molecules/Drawer'
-import { StoreLink } from '@/components/atoms/Link'
-import { CloseIcon, MenuIcon } from '@/assets/icons'
 import { DefaultLinks, LoggedInLinks } from '..'
 
 interface MenuDrawerProps {

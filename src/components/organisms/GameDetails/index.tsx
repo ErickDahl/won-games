@@ -1,7 +1,8 @@
-import { Heading } from '@/components/atoms/Heading'
 import { tv, VariantProps } from 'tailwind-variants'
-import { GameDataProps, GameDetail } from './components/GameDetail'
 import { v4 as uuidv4 } from 'uuid'
+
+import { Heading } from '@/components/atoms/Heading'
+import { GameDataProps, GameDetail } from './components/GameDetail'
 
 const gameDetailsClasses = tv({
   slots: {

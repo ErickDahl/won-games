@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react'
-import { Highlight } from './index'
+
 import highlightImage from '@/assets/hightlightBanner.png'
+import { Highlight } from './index'
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: (props: any) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} />
+    return <img alt="image" {...props} />
   }
 }))
 

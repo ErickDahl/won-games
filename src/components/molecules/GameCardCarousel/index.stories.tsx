@@ -1,7 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
-import GameCardCarousel from '.'
-import { cardsMock } from './mock'
 import { IntlProvider } from 'react-intl'
+
+import { GameCardCarousel } from '.'
+import { cardsMock } from './mock'
 
 export default {
   title: 'Molecules/GameCardCarousel',

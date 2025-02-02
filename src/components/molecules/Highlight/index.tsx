@@ -1,7 +1,8 @@
-import { StoreLink } from '@/components/atoms/Link'
-import Image, { StaticImageData } from 'next/image'
 import { HTMLAttributes } from 'react'
+import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
+
+import { StoreLink } from '@/components/atoms/Link'
 
 const highlightClasses = tv({
   slots: {

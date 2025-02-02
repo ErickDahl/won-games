@@ -1,4 +1,5 @@
 import Image, { ImageProps } from 'next/image'
+
 import LogoBlack from '@/assets/logoBlack.svg'
 import LogoCompact from '@/assets/logoCompact.svg'
 import LogoWhite from '@/assets/logoWhite.svg'

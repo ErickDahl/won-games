@@ -1,9 +1,11 @@
 'use client'
+
+import { tv } from 'tailwind-variants'
+
 import { EmailIcon, PasswordIcon, UserIcon } from '@/assets/icons'
 import { Button } from '@/components/atoms/Button'
 import { TextField } from '@/components/atoms/TextField'
 import { AuthPage } from '@/components/templates/AuthPage'
-import { tv } from 'tailwind-variants'
 
 const SignUpClass = tv({
   slots: {

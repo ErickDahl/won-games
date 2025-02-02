@@ -1,7 +1,8 @@
 'use client'
-import { HTMLAttributes, ReactNode, useState, FC } from 'react'
-import { tv, VariantProps } from 'tailwind-variants'
+
+import { FC, HTMLAttributes, ReactNode, useState } from 'react'
 import ClipLoader from 'react-spinners/ClipLoader'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const buttonClasses = tv({
   slots: {

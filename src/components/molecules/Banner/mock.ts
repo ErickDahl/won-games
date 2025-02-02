@@ -1,5 +1,5 @@
-import { BannerProps } from '.'
 import BannerImage from '@/assets/banner.png'
+import { BannerProps } from '.'
 
 const bannerMock: BannerProps = {
   img: BannerImage,

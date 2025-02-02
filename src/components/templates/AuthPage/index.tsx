@@ -1,10 +1,12 @@
 'use client'
+
+import { PropsWithChildren } from 'react'
+import { tv, VariantProps } from 'tailwind-variants'
+
+import backgroundImage from '@/assets/authBackground.png'
 import { Heading } from '@/components/atoms/Heading'
 import { StoreLink } from '@/components/atoms/Link'
 import { Logo } from '@/components/atoms/Logo'
-import backgroundImage from '@/assets/authBackground.png'
-import { PropsWithChildren } from 'react'
-import { tv, VariantProps } from 'tailwind-variants'
 import useIsMobile from '@/hooks/useIsMobile'
 
 const authClasses = tv({

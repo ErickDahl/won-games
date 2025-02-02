@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { GameInfoProps, GameInfo } from '.'
 import { IntlProvider } from 'react-intl'
+
+import { GameInfo, GameInfoProps } from '.'
 import { gameInfoMock } from './mock'
 
 export default {

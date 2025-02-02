@@ -1,40 +1,68 @@
-import globals from 'globals'
-import pluginJs from '@eslint/js'
-import tseslint from 'typescript-eslint'
-import pluginReact from 'eslint-plugin-react'
-import pluginNext from '@next/eslint-plugin-next'
-import pluginFormatjs from 'eslint-plugin-formatjs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { FlatCompat } from '@eslint/eslintrc'
+import js from '@eslint/js'
+import typescriptEslintEslintPlugin from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import prettier from 'eslint-plugin-prettier'
 
-/** @type {import('eslint').Linter.Config[]} */
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all
+})
+
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
-  {
-    rules: {
-      'react/react-in-jsx-scope': 'off',
-      'no-duplicate-imports': 'error',
-      ...pluginNext.configs.recommended.rules,
-      ...pluginNext.configs['core-web-vitals'].rules,
-      'formatjs/no-offset': 'error'
-    }
-  },
+  ...compat.extends('next', 'next/core-web-vitals', 'prettier'),
   {
     plugins: {
-      '@next/next': pluginNext,
-      formatjs: pluginFormatjs
+      prettier
+    },
+    rules: {
+      'prettier/prettier': 'error',
+      camelcase: 'off',
+      'import/prefer-default-export': 'off',
+      'react/jsx-filename-extension': 'off',
+      'react/jsx-props-no-spreading': 'off',
+      'react/no-unused-prop-types': 'off',
+      'react/require-default-props': 'off',
+      'react/no-unescaped-entities': 'off',
+      'import/extensions': [
+        'error',
+        'ignorePackages',
+        {
+          ts: 'never',
+          tsx: 'never',
+          js: 'never',
+          jsx: 'never'
+        }
+      ]
     }
   },
+  ...compat
+    .extends('plugin:@typescript-eslint/recommended', 'prettier')
+    .map((config) => ({
+      ...config,
+      files: ['**/*.+(ts|tsx)']
+    })),
   {
-    settings: {
-      react: {
-        version: 'detect'
-      }
+    files: ['**/*.+(ts|tsx)'],
+    plugins: {
+      '@typescript-eslint': typescriptEslintEslintPlugin
+    },
+    languageOptions: {
+      parser: tsParser
+    },
+    rules: {
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      'no-use-before-define': [0],
+      '@typescript-eslint/no-use-before-define': [1],
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-var-requires': 'off'
     }
-  },
-  {
-    ignores: ['.storybook', '.jest', 'generators', 'commitlint.config.js']
   }
 ]
