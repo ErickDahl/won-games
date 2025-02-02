@@ -9,7 +9,7 @@ import {
   CarouselProps
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
-import Banner, { BannerProps } from '../Banner'
+import { BannerProps, Banner } from '../Banner'
 import { HTMLAttributes } from 'react'
 
 const BannerSliderClasses = tv({
@@ -56,4 +56,4 @@ const BannerCarousel = ({
   )
 }
 
-export default BannerCarousel
+export { BannerCarousel }

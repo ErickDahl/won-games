@@ -1,7 +1,7 @@
-import Heading, { HeadingProps } from '@/components/atoms/Heading'
-import Highlight, { HighlightProps } from '@/components/molecules/Highlight'
+import { HeadingProps, Heading } from '@/components/atoms/Heading'
+import { HighlightProps, Highlight } from '@/components/molecules/Highlight'
 import { tv, VariantProps } from 'tailwind-variants'
-import GameCardCarousel from '@/components/molecules/GameCardCarousel'
+import { GameCardCarousel } from '@/components/molecules/GameCardCarousel'
 import { GameCardProps } from '@/components/molecules/GameCard'
 
 const showCaseClasses = tv({
@@ -29,4 +29,4 @@ const ShowCase = ({ title, heading, highlight, cards }: ShowCaseProps) => {
   )
 }
 
-export default ShowCase
+export { ShowCase }

@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Logo from '.'
+import { Logo } from '.'
+
 export default {
   title: 'Atoms/Logo',
   component: Logo,
@@ -17,6 +18,7 @@ export default {
     }
   }
 } as Meta
+
 export const Default: StoryObj = {
   args: {
     variant: 'black',

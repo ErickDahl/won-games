@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { WishListIcon } from '@/assets/icons'
-import TextField from '.'
+import { TextField } from '.'
 
 export default {
   title: 'Atoms/TextField',
@@ -19,6 +19,7 @@ export default {
     }
   }
 } as Meta
+
 export const Default: StoryObj = {
   render: (args) => (
     <div style={{ maxWidth: 300, padding: 15 }}>

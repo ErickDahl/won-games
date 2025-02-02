@@ -1,8 +1,8 @@
 'use client'
 import { AddToCartIcon, WishListIcon } from '@/assets/icons'
-import Button from '@/components/atoms/Button'
-import Heading from '@/components/atoms/Heading'
-import Ribbon from '@/components/atoms/Ribbon'
+import { Button } from '@/components/atoms/Button'
+import { Heading } from '@/components/atoms/Heading'
+import { Ribbon } from '@/components/atoms/Ribbon'
 import { useCurrency } from '@/hooks/useCurrency'
 import { FormattedNumber } from 'react-intl'
 import { tv, VariantProps } from 'tailwind-variants'
@@ -74,4 +74,4 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => {
   )
 }
 
-export default GameInfo
+export { GameInfo }

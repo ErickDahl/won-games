@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Radio from '.'
+import { Radio } from '.'
+
 export default {
   title: 'Atoms/Radio',
   component: Radio,
@@ -12,6 +13,7 @@ export default {
     }
   }
 } as Meta
+
 export const Default: StoryObj = {
   render: (args) => (
     <>

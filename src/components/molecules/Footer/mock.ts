@@ -1,4 +1,6 @@
-export const content = [
+import { ContentProps } from '.'
+
+const content: ContentProps[] = [
   {
     heading: 'contact',
     content: [
@@ -39,3 +41,5 @@ export const content = [
     ]
   }
 ]
+
+export { content }

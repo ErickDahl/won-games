@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Banner from '.'
-import Ribbon from '@/components/atoms/Ribbon'
+import { Banner } from '.'
+import { Ribbon } from '@/components/atoms/Ribbon'
 import { bannerMock } from './mock'
 
 export default {

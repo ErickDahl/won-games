@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import GameCard, { GameCardProps } from './index'
+import { GameCardProps, GameCard } from './index'
 import gameImage from '@/assets/gameImage.png'
 import { IntlProvider } from 'react-intl'
 import { gameCardMock } from './mock'

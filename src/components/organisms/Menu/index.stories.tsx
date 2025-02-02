@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Menu from '.'
+import { Menu } from '.'
+
 export default {
   title: 'Organisms/Menu',
   component: Menu,
@@ -12,4 +13,5 @@ export default {
     }
   }
 } as Meta
+
 export const Default: StoryObj = {}

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { gameDetailsMock } from './mock'
 import { IntlProvider } from 'react-intl'
-import GameDetails, { GameDetailsProps } from '.'
+import { GameDetailsProps, GameDetails } from '.'
 
 describe('<GameDetails />', () => {
   const Component = (props: GameDetailsProps) => {

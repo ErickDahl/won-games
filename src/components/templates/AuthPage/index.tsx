@@ -1,7 +1,7 @@
 'use client'
-import Heading from '@/components/atoms/Heading'
-import StoreLink from '@/components/atoms/Link'
-import Logo from '@/components/atoms/Logo'
+import { Heading } from '@/components/atoms/Heading'
+import { StoreLink } from '@/components/atoms/Link'
+import { Logo } from '@/components/atoms/Logo'
 import backgroundImage from '@/assets/authBackground.png'
 import { PropsWithChildren } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
@@ -126,4 +126,4 @@ const AuthPage = ({
   )
 }
 
-export default AuthPage
+export { AuthPage }

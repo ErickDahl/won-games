@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import Heading from '.'
+import { Heading } from '.'
+
 describe('<Heading />', () => {
   it('should render the heading', () => {
     render(<Heading>lorem ipsum</Heading>)

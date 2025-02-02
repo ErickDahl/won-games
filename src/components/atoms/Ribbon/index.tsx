@@ -60,4 +60,4 @@ const Ribbon = ({
     </div>
   )
 }
-export default Ribbon
+export { Ribbon }

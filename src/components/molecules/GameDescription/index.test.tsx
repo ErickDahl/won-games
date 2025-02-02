@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react'
-import GameDescription from '.'
+import { GameDescription } from '.'
 import { gameDescriptionMock } from './mock'
 
 describe('<GameDescription />', () => {

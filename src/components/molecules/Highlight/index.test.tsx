@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Highlight from './index'
+import { Highlight } from './index'
 import highlightImage from '@/assets/hightlightBanner.png'
 
 jest.mock('next/image', () => ({

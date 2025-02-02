@@ -1,8 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Link from '.'
+import { StoreLink } from '.'
+
 export default {
-  title: 'Atoms/Link',
-  component: Link,
+  title: 'Atoms/StoreLink',
+  component: StoreLink,
   argTypes: {
     children: {
       control: 'text',

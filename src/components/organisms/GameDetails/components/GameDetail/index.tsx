@@ -100,4 +100,4 @@ const GameDetail = ({ ...rest }: GameDataProps) => {
   return <GetItemDetail {...rest} />
 }
 
-export default GameDetail
+export { GameDetail }

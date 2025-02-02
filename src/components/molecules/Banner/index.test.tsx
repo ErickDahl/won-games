@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Banner from './index'
+import { Banner } from './index'
 
 jest.mock('next/image', () => ({
   __esModule: true,

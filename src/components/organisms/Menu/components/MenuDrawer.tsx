@@ -4,7 +4,7 @@ import {
   DrawerContent,
   DrawerTrigger
 } from '@/components/molecules/Drawer'
-import StoreLink from '@/components/atoms/Link'
+import { StoreLink } from '@/components/atoms/Link'
 import { CloseIcon, MenuIcon } from '@/assets/icons'
 import { DefaultLinks, LoggedInLinks } from '..'
 
@@ -68,4 +68,4 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({
   )
 }
 
-export default MenuDrawer
+export { MenuDrawer }

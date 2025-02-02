@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Checkbox from '.'
+import { Checkbox } from '.'
+
 export default {
   title: 'Atoms/Checkbox',
   component: Checkbox,
@@ -15,4 +16,5 @@ export default {
     onCheck: { action: 'changed' }
   }
 } as Meta
+
 export const Default: StoryObj = {}

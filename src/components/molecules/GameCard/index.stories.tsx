@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import GameCard, { GameCardProps } from '.'
+import { GameCardProps, GameCard } from '.'
 import { IntlProvider } from 'react-intl'
 import {
   gameCardMock,

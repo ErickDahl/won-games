@@ -1,11 +1,11 @@
-import Container from '@/components/atoms/Container'
+import { Container } from '@/components/atoms/Container'
 import { BannerProps } from '@/components/molecules/Banner'
 import { GameCardProps } from '@/components/molecules/GameCard'
 import { HighlightProps } from '@/components/molecules/Highlight'
-import BannerCarousel from '@/components/molecules/BannerCarousel'
+import { BannerCarousel } from '@/components/molecules/BannerCarousel'
 import { tv, VariantProps } from 'tailwind-variants'
-import PageTemplate from '@/components/templates/PageTemplate'
-import ShowCase from '@/components/templates/ShowCase'
+import { PageTemplate } from '@/components/templates/PageTemplate'
+import { ShowCase } from '@/components/templates/ShowCase'
 import {
   headingBlackMock,
   headingWhiteMock
@@ -81,4 +81,4 @@ const Home = ({
   )
 }
 
-export default Home
+export { Home }

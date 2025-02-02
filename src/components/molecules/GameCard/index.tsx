@@ -4,8 +4,8 @@ import {
   WishListFullIcon,
   WishListIcon
 } from '@/assets/icons'
-import Button from '@/components/atoms/Button'
-import Ribbon from '@/components/atoms/Ribbon'
+import { Button } from '@/components/atoms/Button'
+import { Ribbon } from '@/components/atoms/Ribbon'
 import { useCurrency } from '@/hooks/useCurrency'
 import useIsMobile from '@/hooks/useIsMobile'
 import Image, { StaticImageData } from 'next/image'
@@ -179,4 +179,4 @@ const GameCard = ({
   )
 }
 
-export default GameCard
+export { GameCard }

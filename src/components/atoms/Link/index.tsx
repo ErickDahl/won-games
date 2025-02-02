@@ -63,4 +63,4 @@ const StoreLink = ({
   </Link>
 )
 
-export default StoreLink
+export { StoreLink }

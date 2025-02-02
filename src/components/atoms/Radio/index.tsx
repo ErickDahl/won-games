@@ -74,4 +74,4 @@ const Radio = ({
   )
 }
 
-export default Radio
+export { Radio }

@@ -1,4 +1,4 @@
-import StoreLink from '@/components/atoms/Link'
+import { StoreLink } from '@/components/atoms/Link'
 import Image, { StaticImageData } from 'next/image'
 import { HTMLAttributes } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
@@ -95,4 +95,4 @@ const Highlight = ({
   )
 }
 
-export default Highlight
+export { Highlight }

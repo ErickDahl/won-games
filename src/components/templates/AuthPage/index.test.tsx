@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import AuthPage from '.'
+import { AuthPage } from '.'
 
 describe('<AuthPage />', () => {
   it('should render all components and children', () => {

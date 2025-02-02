@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import BannerCarousel from '.'
+import { BannerCarousel } from '.'
 import { bannersMock } from './mock'
 
 export default {

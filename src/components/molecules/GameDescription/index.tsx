@@ -1,4 +1,4 @@
-import Heading from '@/components/atoms/Heading'
+import { Heading } from '@/components/atoms/Heading'
 import { sanitize } from '@/utils/sanitize'
 import { tv, VariantProps } from 'tailwind-variants'
 
@@ -40,4 +40,4 @@ const GameDescription = ({ title, content }: GameDescriptionProps) => {
   )
 }
 
-export default GameDescription
+export { GameDescription }

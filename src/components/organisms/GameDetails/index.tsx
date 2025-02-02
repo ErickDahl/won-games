@@ -1,6 +1,6 @@
-import Heading from '@/components/atoms/Heading'
+import { Heading } from '@/components/atoms/Heading'
 import { tv, VariantProps } from 'tailwind-variants'
-import GameDetail, { GameDataProps } from './components/GameDetail'
+import { GameDataProps, GameDetail } from './components/GameDetail'
 import { v4 as uuidv4 } from 'uuid'
 
 const gameDetailsClasses = tv({
@@ -27,4 +27,4 @@ const GameDetails = (props: GameDetailsProps) => {
   )
 }
 
-export default GameDetails
+export { GameDetails }

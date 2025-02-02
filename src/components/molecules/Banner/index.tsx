@@ -8,8 +8,8 @@ import {
 } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
-import StoreLink from '../../atoms/Link'
-import Ribbon from '@/components/atoms/Ribbon'
+import { StoreLink } from '../../atoms/Link'
+import { Ribbon } from '@/components/atoms/Ribbon'
 import { sanitize } from '@/utils/sanitize'
 
 const bannerClasses = tv({
@@ -97,4 +97,4 @@ const Banner = ({
   )
 }
 
-export default Banner
+export { Banner }

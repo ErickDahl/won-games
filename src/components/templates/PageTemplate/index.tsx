@@ -1,9 +1,9 @@
 'use client'
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
-import Container from '@/components/atoms/Container'
-import Menu from '../../organisms/Menu'
-import Footer from '../../molecules/Footer'
+import { Container } from '@/components/atoms/Container'
+import { Menu } from '../../organisms/Menu'
+import { Footer } from '../../molecules/Footer'
 import { IntlProvider } from 'react-intl'
 
 const pageTemplateClasses = tv({
@@ -51,4 +51,4 @@ const PageTemplate = ({
   )
 }
 
-export default PageTemplate
+export { PageTemplate }

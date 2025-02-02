@@ -1,7 +1,7 @@
 // Storybook config for Button
 import { Meta, StoryObj } from '@storybook/react'
 import { MdAddShoppingCart } from 'react-icons/md'
-import Button from '.'
+import { Button } from '.'
 
 export default {
   title: 'Atoms/Button',

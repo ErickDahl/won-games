@@ -36,4 +36,4 @@ const Logo = ({ variant = 'black', size = 'large', ...rest }: LogoProps) => {
   )
 }
 
-export default Logo
+export { Logo }

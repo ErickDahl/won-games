@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import Checkbox from '.'
+import { Checkbox } from '.'
 
 describe('<Checkbox />', () => {
   it('should render the checkbox', () => {

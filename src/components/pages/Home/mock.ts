@@ -15,4 +15,4 @@ const homeMockData: HomeTemplateProps = {
   freeHighligth: highlightMock
 }
 
-export default homeMockData
+export { homeMockData }

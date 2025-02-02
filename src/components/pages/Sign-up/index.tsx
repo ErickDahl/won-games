@@ -1,8 +1,8 @@
 'use client'
 import { EmailIcon, PasswordIcon, UserIcon } from '@/assets/icons'
-import Button from '@/components/atoms/Button'
-import TextField from '@/components/atoms/TextField'
-import AuthPage from '@/components/templates/AuthPage'
+import { Button } from '@/components/atoms/Button'
+import { TextField } from '@/components/atoms/TextField'
+import { AuthPage } from '@/components/templates/AuthPage'
 import { tv } from 'tailwind-variants'
 
 const SignUpClass = tv({
@@ -49,4 +49,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export { SignUp }

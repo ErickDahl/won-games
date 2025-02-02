@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Logo from '.'
+import { Logo } from '.'
 import logoBlack from '@/assets/logo-black.svg'
 import logoWhite from '@/assets/logoWhite.svg'
 import logoCompact from '@/assets/logo-compact.svg'
