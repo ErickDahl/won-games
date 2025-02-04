@@ -8,7 +8,7 @@ describe('<GameDetails />', () => {
   const Component = (props: GameDetailsProps) => {
     return (
       <IntlProvider locale={'en'}>
-        <GameDetails {...props} />
+        <GameDetails {...props} timeZone="UTC" />
       </IntlProvider>
     )
   }

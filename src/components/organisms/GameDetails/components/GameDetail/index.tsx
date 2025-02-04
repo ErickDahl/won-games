@@ -22,6 +22,7 @@ export type GameDataProps = {
   publisher?: string
   rating?: string
   genres?: string[]
+  timeZone?: string
 }
 
 const platformIcons: Record<'Windows' | 'Linux' | 'Mac', ReactNode> = {
@@ -36,7 +37,8 @@ const GetItemDetail = ({
   platforms,
   publisher,
   rating,
-  genres
+  genres,
+  timeZone
 }: Omit<GameDataProps, 'title'>) => {
   const { titleClass, detailsClass, detailContainer } = gameDetailsClasses()
 
@@ -56,7 +58,7 @@ const GetItemDetail = ({
             year="numeric"
             month="short"
             day="2-digit"
-            timeZone="UTC"
+            timeZone={timeZone}
           />
         </div>
       )}
