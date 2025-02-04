@@ -52,10 +52,11 @@ const GetItemDetail = ({
         <div className={detailContainer()}>
           <h3 className={titleClass()}>Release date</h3>
           <FormattedDate
-            value={new Date(date)}
+            value={date}
             year="numeric"
             month="short"
             day="2-digit"
+            timeZone="UTC"
           />
         </div>
       )}
