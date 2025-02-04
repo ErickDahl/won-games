@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Heading from '.'
+
+import { Heading } from '.'
 
 const meta: Meta = {
   title: 'Atoms/Heading',

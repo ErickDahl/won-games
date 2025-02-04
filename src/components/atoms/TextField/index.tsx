@@ -1,4 +1,5 @@
 'use client'
+
 import { ChangeEvent, HTMLAttributes, ReactNode, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
@@ -71,7 +72,11 @@ const TextField = ({
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
   const { base, labelClass, inputDiv, inputClass, iconClass, errorClass } =
-    textFieldClasses({ iconPosition, disabled, error })
+    textFieldClasses({
+      iconPosition,
+      disabled,
+      error
+    })
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.currentTarget.value
@@ -106,4 +111,4 @@ const TextField = ({
   )
 }
 
-export default TextField
+export { TextField }

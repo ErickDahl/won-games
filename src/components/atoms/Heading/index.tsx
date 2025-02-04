@@ -2,7 +2,7 @@ import { HTMLAttributes, PropsWithChildren } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const headingClasses = tv({
-  base: 'ml-[4.8%] inline-block cursor-default text-3xl',
+  base: 'ml-[4.8%] inline-block w-fit cursor-default text-3xl',
   variants: {
     color: {
       white: 'text-white',
@@ -15,7 +15,7 @@ const headingClasses = tv({
     linePosition: {
       left: 'border-l-7 border-solid pl-3',
       bottom:
-        'relative after:absolute after:-bottom-2 after:left-0 after:w-5 after:border-b-5 after:border-solid after:content-[""]'
+        'relative after:absolute after:-bottom-2 after:left-0 after:block after:w-[30%] after:border-b-5 after:border-solid after:content-[""]'
     },
     lineBottomColor: {
       primary: 'after:border-primary',
@@ -25,7 +25,8 @@ const headingClasses = tv({
   defaultVariants: {
     color: 'white',
     lineColor: 'primary',
-    lineBottomColor: 'primary'
+    lineBottomColor: 'primary',
+    linePosition: 'left'
   }
 })
 
@@ -57,4 +58,4 @@ const Heading = ({
   )
 }
 
-export default Heading
+export { Heading }

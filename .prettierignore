@@ -6,3 +6,4 @@ coverage
 .next
 node_modules
 generators
+out

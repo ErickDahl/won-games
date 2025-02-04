@@ -1,43 +1,17 @@
-import GameCardImage from '@/assets/gameCard.png'
 import { GameCardProps } from '../GameCard'
+import {
+  gameCardMock,
+  gameCardMockInCart,
+  gameCardMockInWishlist,
+  gameCardMockNoRibbon
+} from '../GameCard/mock'
 
 const cardsMock: GameCardProps[] = [
-  {
-    title: 'test',
-    developer: 'test',
-    image: GameCardImage,
-    listPrice: 100,
-    price: 150,
-    isInCart: true,
-    isInWishlist: true
-  },
-  {
-    title: 'test',
-    developer: 'test',
-    image: GameCardImage,
-    listPrice: 100,
-    price: 150,
-    isInCart: false,
-    isInWishlist: false
-  },
-  {
-    title: 'test',
-    developer: 'test',
-    image: GameCardImage,
-    listPrice: 100,
-    price: 150,
-    isInCart: true,
-    isInWishlist: false
-  },
-  {
-    title: 'test',
-    developer: 'test',
-    image: GameCardImage,
-    listPrice: 100,
-    price: 150,
-    isInCart: false,
-    isInWishlist: true
-  }
+  gameCardMock,
+  gameCardMockInCart,
+  gameCardMockInWishlist,
+  gameCardMockNoRibbon,
+  gameCardMock
 ]
 
-export default cardsMock
+export { cardsMock }

@@ -1,6 +1,6 @@
+import { ReactNode } from 'react'
 import Link, { LinkProps as NextLinkProps } from 'next/link'
 import { tv, VariantProps } from 'tailwind-variants'
-import { ReactNode } from 'react'
 
 const LinkClasses = tv({
   base: 'text-center text-2xl font-bold text-black',
@@ -63,4 +63,4 @@ const StoreLink = ({
   </Link>
 )
 
-export default StoreLink
+export { StoreLink }

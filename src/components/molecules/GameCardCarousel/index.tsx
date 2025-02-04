@@ -1,5 +1,9 @@
 'use client'
+
+import { HTMLAttributes } from 'react'
+import { tv, VariantProps } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
+
 import {
   Carousel,
   CarouselContent,
@@ -9,31 +13,37 @@ import {
   CarouselPrevious,
   CarouselProps
 } from '@/components/ui/carousel'
-import GameCard, { GameCardProps } from '../GameCard'
 import useIsMobile from '@/hooks/useIsMobile'
-import { HTMLAttributes } from 'react'
+import { GameCard, GameCardProps } from '../GameCard'
+
+const gameCardCarouselClasses = tv({
+  slots: {
+    base: 'mx-auto max-w-[90%]',
+    carouselItemClass:
+      'mx-3 flex w-full flex-[0_0_70%] items-center justify-center lg:flex-[0_0_33%]'
+  }
+})
 
 type GameCardCarouselProps = HTMLAttributes<HTMLDivElement> &
+  VariantProps<typeof gameCardCarouselClasses> &
   CarouselProps & {
     cards: GameCardProps[]
   }
 
 const GameCardCarousel = ({ cards, ...rest }: GameCardCarouselProps) => {
   const isMobile = useIsMobile()
+  const { base, carouselItemClass } = gameCardCarouselClasses()
 
   return (
-    <Carousel
-      className="mx-auto max-w-[90%]"
-      opts={{ align: 'start' }}
-      {...rest}
-    >
+    <Carousel className={base()} opts={{ align: 'start' }} {...rest}>
       <CarouselContent>
-        {cards?.map((card) => (
+        {cards?.map((card, index) => (
           <CarouselItem
-            className={isMobile ? 'flex-[0_0_70%]' : 'flex-[0_0_33%]'}
+            className={carouselItemClass()}
+            index={index}
             key={uuidv4()}
           >
-            <GameCard className="m-auto" {...card} />
+            <GameCard {...card} />
           </CarouselItem>
         ))}
       </CarouselContent>
@@ -49,4 +59,4 @@ const GameCardCarousel = ({ cards, ...rest }: GameCardCarouselProps) => {
   )
 }
 
-export default GameCardCarousel
+export { GameCardCarousel }

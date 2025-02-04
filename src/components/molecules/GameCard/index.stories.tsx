@@ -1,10 +1,17 @@
 import { Meta, StoryObj } from '@storybook/react'
-import GameCard from '.'
-import gameImage from '@/assets/gameCard.png'
+import { IntlProvider } from 'react-intl'
+
+import { GameCard, GameCardProps } from '.'
+import {
+  gameCardMock,
+  gameCardMockInCart,
+  gameCardMockInWishlist
+} from './mock'
 
 export default {
   title: 'Molecules/GameCard',
   component: GameCard,
+  args: gameCardMock,
   argTypes: {
     image: {
       control: false
@@ -12,50 +19,34 @@ export default {
   }
 } as Meta
 
-export const Default: StoryObj = {
+const DefaultRender = (props: GameCardProps) => {
+  return (
+    <IntlProvider locale={'en'}>
+      <GameCard {...props} />
+    </IntlProvider>
+  )
+}
+
+export const Default: StoryObj<GameCardProps> = {
   render: (args) => (
     <div style={{ maxWidth: '18rem' }}>
-      <GameCard
-        title={'Game Title'}
-        developer={'Game Developer'}
-        image={gameImage}
-        listPrice={100}
-        price={150}
-        {...args}
-      />
+      <DefaultRender {...args} />
     </div>
   )
 }
 
-export const InCart: StoryObj = {
-  render: (args) => (
+export const InCart: StoryObj<GameCardProps> = {
+  render: () => (
     <div style={{ maxWidth: '18rem' }}>
-      <GameCard
-        title={'Game Title'}
-        developer={'Game Developer'}
-        image={gameImage}
-        listPrice={100}
-        price={150}
-        isInCart={true}
-        {...args}
-      />
+      <DefaultRender {...gameCardMockInCart} />
     </div>
   )
 }
 
-export const InWishlist: StoryObj = {
-  render: (args) => (
+export const InWishlist: StoryObj<GameCardProps> = {
+  render: () => (
     <div style={{ maxWidth: '18rem' }}>
-      <GameCard
-        title={'Game Title'}
-        developer={'Game Developer'}
-        image={gameImage}
-        listPrice={100}
-        price={150}
-        isInCart={true}
-        isInWishlist={true}
-        {...args}
-      />
+      <DefaultRender {...gameCardMockInWishlist} />
     </div>
   )
 }

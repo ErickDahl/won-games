@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import SignIn from '.'
+
+import { SignIn } from '.'
 
 describe('<SignIn />', () => {
   it('should render the form', () => {

@@ -1,7 +1,8 @@
 'use client'
-import { HTMLAttributes, ReactNode, useState, FC } from 'react'
-import { tv, VariantProps } from 'tailwind-variants'
+
+import { FC, HTMLAttributes, ReactNode, useState } from 'react'
 import ClipLoader from 'react-spinners/ClipLoader'
+import { tv, VariantProps } from 'tailwind-variants'
 
 const buttonClasses = tv({
   slots: {
@@ -30,6 +31,9 @@ const buttonClasses = tv({
       },
       secondary: {
         button: 'bg-secondary hover:bg-secondaryDark'
+      },
+      noBackground: {
+        button: 'bg-transparent hover:bg-transparent'
       }
     },
     disabled: {
@@ -111,7 +115,7 @@ const ButtonContent = ({
 }: ButtonContentProps) => (
   <>
     {!!icon && iconPosition === 'left' && icon}
-    {children && <span>{children}</span>}
+    {children && <span className="leading-none">{children}</span>}
     {!!icon && iconPosition === 'right' && icon}
   </>
 )
@@ -178,4 +182,4 @@ const Button: FC<ButtonProps> = ({
   )
 }
 
-export default Button
+export { Button }

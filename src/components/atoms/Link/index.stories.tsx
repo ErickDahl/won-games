@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Link from '.'
+
+import { StoreLink } from '.'
+
 export default {
-  title: 'Atoms/Link',
-  component: Link,
+  title: 'Atoms/StoreLink',
+  component: StoreLink,
   argTypes: {
     children: {
       control: 'text',
@@ -35,6 +37,11 @@ export default {
     className: {
       control: false,
       description: 'Class name'
+    }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light'
     }
   }
 } as Meta

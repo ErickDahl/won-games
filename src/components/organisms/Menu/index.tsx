@@ -1,11 +1,13 @@
 'use client'
-import { CartIcon, SearchIcon } from '@/assets/icons'
-import Logo from '@/components/atoms/Logo'
-import MenuDrawer from './components/MenuDrawer'
-import useIsMobile from '@/hooks/useIsMobile'
-import { tv, VariantProps } from 'tailwind-variants'
-import StoreLink from '@/components/atoms/Link'
+
 import { HTMLAttributes } from 'react'
+import { tv, VariantProps } from 'tailwind-variants'
+
+import { CartIcon, SearchIcon } from '@/assets/icons'
+import { StoreLink } from '@/components/atoms/Link'
+import { Logo } from '@/components/atoms/Logo'
+import useIsMobile from '@/hooks/useIsMobile'
+import { MenuDrawer } from './components/MenuDrawer'
 
 const MenuClasses = tv({
   slots: {
@@ -122,4 +124,4 @@ const Menu = ({ isLogged, className, ...rest }: MenuProps) => {
   )
 }
 
-export default Menu
+export { Menu }

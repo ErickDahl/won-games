@@ -5,10 +5,10 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType
 } from 'embla-carousel-react'
 
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { DotButton, useDotButton } from './dotButton'
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/icons'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { DotButton, useDotButton } from './dotButton'
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -33,7 +33,7 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
-function useCarousel() {
+export function useCarousel() {
   const context = React.useContext(CarouselContext)
 
   if (!context) {
@@ -173,26 +173,32 @@ const CarouselContent = React.forwardRef<
 })
 CarouselContent.displayName = 'CarouselContent'
 
-const CarouselItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { orientation } = useCarousel()
+type CarouselItemProps = React.HTMLAttributes<HTMLDivElement> & {
+  index: number
+  onClickIndex?: (index: number) => void
+}
 
-  return (
-    <div
-      ref={ref}
-      role="group"
-      aria-roledescription="slide"
-      className={cn(
-        'min-w-0 shrink-0 grow-0 basis-full',
-        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
-        className
-      )}
-      {...props}
-    />
-  )
-})
+const CarouselItem = React.forwardRef<HTMLDivElement, CarouselItemProps>(
+  ({ className, index, ...props }, ref) => {
+    const { orientation } = useCarousel()
+
+    return (
+      <div
+        ref={ref}
+        role="group"
+        data-index={index}
+        aria-roledescription="slide"
+        className={cn(
+          'min-w-0 shrink-0 grow-0 basis-full',
+          orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+          className
+        )}
+        {...props}
+      />
+    )
+  }
+)
+
 CarouselItem.displayName = 'CarouselItem'
 
 const CarouselPrevious = React.forwardRef<

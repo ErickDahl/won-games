@@ -11,4 +11,4 @@ const highlightMock: HighlightProps = {
   image: BannerImage
 }
 
-export default highlightMock
+export { highlightMock }

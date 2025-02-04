@@ -1,6 +1,6 @@
-import bannersMock from '@/components/molecules/BannerCarousel/mock'
-import cardsMock from '@/components/molecules/GameCardCarousel/mock'
-import highlightMock from '@/components/molecules/Highlight/mock'
+import { bannersMock } from '@/components/molecules/BannerCarousel/mock'
+import { cardsMock } from '@/components/molecules/GameCardCarousel/mock'
+import { highlightMock } from '@/components/molecules/Highlight/mock'
 import { HomeTemplateProps } from '.'
 
 const homeMockData: HomeTemplateProps = {
@@ -8,11 +8,11 @@ const homeMockData: HomeTemplateProps = {
   newGames: cardsMock,
   mostPopularHighlight: highlightMock,
   mostPopularGames: cardsMock,
-  upcommingGames: cardsMock,
-  upcommingHighligth: highlightMock,
-  upcommingMoreGames: cardsMock,
+  upcomingGames: cardsMock,
+  upcomingHighligth: highlightMock,
+  upcomingMoreGames: cardsMock,
   freeGames: cardsMock,
   freeHighligth: highlightMock
 }
 
-export default homeMockData
+export { homeMockData }

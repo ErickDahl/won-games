@@ -19,7 +19,6 @@
     "http",
     "net"
   ],
-  "editor.formatOnSave": true,
   "tailwindCSS.experimental.classRegex": [
     ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ]

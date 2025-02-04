@@ -1,17 +1,19 @@
 'use client'
+
 import { HTMLAttributes, ReactNode, useState } from 'react'
-import { DrawerContext, useDrawerContext } from './context/context'
 import { tv, VariantProps } from 'tailwind-variants'
+
+import { DrawerContext, useDrawerContext } from './context/context'
 
 const drawerClasses = tv({
   slots: {
     root: 'relative',
-    trigger: 'cursor-pointer',
+    trigger: '',
     overlay:
-      'fixed inset-0 z-40 h-screen bg-black bg-opacity-50 transition-opacity duration-300',
+      'fixed inset-0 z-40 h-screen bg-black transition-opacity duration-300',
     content:
       'fixed z-50 flex flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
-    close: 'cursor-pointer'
+    close: ''
   },
   variants: {
     haveOverlay: {
@@ -132,7 +134,7 @@ export const Drawer = ({
       <div className={root({ className })} {...rest}>
         {children}
       </div>
-      <div className={overlay()} onClick={closeDrawer}></div>
+      <div className={overlay({ isOpen })} onClick={closeDrawer} />
     </DrawerContext>
   )
 }
@@ -152,6 +154,7 @@ export const DrawerTrigger = ({
   return (
     <div
       onClick={openDrawer}
+      role="button"
       aria-label="Open Drawer"
       className={trigger({ className })}
       {...rest}
@@ -176,6 +179,7 @@ export const DrawerClose = ({
   return (
     <div
       onClick={closeDrawer}
+      role="button"
       aria-hidden={!isOpen}
       aria-label="Close Drawer"
       className={close({ className })}

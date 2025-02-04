@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Highlight from '.'
-import highlight from './mock'
+
+import { Highlight } from '.'
+import { highlightMock } from './mock'
 
 export default {
   title: 'Molecules/Highlight',
@@ -16,9 +17,7 @@ export default {
       control: false
     }
   },
-  args: {
-    ...highlight
-  }
+  args: highlightMock
 } as Meta
 
 export const Default: StoryObj = {}

@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Home from '.'
-import homeMockData from './mock'
+
+import { Home } from '.'
+import { homeMockData } from './mock'
 
 export default {
   title: 'Pages/Home',

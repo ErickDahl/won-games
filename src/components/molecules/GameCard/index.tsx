@@ -1,16 +1,18 @@
-'use client'
+import { HTMLAttributes } from 'react'
+import Image, { StaticImageData } from 'next/image'
+import { FormattedNumber } from 'react-intl'
+import { tv, VariantProps } from 'tailwind-variants'
+
 import {
   AddCartIcon,
   InCartIcon,
   WishListFullIcon,
   WishListIcon
 } from '@/assets/icons'
-import Button from '@/components/atoms/Button'
-import Ribbon from '@/components/atoms/Ribbon'
+import { Button } from '@/components/atoms/Button'
+import { Ribbon } from '@/components/atoms/Ribbon'
+import { useCurrency } from '@/hooks/useCurrency'
 import useIsMobile from '@/hooks/useIsMobile'
-import Image, { StaticImageData } from 'next/image'
-import { HTMLAttributes } from 'react'
-import { tv, VariantProps } from 'tailwind-variants'
 
 const gameCardClasses = tv({
   slots: {
@@ -120,6 +122,7 @@ const GameCard = ({
   } = gameCardClasses()
 
   const isMobile = useIsMobile()
+  const currency = useCurrency()
   const discount = !!price && Math.round(100 - (listPrice / price) * 100)
 
   return (
@@ -146,8 +149,26 @@ const GameCard = ({
         </div>
         <h4 className={developerClass()}>{developer}</h4>
         <div className={divPriceClass()}>
-          {!!price && <span className={priceClass()}>${price}</span>}
-          <span className={listPriceClass()}>${listPrice}</span>
+          {!!price && (
+            <span className={priceClass()}>
+              {
+                <FormattedNumber
+                  value={price}
+                  style="currency"
+                  currency={currency}
+                />
+              }
+            </span>
+          )}
+          <span className={listPriceClass()}>
+            {
+              <FormattedNumber
+                value={listPrice}
+                style="currency"
+                currency={currency}
+              />
+            }
+          </span>
           {!isMobile && (
             <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />
           )}
@@ -160,4 +181,4 @@ const GameCard = ({
   )
 }
 
-export default GameCard
+export { GameCard }

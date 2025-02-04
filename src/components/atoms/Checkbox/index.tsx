@@ -1,4 +1,5 @@
 'use client'
+
 import { HTMLAttributes, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
@@ -75,4 +76,4 @@ const Checkbox = ({
   )
 }
 
-export default Checkbox
+export { Checkbox }

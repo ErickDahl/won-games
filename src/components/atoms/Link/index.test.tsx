@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import StoreLink from '.'
+
+import { StoreLink } from '.'
 
 describe('<StoreLink />', () => {
   it('should render the link with correct text, href, and hoverEffect classes', () => {
