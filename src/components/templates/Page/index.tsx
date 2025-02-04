@@ -31,24 +31,21 @@ const PageTemplate = ({
   const { base, header, menuClass, clipPathFooter } = pageTemplateClasses()
 
   const [isScrolled, setIsScrolled] = useState(false)
+  const [locale, setLocale] = useState('en')
 
   useEffect(() => {
+    setLocale(navigator.language)
+
     const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.scrollY > 80)
     }
 
     window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <IntlProvider locale={navigator.language} defaultLocale="en">
+    <IntlProvider locale={locale} defaultLocale="en">
       <section className={base({ className })} {...rest}>
         <div
           className={`${header()} ${isScrolled ? 'bg-mainBg/80 backdrop-blur-lg' : 'bg-mainBg/0'}`}
