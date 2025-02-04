@@ -64,6 +64,7 @@ const GamePage = ({
         className={coverClass()}
         style={{ backgroundImage: `url(${gameConver.src})` }}
       />
+
       <Container className={container() + ' mt-80 lg:mt-96'}>
         <GameInfo {...gameInfo} />
       </Container>

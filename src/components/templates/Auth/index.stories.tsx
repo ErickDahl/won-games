@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { AuthPage } from '.'
+import { AuthTemplate } from '.'
 
 export default {
   title: 'Templates/AuthPage',
-  component: AuthPage
+  component: AuthTemplate
 } as Meta
 
 export const Default: StoryObj = {
-  render: () => <AuthPage pageType="signin">children</AuthPage>
+  render: () => <AuthTemplate pageType="signin">children</AuthTemplate>
 }

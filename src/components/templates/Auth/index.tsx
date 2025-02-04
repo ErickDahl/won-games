@@ -29,12 +29,14 @@ const authClasses = tv({
   }
 })
 
-type AuthPageProps = VariantProps<typeof authClasses> & {
+type AuthTemplateProps = VariantProps<typeof authClasses> & {
   pageType: 'signup' | 'signin'
   className?: string
 }
 
-const RenderActionText = ({ pageType }: Pick<AuthPageProps, 'pageType'>) => {
+const RenderActionText = ({
+  pageType
+}: Pick<AuthTemplateProps, 'pageType'>) => {
   const { rightDivActionText } = authClasses()
 
   const isSignup = pageType === 'signup'
@@ -62,7 +64,7 @@ const AuthTemplate = ({
   pageType,
   className,
   children
-}: PropsWithChildren<AuthPageProps>) => {
+}: PropsWithChildren<AuthTemplateProps>) => {
   const {
     base,
     leftDiv,
