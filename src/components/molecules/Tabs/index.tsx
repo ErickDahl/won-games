@@ -17,9 +17,8 @@ const tabsClasses = tv({
     tabsListClass: 'relative grid w-full',
     tabsTriggerClass: 'relative py-2 text-white',
     tabsTriggerClassHide: 'py-2 text-gray',
-    tabsContentClass: 'mt-4 text-white opacity-100 transition-all duration-300',
-    tabsContentClassHide:
-      'pointer-events-none absolute mt-4 text-white opacity-0',
+    tabsContentClass: 'text-white opacity-100 transition-all duration-300',
+    tabsContentClassHide: 'pointer-events-none absolute text-white opacity-0',
     borderClass:
       'absolute bottom-0 h-1 bg-primary transition-all duration-300 ease-in-out'
   }

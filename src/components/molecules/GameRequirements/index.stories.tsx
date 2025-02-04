@@ -4,7 +4,7 @@ import { GameRequirements } from '.'
 import { gameRequirementsMock } from './mock'
 
 export default {
-  title: 'GameRequirements',
+  title: 'Molecules/GameRequirements',
   component: GameRequirements,
   args: gameRequirementsMock,
   parameters: {

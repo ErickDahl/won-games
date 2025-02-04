@@ -8,9 +8,9 @@ const homeMockData: HomeTemplateProps = {
   newGames: cardsMock,
   mostPopularHighlight: highlightMock,
   mostPopularGames: cardsMock,
-  upcommingGames: cardsMock,
-  upcommingHighligth: highlightMock,
-  upcommingMoreGames: cardsMock,
+  upcomingGames: cardsMock,
+  upcomingHighligth: highlightMock,
+  upcomingMoreGames: cardsMock,
   freeGames: cardsMock,
   freeHighligth: highlightMock
 }

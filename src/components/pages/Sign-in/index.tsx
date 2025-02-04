@@ -6,7 +6,7 @@ import { EmailIcon, PasswordIcon } from '@/assets/icons'
 import { Button } from '@/components/atoms/Button'
 import { StoreLink } from '@/components/atoms/Link'
 import { TextField } from '@/components/atoms/TextField'
-import { AuthPage } from '@/components/templates/AuthPage'
+import { AuthTemplate } from '@/components/templates/Auth'
 
 const SignInClass = tv({
   slots: {
@@ -21,7 +21,7 @@ const SignIn = () => {
   const { base, content, input, forgotPassword } = SignInClass()
 
   return (
-    <AuthPage className={base()} pageType="signin">
+    <AuthTemplate className={base()} pageType="signin">
       <form className={content()}>
         <TextField
           className={input()}
@@ -41,7 +41,7 @@ const SignIn = () => {
 
         <Button fullWidth>Sign in now</Button>
       </form>
-    </AuthPage>
+    </AuthTemplate>
   )
 }
 

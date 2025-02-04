@@ -16,11 +16,11 @@ import {
 
 const subGalleryClasses = tv({
   slots: {
-    base: 'mx-auto max-w-[90%]',
+    base: 'mx-auto w-full max-w-6xl px-4',
     carouselItemClass:
       'flex w-full flex-[0_0_100%] items-center justify-center',
     modalContentClass:
-      'flex h-fit w-full items-center justify-center bg-transparent shadow-none'
+      'flex w-full max-w-6xl items-center justify-center bg-transparent shadow-none'
   }
 })
 
@@ -54,6 +54,7 @@ const SubGallery = ({ images, index, ...rest }: SubGalleryProps) => {
               key={uuidv4()}
             >
               <Image
+                className="w-full"
                 alt={'gallery image'}
                 width={image?.width}
                 src={image?.src}

@@ -2,6 +2,7 @@
 
 import { HTMLAttributes, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
+import Autoplay from 'embla-carousel-autoplay'
 import { tv, VariantProps } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -35,7 +36,17 @@ const Gallery = ({ images, ...rest }: GalleryProps) => {
 
   return (
     <Modal closeOnEsc>
-      <Carousel className={base()} opts={{ align: 'start' }} {...rest}>
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 5000,
+            stopOnMouseEnter: true
+          })
+        ]}
+        className={base()}
+        opts={{ align: 'start' }}
+        {...rest}
+      >
         <CarouselContent>
           {images?.map((image, index) => (
             <CarouselItem
@@ -46,6 +57,7 @@ const Gallery = ({ images, ...rest }: GalleryProps) => {
             >
               <ModalTrigger>
                 <Image
+                  className="w-full"
                   alt={'gallery image'}
                   role="button"
                   width={image?.width}

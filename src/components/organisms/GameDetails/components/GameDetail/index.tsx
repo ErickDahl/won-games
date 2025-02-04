@@ -16,10 +16,10 @@ const gameDetailsClasses = tv({
 })
 
 export type GameDataProps = {
-  company?: string
+  developer?: string
   date?: string
   platforms?: ('Windows' | 'Linux' | 'Mac')[]
-  editor?: string
+  publisher?: string
   rating?: string
   genres?: string[]
 }
@@ -31,10 +31,10 @@ const platformIcons: Record<'Windows' | 'Linux' | 'Mac', ReactNode> = {
 }
 
 const GetItemDetail = ({
-  company,
+  developer,
   date,
   platforms,
-  editor,
+  publisher,
   rating,
   genres
 }: Omit<GameDataProps, 'title'>) => {
@@ -42,10 +42,10 @@ const GetItemDetail = ({
 
   return (
     <div className={detailsClass()}>
-      {!!company && (
+      {!!developer && (
         <div className={detailContainer()}>
-          <h3 className={titleClass()}>Company</h3>
-          <p> {company}</p>
+          <h3 className={titleClass()}>Developer</h3>
+          <p> {developer}</p>
         </div>
       )}
       {!!date && (
@@ -69,10 +69,10 @@ const GetItemDetail = ({
           </ul>
         </div>
       )}
-      {!!editor && (
+      {!!publisher && (
         <div className={detailContainer()}>
-          <h3 className={titleClass()}>Editor</h3>
-          <p>{editor}</p>
+          <h3 className={titleClass()}>Publisher</h3>
+          <p>{publisher}</p>
         </div>
       )}
       {!!rating && (

@@ -16,13 +16,20 @@ type ShowCaseProps = VariantProps<typeof showCaseClasses> & {
   heading?: HeadingProps
   highlight?: HighlightProps
   cards?: GameCardProps[]
+  className?: string
 }
 
-const ShowCase = ({ title, heading, highlight, cards }: ShowCaseProps) => {
+const ShowCase = ({
+  title,
+  heading,
+  highlight,
+  cards,
+  className
+}: ShowCaseProps) => {
   const { base } = showCaseClasses()
 
   return (
-    <section className={base()}>
+    <section className={base({ className })}>
       {!!title && !!heading && <Heading {...heading}>{title}</Heading>}
       {!!highlight && <Highlight {...highlight} />}
       {!!cards && <GameCardCarousel cards={cards} />}

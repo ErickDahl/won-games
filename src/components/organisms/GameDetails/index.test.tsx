@@ -17,7 +17,7 @@ describe('<GameDetails />', () => {
     render(<Component {...gameDetailsMock} />)
 
     expect(
-      screen.getByRole('heading', { name: /Company/i })
+      screen.getByRole('heading', { name: /Developer/i })
     ).toBeInTheDocument()
     expect(
       screen.getByRole('heading', { name: /Release date/i })
@@ -25,7 +25,9 @@ describe('<GameDetails />', () => {
     expect(
       screen.getByRole('heading', { name: /Platforms/i })
     ).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /Editor/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Publisher/i })
+    ).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /Rating/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /Genre/i })).toBeInTheDocument()
   })
@@ -36,6 +38,16 @@ describe('<GameDetails />', () => {
     expect(screen.getByTitle(/linux/i)).toBeInTheDocument()
     expect(screen.getByTitle(/mac/i)).toBeInTheDocument()
     expect(screen.getByTitle(/windows/i)).toBeInTheDocument()
+  })
+
+  it('should render the developer', () => {
+    render(<Component {...gameDetailsMock} />)
+    expect(screen.getByText(/Gearbox Software/i)).toBeInTheDocument()
+  })
+
+  it('should render the publisher', () => {
+    render(<Component {...gameDetailsMock} />)
+    expect(screen.getByText(/2k/i)).toBeInTheDocument()
   })
 
   it('should render the formated date', () => {

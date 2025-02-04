@@ -1,10 +1,12 @@
 import { tv, VariantProps } from 'tailwind-variants'
 
+import { Heading } from '@/components/atoms/Heading'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../Tabs'
 
 const GameRequirementsClasses = tv({
   slots: {
-    base: 'px-3',
+    base: 'flex flex-col gap-8 px-3',
+    tabsClass: 'flex flex-col gap-8',
     titlePlatform: 'text-base font-medium text-white sm:text-lg',
     divRequirements: 'flex flex-col',
     divSection: 'flex w-fit flex-col gap-3',
@@ -70,30 +72,33 @@ const RequirementSection = ({
 }
 
 const GameRequirements = ({ gameRequirements }: GameRequirementsProps) => {
-  const { base, divContent } = GameRequirementsClasses()
+  const { base, divContent, tabsClass } = GameRequirementsClasses()
 
   return (
-    <Tabs defaultTab="Windows" className={base()}>
-      <TabsList>
-        {gameRequirements.map((game) => (
-          <TabsTrigger key={game.platform} value={game.platform}>
-            {game.platform}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+    <div className={base()}>
+      <Heading className="m-0">Game Requirements</Heading>
+      <Tabs defaultTab="Windows" className={tabsClass()}>
+        <TabsList>
+          {gameRequirements.map((game) => (
+            <TabsTrigger key={game.platform} value={game.platform}>
+              {game.platform}
+            </TabsTrigger>
+          ))}
+        </TabsList>
 
-      {gameRequirements.map((game) => (
-        <TabsContent key={game.platform} value={game.platform}>
-          <div className={divContent()}>
-            <RequirementSection title="Minimum" requirements={game.minimum} />
-            <RequirementSection
-              title="Recommended"
-              requirements={game.recommend}
-            />
-          </div>
-        </TabsContent>
-      ))}
-    </Tabs>
+        {gameRequirements.map((game) => (
+          <TabsContent key={game.platform} value={game.platform}>
+            <div className={divContent()}>
+              <RequirementSection title="Minimum" requirements={game.minimum} />
+              <RequirementSection
+                title="Recommended"
+                requirements={game.recommend}
+              />
+            </div>
+          </TabsContent>
+        ))}
+      </Tabs>
+    </div>
   )
 }
 

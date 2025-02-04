@@ -6,8 +6,8 @@ import { GameDataProps, GameDetail } from './components/GameDetail'
 
 const gameDetailsClasses = tv({
   slots: {
-    base: 'flex flex-col gap-5',
-    headingClass: 'm-0 hidden lg:block'
+    base: 'flex flex-col gap-5 px-3',
+    headingClass: 'm-0'
   }
 })
 
@@ -19,7 +19,7 @@ const GameDetails = (props: GameDetailsProps) => {
 
   return (
     <div className={base()}>
-      <Heading className={headingClass()} color="white" lineColor="secondary">
+      <Heading className={headingClass()} color="white">
         Game details
       </Heading>
 

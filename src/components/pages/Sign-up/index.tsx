@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants'
 import { EmailIcon, PasswordIcon, UserIcon } from '@/assets/icons'
 import { Button } from '@/components/atoms/Button'
 import { TextField } from '@/components/atoms/TextField'
-import { AuthPage } from '@/components/templates/AuthPage'
+import { AuthTemplate } from '@/components/templates/Auth'
 
 const SignUpClass = tv({
   slots: {
@@ -19,7 +19,7 @@ const SignUp = () => {
   const { base, content, input } = SignUpClass()
 
   return (
-    <AuthPage className={base()} pageType="signup">
+    <AuthTemplate className={base()} pageType="signup">
       <form className={content()}>
         <TextField
           className={input()}
@@ -47,7 +47,7 @@ const SignUp = () => {
         />
         <Button fullWidth>Sign up now</Button>
       </form>
-    </AuthPage>
+    </AuthTemplate>
   )
 }
 

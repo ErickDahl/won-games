@@ -14,7 +14,8 @@ const sanitize = (input: string): string => {
     'h1',
     'h2',
     'h3',
-    'img'
+    'img',
+    'div'
   ]
 
   const regex = /<\/?([a-zA-Z][a-zA-Z0-9]*)\b[^>]*>/g
