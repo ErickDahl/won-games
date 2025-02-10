@@ -6,8 +6,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const buttonClasses = tv({
   slots: {
-    button:
-      'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius p-2 text-white',
+    button: 'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius p-2 text-white',
     div: 'flex items-center justify-center gap-2'
   },
   variants: {
@@ -96,10 +95,7 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> &
     loading?: boolean
   }
 
-type ButtonContentProps = Pick<
-  ButtonProps,
-  'icon' | 'iconPosition' | 'children'
->
+type ButtonContentProps = Pick<ButtonProps, 'icon' | 'iconPosition' | 'children'>
 
 const LoadingState = () => (
   <>
@@ -108,11 +104,7 @@ const LoadingState = () => (
   </>
 )
 
-const ButtonContent = ({
-  icon,
-  iconPosition,
-  children
-}: ButtonContentProps) => (
+const ButtonContent = ({ icon, iconPosition, children }: ButtonContentProps) => (
   <>
     {!!icon && iconPosition === 'left' && icon}
     {children && <span className="leading-none">{children}</span>}

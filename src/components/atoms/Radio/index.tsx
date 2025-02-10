@@ -37,16 +37,7 @@ type RadioProps = VariantProps<typeof radioClasses> &
     className?: string
   }
 
-const Radio = ({
-  onCheck,
-  label,
-  labelColor,
-  labelFor,
-  name,
-  value,
-  className,
-  ...rest
-}: RadioProps) => {
+const Radio = ({ onCheck, label, labelColor, labelFor, name, value, className, ...rest }: RadioProps) => {
   const { base, inputClass, labelClass } = radioClasses({ labelColor })
 
   const onChange = () => {
@@ -57,14 +48,7 @@ const Radio = ({
 
   return (
     <div className={base({ className })}>
-      <input
-        className={inputClass()}
-        id={labelFor}
-        type="radio"
-        onChange={onChange}
-        name={name}
-        {...rest}
-      />
+      <input className={inputClass()} id={labelFor} type="radio" onChange={onChange} name={name} {...rest} />
       {!!label && (
         <label className={labelClass()} htmlFor={labelFor}>
           {label}

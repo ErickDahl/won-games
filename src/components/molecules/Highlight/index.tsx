@@ -48,22 +48,10 @@ const Highlight = ({
   image,
   className
 }: HighlightProps) => {
-  const {
-    base,
-    content,
-    titles,
-    titleClass,
-    subtitleClass,
-    imageClass,
-    buttonClass
-  } = highlightClasses({ align })
+  const { base, content, titles, titleClass, subtitleClass, imageClass, buttonClass } = highlightClasses({ align })
 
   return (
-    <div
-      className={base({ className })}
-      data-testid="highlight"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <div className={base({ className })} data-testid="highlight" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className={content()}>
         <div className={titles()}>
           <h2 className={titleClass()}>{title}</h2>

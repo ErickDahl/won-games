@@ -55,17 +55,9 @@ describe('<ShowCase />', () => {
   // })
 
   it('should render without games', () => {
-    render(
-      <ShowCase
-        title={props.title}
-        heading={props.heading}
-        highlight={props.highlight}
-      />
-    )
+    render(<ShowCase title={props.title} heading={props.heading} highlight={props.highlight} />)
     screen.getByRole('heading', { name: /most popular/i })
     screen.getByRole('heading', { name: highlightMock.title })
-    expect(
-      screen.queryByRole('heading', { name: cardsMock[0].title })
-    ).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: cardsMock[0].title })).not.toBeInTheDocument()
   })
 })

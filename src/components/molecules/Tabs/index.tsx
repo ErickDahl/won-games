@@ -1,12 +1,6 @@
 'use client'
 
-import React, {
-  HTMLAttributes,
-  PropsWithChildren,
-  useEffect,
-  useRef,
-  useState
-} from 'react'
+import React, { HTMLAttributes, PropsWithChildren, useEffect, useRef, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 import { TabContext, useTabContext } from './context/context'
@@ -19,8 +13,7 @@ const tabsClasses = tv({
     tabsTriggerClassHide: 'py-2 text-gray',
     tabsContentClass: 'text-white opacity-100 transition-all duration-300',
     tabsContentClassHide: 'pointer-events-none absolute text-white opacity-0',
-    borderClass:
-      'absolute bottom-0 h-1 bg-primary transition-all duration-300 ease-in-out'
+    borderClass: 'absolute bottom-0 h-1 bg-primary transition-all duration-300 ease-in-out'
   }
 })
 
@@ -29,12 +22,7 @@ type TabsProps = VariantProps<typeof tabsClasses> &
     defaultTab: string
   }
 
-export const Tabs = ({
-  defaultTab,
-  className,
-  children,
-  ...rest
-}: PropsWithChildren<TabsProps>) => {
+export const Tabs = ({ defaultTab, className, children, ...rest }: PropsWithChildren<TabsProps>) => {
   const { base } = tabsClasses()
   const [currentTab, setCurrentTab] = useState(defaultTab)
 
@@ -54,11 +42,7 @@ export const Tabs = ({
 
 type TabsListProps = HTMLAttributes<HTMLElement>
 
-export const TabsList = ({
-  className,
-  children,
-  ...rest
-}: PropsWithChildren<TabsListProps>) => {
+export const TabsList = ({ className, children, ...rest }: PropsWithChildren<TabsListProps>) => {
   const { tabsListClass, borderClass } = tabsClasses()
   const { currentTab } = useTabContext()
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 })
@@ -68,9 +52,7 @@ export const TabsList = ({
   const updateIndicator = () => {
     requestAnimationFrame(() => {
       if (containerRef.current) {
-        const activeButton = containerRef.current.querySelector(
-          '[data-active="true"]'
-        ) as HTMLElement
+        const activeButton = containerRef.current.querySelector('[data-active="true"]') as HTMLElement
         if (activeButton) {
           const activeButtonRect = activeButton.getBoundingClientRect()
           const containerRect = containerRef.current.getBoundingClientRect()
@@ -125,12 +107,7 @@ type TabsTriggerProps = HTMLAttributes<HTMLButtonElement> & {
   value: string
 }
 
-export const TabsTrigger = ({
-  value,
-  className,
-  children,
-  ...rest
-}: PropsWithChildren<TabsTriggerProps>) => {
+export const TabsTrigger = ({ value, className, children, ...rest }: PropsWithChildren<TabsTriggerProps>) => {
   const { tabsTriggerClass, tabsTriggerClassHide } = tabsClasses()
   const { currentTab, setCurrentTab } = useTabContext()
 
@@ -153,17 +130,11 @@ type TabsContentProps = HTMLAttributes<HTMLDivElement> & {
   value: string
 }
 
-export const TabsContent = ({
-  value,
-  className,
-  children,
-  ...rest
-}: PropsWithChildren<TabsContentProps>) => {
+export const TabsContent = ({ value, className, children, ...rest }: PropsWithChildren<TabsContentProps>) => {
   const { tabsContentClass, tabsContentClassHide } = tabsClasses()
   const { currentTab } = useTabContext()
 
-  const tabTriggerClass =
-    value === currentTab ? tabsContentClass : tabsContentClassHide
+  const tabTriggerClass = value === currentTab ? tabsContentClass : tabsContentClassHide
 
   return (
     <div className={tabTriggerClass({ className })} {...rest}>

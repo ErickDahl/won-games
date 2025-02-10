@@ -11,9 +11,7 @@ const localeToCurrency = {
 type SupportedLocales = keyof typeof localeToCurrency
 type SupportedCurrencies = (typeof localeToCurrency)[SupportedLocales]
 
-export const useCurrency = (
-  value?: SupportedCurrencies
-): SupportedCurrencies => {
+export const useCurrency = (value?: SupportedCurrencies): SupportedCurrencies => {
   const { locale } = useIntl()
   return value || localeToCurrency[locale as SupportedLocales] || 'USD'
 }

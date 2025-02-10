@@ -19,13 +19,7 @@ type ShowCaseProps = VariantProps<typeof showCaseClasses> & {
   className?: string
 }
 
-const ShowCase = ({
-  title,
-  heading,
-  highlight,
-  cards,
-  className
-}: ShowCaseProps) => {
+const ShowCase = ({ title, heading, highlight, cards, className }: ShowCaseProps) => {
   const { base } = showCaseClasses()
 
   return (

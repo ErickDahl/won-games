@@ -53,13 +53,7 @@ const GetItemDetail = ({
       {!!date && (
         <div className={detailContainer()}>
           <h3 className={titleClass()}>Release date</h3>
-          <FormattedDate
-            value={date}
-            year="numeric"
-            month="short"
-            day="2-digit"
-            timeZone={timeZone}
-          />
+          <FormattedDate value={date} year="numeric" month="short" day="2-digit" timeZone={timeZone} />
         </div>
       )}
       {!!platforms && (

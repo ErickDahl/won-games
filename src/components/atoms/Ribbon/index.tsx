@@ -41,8 +41,7 @@ const ribbonClasses = tv({
   }
 })
 
-type RibbonProps = VariantProps<typeof ribbonClasses> &
-  HTMLAttributes<HTMLDivElement>
+type RibbonProps = VariantProps<typeof ribbonClasses> & HTMLAttributes<HTMLDivElement>
 
 const Ribbon = ({
   backGroundColor,

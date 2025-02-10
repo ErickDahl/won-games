@@ -26,15 +26,7 @@ export const Default: StoryObj = {
           alignItems: 'center'
         }}
       >
-        <Radio
-          label="first"
-          labelFor="first"
-          id="first"
-          value="first"
-          name="radio"
-          defaultChecked
-          {...args}
-        />
+        <Radio label="first" labelFor="first" id="first" value="first" name="radio" defaultChecked {...args} />
       </div>
       <div
         style={{
@@ -44,14 +36,7 @@ export const Default: StoryObj = {
           alignItems: 'center'
         }}
       >
-        <Radio
-          label="second"
-          labelFor="second"
-          id="second"
-          name="radio"
-          value="second"
-          {...args}
-        />
+        <Radio label="second" labelFor="second" id="second" name="radio" value="second" {...args} />
       </div>
       <div
         style={{
@@ -61,14 +46,7 @@ export const Default: StoryObj = {
           alignItems: 'center'
         }}
       >
-        <Radio
-          label="third"
-          labelFor="third"
-          id="third"
-          name="radio"
-          value="third"
-          {...args}
-        />
+        <Radio label="third" labelFor="third" id="third" name="radio" value="third" {...args} />
       </div>
     </>
   )

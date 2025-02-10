@@ -11,8 +11,7 @@ const gameDetailsClasses = tv({
   }
 })
 
-export type GameDetailsProps = VariantProps<typeof gameDetailsClasses> &
-  GameDataProps
+export type GameDetailsProps = VariantProps<typeof gameDetailsClasses> & GameDataProps
 
 const GameDetails = (props: GameDetailsProps) => {
   const { base, headingClass } = gameDetailsClasses()

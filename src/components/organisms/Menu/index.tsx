@@ -55,7 +55,7 @@ export const DefaultLinks = ({ className }: { className?: string }) => {
 
   return (
     <>
-      <StoreLink className={storeLinks({ className })} href={'#'}>
+      <StoreLink className={storeLinks({ className })} href={'/'}>
         Home
       </StoreLink>
       <StoreLink className={storeLinks({ className })} href={'#'}>
@@ -65,13 +65,7 @@ export const DefaultLinks = ({ className }: { className?: string }) => {
   )
 }
 
-const MenuIcons = ({
-  className,
-  isMobile
-}: {
-  className?: string
-  isMobile: boolean
-}) => (
+const MenuIcons = ({ className, isMobile }: { className?: string; isMobile: boolean }) => (
   <div className={className}>
     <SearchIcon aria-label="Search" size={iconSize} color={iconsColor} />
     <CartIcon aria-label="openCart" size={iconSize} color={iconsColor} />
@@ -83,13 +77,7 @@ const MenuIcons = ({
   </div>
 )
 
-const MenuLinks = ({
-  isLogged,
-  className
-}: {
-  isLogged?: boolean
-  className?: string
-}) => (
+const MenuLinks = ({ isLogged, className }: { isLogged?: boolean; className?: string }) => (
   <div className={className}>
     <DefaultLinks />
     {isLogged && <LoggedInLinks />}
@@ -102,20 +90,10 @@ const Menu = ({ isLogged, className, ...rest }: MenuProps) => {
 
   return (
     <menu className={menu({ className })} {...rest}>
-      {isMobile && (
-        <MenuDrawer
-          isLogged={isLogged}
-          iconSize={iconSize}
-          iconsColor={iconsColor}
-        />
-      )}
+      {isMobile && <MenuDrawer isLogged={isLogged} iconSize={iconSize} iconsColor={iconsColor} />}
       <div className={logoLinks()}>
         <StoreLink href={'/'} hoverEffect={false}>
-          <Logo
-            className={logo()}
-            variant={isMobile ? 'compact' : 'white'}
-            size={'small'}
-          />
+          <Logo className={logo()} variant={isMobile ? 'compact' : 'white'} size={'small'} />
         </StoreLink>
         {!isMobile && <MenuLinks className={links()} isLogged={isLogged} />}
       </div>

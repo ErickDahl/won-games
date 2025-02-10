@@ -2,7 +2,7 @@ import { HTMLAttributes, PropsWithChildren } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const headingClasses = tv({
-  base: 'ml-[4.8%] inline-block w-fit cursor-default text-3xl',
+  base: 'ml-[4.8%] inline-block w-fit cursor-default text-3xl lg:m-0',
   variants: {
     color: {
       white: 'text-white',
@@ -30,8 +30,7 @@ const headingClasses = tv({
   }
 })
 
-export type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
-  VariantProps<typeof headingClasses>
+export type HeadingProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof headingClasses>
 
 const Heading = ({
   children,

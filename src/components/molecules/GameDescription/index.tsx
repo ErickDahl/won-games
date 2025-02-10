@@ -10,9 +10,7 @@ const gameDescriptionClasses = tv({
   }
 })
 
-export type GameDescriptionProps = VariantProps<
-  typeof gameDescriptionClasses
-> & {
+export type GameDescriptionProps = VariantProps<typeof gameDescriptionClasses> & {
   title?: string
   content: string
 }
@@ -23,20 +21,12 @@ const GameDescription = ({ title, content }: GameDescriptionProps) => {
   return (
     <div className={base()}>
       {!!title && (
-        <Heading
-          className="m-0"
-          linePosition="left"
-          lineColor="secondary"
-          color="black"
-        >
+        <Heading className="m-0" linePosition="left" lineColor="secondary" color="black">
           {title}
         </Heading>
       )}
 
-      <div
-        className={contentClass()}
-        dangerouslySetInnerHTML={{ __html: sanitize(content) }}
-      />
+      <div className={contentClass()} dangerouslySetInnerHTML={{ __html: sanitize(content) }} />
     </div>
   )
 }

@@ -3,12 +3,7 @@ import Image, { StaticImageData } from 'next/image'
 import { FormattedNumber } from 'react-intl'
 import { tv, VariantProps } from 'tailwind-variants'
 
-import {
-  AddCartIcon,
-  InCartIcon,
-  WishListFullIcon,
-  WishListIcon
-} from '@/assets/icons'
+import { AddCartIcon, InCartIcon, WishListFullIcon, WishListIcon } from '@/assets/icons'
 import { Button } from '@/components/atoms/Button'
 import { Ribbon } from '@/components/atoms/Ribbon'
 import { useCurrency } from '@/hooks/useCurrency'
@@ -19,10 +14,8 @@ const gameCardClasses = tv({
     base: 'relative flex max-w-72 flex-col',
     content: 'rounded-b-md rounded-bl-md bg-white p-2',
     topContent: 'flex h-6 items-center justify-between gap-1',
-    gameClass:
-      'w-[calc(100%-1.5rem)] break-words text-base font-semibold capitalize text-black',
-    developerClass:
-      'block w-full text-start text-xs font-medium capitalize text-gray',
+    gameClass: 'w-[calc(100%-1.5rem)] break-words text-base font-semibold capitalize text-black',
+    developerClass: 'block w-full text-start text-xs font-medium capitalize text-gray',
     button: 'bg-transparent p-0 hover:bg-transparent',
     divPriceClass: 'mb-2 flex items-center justify-end',
     priceClass: 'text-sm font-semibold text-gray line-through',
@@ -66,11 +59,7 @@ const RenderBuyButton = ({ isInCart, isMobile }: RenderBuyButtonProps) => {
   return (
     <Button
       className={buyButton()}
-      style={
-        isMobile
-          ? { marginLeft: 'auto', width: '2.5rem' }
-          : { marginLeft: '0.3rem', width: '1.8rem' }
-      }
+      style={isMobile ? { marginLeft: 'auto', width: '2.5rem' } : { marginLeft: '0.3rem', width: '1.8rem' }}
       size="xsmall"
       variation={variation}
       icon={icon}
@@ -78,9 +67,7 @@ const RenderBuyButton = ({ isInCart, isMobile }: RenderBuyButtonProps) => {
   )
 }
 
-const RenderWishListButton = ({
-  isInWishlist
-}: Pick<GameCardProps, 'isInWishlist'>) => {
+const RenderWishListButton = ({ isInWishlist }: Pick<GameCardProps, 'isInWishlist'>) => {
   const { button } = gameCardClasses()
   const iconColor = 'rgb(var(--color-primary))'
 
@@ -128,20 +115,11 @@ const GameCard = ({
   return (
     <article className={base({ className })}>
       {!!price && !disableRibbon && (
-        <Ribbon
-          backGroundColor="tertiary"
-          className={ribbonClass()}
-          size="small"
-        >
+        <Ribbon backGroundColor="tertiary" className={ribbonClass()} size="small">
           {discount}% OFF
         </Ribbon>
       )}
-      <Image
-        src={image.src}
-        width={image.width}
-        height={image.height}
-        alt={title}
-      />
+      <Image src={image.src} width={image.width} height={image.height} alt={title} />
       <div className={content()}>
         <div className={topContent()}>
           <h3 className={gameClass()}>{title}</h3>
@@ -151,31 +129,15 @@ const GameCard = ({
         <div className={divPriceClass()}>
           {!!price && (
             <span className={priceClass()}>
-              {
-                <FormattedNumber
-                  value={price}
-                  style="currency"
-                  currency={currency}
-                />
-              }
+              {<FormattedNumber value={price} style="currency" currency={currency} />}
             </span>
           )}
           <span className={listPriceClass()}>
-            {
-              <FormattedNumber
-                value={listPrice}
-                style="currency"
-                currency={currency}
-              />
-            }
+            {<FormattedNumber value={listPrice} style="currency" currency={currency} />}
           </span>
-          {!isMobile && (
-            <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />
-          )}
+          {!isMobile && <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />}
         </div>
-        {isMobile && (
-          <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />
-        )}
+        {isMobile && <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />}
       </div>
     </article>
   )

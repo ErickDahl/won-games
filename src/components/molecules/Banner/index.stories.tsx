@@ -23,10 +23,5 @@ export const Default: StoryObj = {
 }
 
 export const WithRibbon: StoryObj = {
-  render: () => (
-    <Banner
-      {...bannerMock}
-      ribbon={<Ribbon backGroundColor="secondary">teste</Ribbon>}
-    />
-  )
+  render: () => <Banner {...bannerMock} ribbon={<Ribbon backGroundColor="secondary">teste</Ribbon>} />
 }

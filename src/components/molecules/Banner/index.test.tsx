@@ -35,9 +35,7 @@ describe('<Banner />', () => {
         buttonLink="/"
       />
     )
-    expect(
-      screen.getByRole('heading', { name: /Banner Title/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Banner Title/i })).toBeInTheDocument()
   })
 
   it('should render the subtitle', () => {
@@ -50,9 +48,7 @@ describe('<Banner />', () => {
         buttonLink="/"
       />
     )
-    expect(
-      screen.getByRole('heading', { name: /Banner Subtitle/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Banner Subtitle/i })).toBeInTheDocument()
   })
 
   it('should render the button with correct label and link', () => {

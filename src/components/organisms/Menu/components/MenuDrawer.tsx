@@ -1,11 +1,6 @@
 import { CloseIcon, MenuIcon } from '@/assets/icons'
 import { StoreLink } from '@/components/atoms/Link'
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerTrigger
-} from '@/components/molecules/Drawer'
+import { Drawer, DrawerClose, DrawerContent, DrawerTrigger } from '@/components/molecules/Drawer'
 import { DefaultLinks, LoggedInLinks } from '..'
 
 interface MenuDrawerProps {
@@ -21,13 +16,7 @@ const AuthButtons = () => (
       Log in now
     </StoreLink>
     <span>or</span>
-    <StoreLink
-      href={'/sign-up'}
-      className="text-base text-primary"
-      border
-      borderColor="primary"
-      hoverEffect={false}
-    >
+    <StoreLink href={'/sign-up'} className="text-base text-primary" border borderColor="primary" hoverEffect={false}>
       Sign up
     </StoreLink>
   </div>
@@ -57,11 +46,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({
       <DrawerContent className="justify-evenly">
         {renderLoggedMenu(isLogged)}
         <DrawerClose className="absolute right-0 top-3 mr-4">
-          <CloseIcon
-            color="rgb(var(--color-black))"
-            size={30}
-            aria-label="CloseDrawer"
-          />
+          <CloseIcon color="rgb(var(--color-black))" size={30} aria-label="CloseDrawer" />
         </DrawerClose>
       </DrawerContent>
     </Drawer>

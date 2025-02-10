@@ -12,11 +12,7 @@ type ContainerProps = VariantProps<typeof containerClasses> &
     className?: string
   }
 
-const Container = ({
-  children,
-  className,
-  ...rest
-}: PropsWithChildren<ContainerProps>) => {
+const Container = ({ children, className, ...rest }: PropsWithChildren<ContainerProps>) => {
   const { base } = containerClasses()
 
   return (

@@ -8,17 +8,13 @@ describe('<SignIn />', () => {
 
     expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument()
     expect(screen.getByPlaceholderText(/password/i)).toBeInTheDocument()
-    expect(
-      screen.getByRole('button', { name: /sign in now/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /sign in now/i })).toBeInTheDocument()
   })
 
   it('should render the forgot password link', () => {
     render(<SignIn />)
 
-    expect(
-      screen.getByRole('link', { name: /forgot your password\?/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /forgot your password\?/i })).toBeInTheDocument()
   })
 
   it('should render text to sign up if doesn’t have an account', () => {

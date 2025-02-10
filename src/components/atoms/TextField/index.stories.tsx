@@ -48,13 +48,7 @@ export const WithIconRight: StoryObj = {
 export const WithError: StoryObj = {
   render: (args) => (
     <div style={{ maxWidth: 300, padding: 15 }}>
-      <TextField
-        error
-        errorMessage="error on this input"
-        iconPosition="right"
-        {...args}
-        icon={<WishListIcon />}
-      />
+      <TextField error errorMessage="error on this input" iconPosition="right" {...args} icon={<WishListIcon />} />
     </div>
   )
 }

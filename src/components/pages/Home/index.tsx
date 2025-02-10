@@ -1,10 +1,7 @@
 import { tv, VariantProps } from 'tailwind-variants'
 
 import { Container } from '@/components/atoms/Container'
-import {
-  headingBlackMock,
-  headingWhiteMock
-} from '@/components/atoms/Heading/mock'
+import { headingBlackMock, headingWhiteMock } from '@/components/atoms/Heading/mock'
 import { BannerProps } from '@/components/molecules/Banner'
 import { BannerCarousel } from '@/components/molecules/BannerCarousel'
 import { GameCardProps } from '@/components/molecules/GameCard'
@@ -16,8 +13,7 @@ const homeClasses = tv({
   slots: {
     base: '',
     BannerCarouselClass: 'z-10 lg:top-14',
-    clipPathTop:
-      'bg-lightBg pb-20 pt-16 [clip-path:polygon(0_0,_100%_15%,_100%_100%,_0_85%)]'
+    clipPathTop: 'bg-lightBg pb-20 pt-16 [clip-path:polygon(0_0,_100%_15%,_100%_100%,_0_85%)]'
   }
 })
 
@@ -63,21 +59,11 @@ const Home = ({
         cards={mostPopularGames}
       />
 
-      <ShowCase
-        title="Upcoming"
-        heading={headingWhiteMock}
-        highlight={upcomingHighligth}
-        cards={upcomingGames}
-      />
+      <ShowCase title="Upcoming" heading={headingWhiteMock} highlight={upcomingHighligth} cards={upcomingGames} />
 
       <ShowCase highlight={upcomingHighligth} cards={upcomingMoreGames} />
 
-      <ShowCase
-        title="Free Games"
-        heading={headingWhiteMock}
-        highlight={freeHighligth}
-        cards={freeGames}
-      />
+      <ShowCase title="Free Games" heading={headingWhiteMock} highlight={freeHighligth} cards={freeGames} />
     </PageTemplate>
   )
 }

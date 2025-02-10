@@ -5,21 +5,12 @@ import { BreakLine } from '@/components/atoms/BreakLine'
 import { Container } from '@/components/atoms/Container'
 import { HeadingProps } from '@/components/atoms/Heading'
 import { GameCardProps } from '@/components/molecules/GameCard'
-import {
-  GameDescription,
-  GameDescriptionProps
-} from '@/components/molecules/GameDescription'
+import { GameDescription, GameDescriptionProps } from '@/components/molecules/GameDescription'
 import { GameInfo, GameInfoProps } from '@/components/molecules/GameInfo'
-import {
-  GameRequirements,
-  GameRequirementsProps
-} from '@/components/molecules/GameRequirements'
+import { GameRequirements, GameRequirementsProps } from '@/components/molecules/GameRequirements'
 import { HighlightProps } from '@/components/molecules/Highlight'
 import { Gallery, GalleryProps } from '@/components/organisms/Gallery'
-import {
-  GameDetails,
-  GameDetailsProps
-} from '@/components/organisms/GameDetails'
+import { GameDetails, GameDetailsProps } from '@/components/organisms/GameDetails'
 import { PageTemplate } from '@/components/templates/Page'
 import { ShowCase } from '@/components/templates/ShowCase'
 
@@ -60,10 +51,7 @@ const GamePage = ({
 
   return (
     <PageTemplate>
-      <div
-        className={coverClass()}
-        style={{ backgroundImage: `url(${gameConver.src})` }}
-      />
+      <div className={coverClass()} style={{ backgroundImage: `url(${gameConver.src})` }} />
 
       <Container className={container() + ' mt-80 lg:mt-96'}>
         <GameInfo {...gameInfo} />
@@ -89,19 +77,9 @@ const GamePage = ({
         <BreakLine />
       </Container>
 
-      <ShowCase
-        title="Upcoming"
-        heading={headingMock}
-        highlight={upcomingHighligth}
-        cards={upcomingMoreGames}
-      />
+      <ShowCase title="Upcoming" heading={headingMock} highlight={upcomingHighligth} cards={upcomingMoreGames} />
 
-      <ShowCase
-        className="mt-28"
-        title="You may like these games"
-        heading={headingMock}
-        cards={recommendedGames}
-      />
+      <ShowCase className="mt-28" title="You may like these games" heading={headingMock} cards={recommendedGames} />
     </PageTemplate>
   )
 }

@@ -1,12 +1,6 @@
 'use client'
 
-import {
-  HTMLAttributes,
-  ReactElement,
-  useEffect,
-  useRef,
-  useState
-} from 'react'
+import { HTMLAttributes, ReactElement, useEffect, useRef, useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
 
@@ -18,8 +12,7 @@ const bannerClasses = tv({
   slots: {
     base: 'relative flex w-full flex-col',
     image: 'rounded-md',
-    containerInformation:
-      'bottom-0 left-0 w-full bg-darkGray p-5 lg:absolute lg:rounded-b-md lg:bg-black/60',
+    containerInformation: 'bottom-0 left-0 w-full bg-darkGray p-5 lg:absolute lg:rounded-b-md lg:bg-black/60',
     containerTitles: 'mb-3',
     titleClassName: 'text-xl font-semibold text-white',
     subtitleClassName: 'text-sm font-normal text-white',
@@ -47,15 +40,8 @@ const Banner = ({
   className,
   ...rest
 }: BannerProps) => {
-  const {
-    base,
-    image,
-    containerInformation,
-    containerTitles,
-    titleClassName,
-    subtitleClassName,
-    linkClassName
-  } = bannerClasses()
+  const { base, image, containerInformation, containerTitles, titleClassName, subtitleClassName, linkClassName } =
+    bannerClasses()
 
   const imgRef = useRef<HTMLImageElement>(null)
   const [imgWidth, setImgWidth] = useState<number | undefined>(undefined)
@@ -67,11 +53,7 @@ const Banner = ({
   }, [])
 
   return (
-    <div
-      className={base({ className })}
-      style={{ maxWidth: imgWidth }}
-      {...rest}
-    >
+    <div className={base({ className })} style={{ maxWidth: imgWidth }} {...rest}>
       <Image className={image()} ref={imgRef} src={img} alt={'game banner'} />
       {!!ribbon && ribbon}
       <div className={containerInformation()}>
@@ -79,19 +61,12 @@ const Banner = ({
           <h2 className={titleClassName()}>{title}</h2>
           <h3
             dangerouslySetInnerHTML={{
-              __html: sanitize(
-                subtitle.replace('<strong>', '<strong class="text-primary">')
-              )
+              __html: sanitize(subtitle.replace('<strong>', '<strong class="text-primary">'))
             }}
             className={subtitleClassName()}
           />
         </div>
-        <StoreLink
-          className={linkClassName()}
-          button
-          hoverEffect={false}
-          href={buttonLink}
-        >
+        <StoreLink className={linkClassName()} button hoverEffect={false} href={buttonLink}>
           {buttonLabel}
         </StoreLink>
       </div>

@@ -17,18 +17,10 @@ describe('<GameDetails />', () => {
   it('should render the headings', () => {
     render(<Component {...gameDetailsMock} />)
 
-    expect(
-      screen.getByRole('heading', { name: /Developer/i })
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /Release date/i })
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /Platforms/i })
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /Publisher/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Developer/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Release date/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Platforms/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Publisher/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /Rating/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /Genre/i })).toBeInTheDocument()
   })

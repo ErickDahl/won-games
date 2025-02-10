@@ -18,18 +18,14 @@ describe('<Checkbox />', () => {
   })
 
   it('should render with black label', () => {
-    render(
-      <Checkbox label="checkbox label" labelFor="action" labelColor="black" />
-    )
+    render(<Checkbox label="checkbox label" labelFor="action" labelColor="black" />)
     expect(screen.getByText(/checkbox label/i)).toHaveClass('text-black')
   })
 
   it('should dispatch onCheck when the status change', async () => {
     const onCheck = jest.fn()
 
-    render(
-      <Checkbox label="checkbox label" labelFor="action" onCheck={onCheck} />
-    )
+    render(<Checkbox label="checkbox label" labelFor="action" onCheck={onCheck} />)
 
     expect(onCheck).not.toHaveBeenCalled()
 
@@ -44,14 +40,7 @@ describe('<Checkbox />', () => {
   it('should dispatch onCheck when the status change', async () => {
     const onCheck = jest.fn()
 
-    render(
-      <Checkbox
-        label="checkbox label"
-        labelFor="action"
-        onCheck={onCheck}
-        isChecked
-      />
-    )
+    render(<Checkbox label="checkbox label" labelFor="action" onCheck={onCheck} isChecked />)
 
     expect(onCheck).not.toHaveBeenCalled()
 

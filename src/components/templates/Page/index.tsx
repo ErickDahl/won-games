@@ -23,11 +23,7 @@ type PageTemplateProps = VariantProps<typeof pageTemplateClasses> &
     className?: string
   }
 
-const PageTemplate = ({
-  children,
-  className,
-  ...rest
-}: PropsWithChildren<PageTemplateProps>) => {
+const PageTemplate = ({ children, className, ...rest }: PropsWithChildren<PageTemplateProps>) => {
   const { base, header, menuClass, clipPathFooter } = pageTemplateClasses()
 
   const [isScrolled, setIsScrolled] = useState(false)
@@ -47,9 +43,7 @@ const PageTemplate = ({
   return (
     <IntlProvider locale={locale} defaultLocale="en">
       <section className={base({ className })} {...rest}>
-        <div
-          className={`${header()} ${isScrolled ? 'bg-mainBg/80 backdrop-blur-lg' : 'bg-mainBg/0'}`}
-        >
+        <div className={`${header()} ${isScrolled ? 'bg-mainBg/80 backdrop-blur-lg' : 'bg-mainBg/0'}`}>
           <Container className="my-0">
             <header>
               <Menu className={menuClass()} />

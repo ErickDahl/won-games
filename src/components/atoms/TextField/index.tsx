@@ -9,8 +9,7 @@ const textFieldClasses = tv({
     labelClass: 'cursor-pointer text-black',
     inputDiv:
       'flex w-full items-center justify-center gap-2 rounded-md border border-solid border-lightGray bg-lightGray px-3 transition-all focus-within:shadow-md',
-    inputClass:
-      'w-full border-none bg-transparent py-1 text-black outline-none',
+    inputClass: 'w-full border-none bg-transparent py-1 text-black outline-none',
     iconClass: 'flex max-w-4 text-gray',
     errorClass: 'text-sm text-red-500'
   },
@@ -71,12 +70,11 @@ const TextField = ({
   ...rest
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
-  const { base, labelClass, inputDiv, inputClass, iconClass, errorClass } =
-    textFieldClasses({
-      iconPosition,
-      disabled,
-      error
-    })
+  const { base, labelClass, inputDiv, inputClass, iconClass, errorClass } = textFieldClasses({
+    iconPosition,
+    disabled,
+    error
+  })
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.currentTarget.value

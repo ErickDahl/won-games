@@ -29,9 +29,7 @@ describe('<Button />', () => {
   })
 
   it('should render a button with an icon', () => {
-    render(
-      <Button icon={<MdAddShoppingCart data-testid="icon" />}>button</Button>
-    )
+    render(<Button icon={<MdAddShoppingCart data-testid="icon" />}>button</Button>)
     const element = screen.getByRole('button', { name: /button/i })
     const icon = screen.getByTestId('icon')
     expect(element).toBeInTheDocument()
