@@ -55,7 +55,7 @@ export const DefaultLinks = ({ className }: { className?: string }) => {
 
   return (
     <>
-      <StoreLink className={storeLinks({ className })} href={'#'}>
+      <StoreLink className={storeLinks({ className })} href={'/'}>
         Home
       </StoreLink>
       <StoreLink className={storeLinks({ className })} href={'#'}>
