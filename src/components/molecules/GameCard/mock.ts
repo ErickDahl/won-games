@@ -45,9 +45,4 @@ const gameCardMockNoRibbon: GameCardProps = {
   disableRibbon: true
 }
 
-export {
-  gameCardMock,
-  gameCardMockInCart,
-  gameCardMockInWishlist,
-  gameCardMockNoRibbon
-}
+export { gameCardMock, gameCardMockInCart, gameCardMockInWishlist, gameCardMockNoRibbon }

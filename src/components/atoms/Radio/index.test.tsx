@@ -25,15 +25,7 @@ describe('<Radio />', () => {
 
   it('should dispatch onCheck when label status changes', async () => {
     const onCheck = jest.fn()
-    render(
-      <Radio
-        label="Radio"
-        labelFor="Radio"
-        onCheck={onCheck}
-        value="anyValue"
-        name={''}
-      />
-    )
+    render(<Radio label="Radio" labelFor="Radio" onCheck={onCheck} value="anyValue" name={''} />)
     expect(onCheck).not.toHaveBeenCalled()
     userEvent.click(screen.getByLabelText('Radio'))
     await waitFor(() => {

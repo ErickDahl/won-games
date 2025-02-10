@@ -5,10 +5,7 @@ import {
   FaRegUserCircle as UserIcon,
   FaWindows as WindowsIcon
 } from 'react-icons/fa'
-import {
-  IoIosArrowBack as ArrowLeftIcon,
-  IoIosArrowForward as ArrowRightIcon
-} from 'react-icons/io'
+import { IoIosArrowBack as ArrowLeftIcon, IoIosArrowForward as ArrowRightIcon } from 'react-icons/io'
 import {
   MdAddShoppingCart as AddCartIcon,
   MdOutlineShoppingCart as CartIcon,
@@ -17,14 +14,8 @@ import {
   MdMenu as MenuIcon,
   MdOutlineSearch as SearchIcon
 } from 'react-icons/md'
-import {
-  PiHeartStraightFill as WishListFullIcon,
-  PiHeartStraight as WishListIcon
-} from 'react-icons/pi'
-import {
-  TbShoppingCartPlus as AddToCartIcon,
-  TbShoppingCartCheck as InCartIcon
-} from 'react-icons/tb'
+import { PiHeartStraightFill as WishListFullIcon, PiHeartStraight as WishListIcon } from 'react-icons/pi'
+import { TbShoppingCartPlus as AddToCartIcon, TbShoppingCartCheck as InCartIcon } from 'react-icons/tb'
 
 export {
   SearchIcon,

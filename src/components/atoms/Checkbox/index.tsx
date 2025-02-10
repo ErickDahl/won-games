@@ -59,14 +59,7 @@ const Checkbox = ({
 
   return (
     <div className={base({ className })}>
-      <input
-        className={inputClass()}
-        id={labelFor}
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        {...rest}
-      />
+      <input className={inputClass()} id={labelFor} type="checkbox" checked={checked} onChange={onChange} {...rest} />
       {!!label && (
         <label className={labelClass()} htmlFor={labelFor}>
           {label}

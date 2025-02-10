@@ -24,12 +24,8 @@ describe('<Highlight />', () => {
   it('should render the title and subtitle', () => {
     render(<Highlight {...props} />)
 
-    expect(
-      screen.getByRole('heading', { name: /Highlight Title/i })
-    ).toBeInTheDocument()
-    expect(
-      screen.getByRole('heading', { name: /Highlight Subtitle/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Highlight Title/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Highlight Subtitle/i })).toBeInTheDocument()
   })
 
   it('should render the button with correct label and link', () => {
@@ -52,8 +48,6 @@ describe('<Highlight />', () => {
     render(<Highlight {...props} />)
 
     const highlightElement = screen.getByTestId('highlight')
-    expect(highlightElement).toHaveStyle(
-      `background-image: url(${highlightImage.src})`
-    )
+    expect(highlightElement).toHaveStyle(`background-image: url(${highlightImage.src})`)
   })
 })

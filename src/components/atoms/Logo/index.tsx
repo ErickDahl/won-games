@@ -4,8 +4,7 @@ import LogoBlack from '@/assets/logoBlack.svg'
 import LogoCompact from '@/assets/logoCompact.svg'
 import LogoWhite from '@/assets/logoWhite.svg'
 
-interface LogoProps
-  extends Omit<ImageProps, 'src' | 'width' | 'height' | 'alt'> {
+interface LogoProps extends Omit<ImageProps, 'src' | 'width' | 'height' | 'alt'> {
   variant?: 'black' | 'compact' | 'white'
   size?: 'large' | 'small'
 }
@@ -26,15 +25,7 @@ const Logo = ({ variant = 'black', size = 'large', ...rest }: LogoProps) => {
   const width = sizeMap[size]
   const height = (logo.height / logo.width) * width
 
-  return (
-    <Image
-      src={logo.src}
-      alt="won games"
-      width={width}
-      height={height}
-      {...rest}
-    />
-  )
+  return <Image src={logo.src} alt="won games" width={width} height={height} {...rest} />
 }
 
 export { Logo }

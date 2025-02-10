@@ -22,12 +22,7 @@ const Empty = ({ title, description, hasLink }: EmptyProps) => {
 
   return (
     <main className={base()}>
-      <Image
-        src={'/empty.svg'}
-        width={300}
-        height={300}
-        alt={'a gamer in a couch'}
-      />
+      <Image src={'/empty.svg'} width={300} height={300} alt={'a gamer in a couch'} />
 
       <h2 className={titleClass()}>{title}</h2>
       <p className={descriptionClass()}>{description}</p>

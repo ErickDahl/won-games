@@ -28,21 +28,12 @@ type GameRequirements = {
   recommend: SystemRequirements
 }
 
-export type GameRequirementsProps = VariantProps<
-  typeof GameRequirementsClasses
-> & {
+export type GameRequirementsProps = VariantProps<typeof GameRequirementsClasses> & {
   gameRequirements: GameRequirements[]
 }
 
-const SystemRequirement = ({
-  title,
-  value
-}: {
-  title: string
-  value: string
-}) => {
-  const { titleRequirement, divRequirements, textRequirement } =
-    GameRequirementsClasses()
+const SystemRequirement = ({ title, value }: { title: string; value: string }) => {
+  const { titleRequirement, divRequirements, textRequirement } = GameRequirementsClasses()
 
   return (
     <div className={divRequirements()}>
@@ -52,13 +43,7 @@ const SystemRequirement = ({
   )
 }
 
-const RequirementSection = ({
-  title,
-  requirements
-}: {
-  title: string
-  requirements: SystemRequirements
-}) => {
+const RequirementSection = ({ title, requirements }: { title: string; requirements: SystemRequirements }) => {
   const { titlePlatform, divSection } = GameRequirementsClasses()
 
   return (
@@ -90,10 +75,7 @@ const GameRequirements = ({ gameRequirements }: GameRequirementsProps) => {
           <TabsContent key={game.platform} value={game.platform}>
             <div className={divContent()}>
               <RequirementSection title="Minimum" requirements={game.minimum} />
-              <RequirementSection
-                title="Recommended"
-                requirements={game.recommend}
-              />
+              <RequirementSection title="Recommended" requirements={game.recommend} />
             </div>
           </TabsContent>
         ))}

@@ -9,8 +9,7 @@ const drawerClasses = tv({
   slots: {
     root: 'relative',
     trigger: '',
-    overlay:
-      'fixed inset-0 z-40 h-screen bg-black transition-opacity duration-300',
+    overlay: 'fixed inset-0 z-40 h-screen bg-black transition-opacity duration-300',
     content:
       'fixed z-50 flex flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
     close: ''
@@ -143,22 +142,12 @@ type DrawerTriggerProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
 }
 
-export const DrawerTrigger = ({
-  children,
-  className,
-  ...rest
-}: DrawerTriggerProps) => {
+export const DrawerTrigger = ({ children, className, ...rest }: DrawerTriggerProps) => {
   const { openDrawer, isOpen } = useDrawerContext()
   const { trigger } = drawerClasses({ isOpen })
 
   return (
-    <div
-      onClick={openDrawer}
-      role="button"
-      aria-label="Open Drawer"
-      className={trigger({ className })}
-      {...rest}
-    >
+    <div onClick={openDrawer} role="button" aria-label="Open Drawer" className={trigger({ className })} {...rest}>
       {children}
     </div>
   )
@@ -168,11 +157,7 @@ type DrawerCloseProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode
 }
 
-export const DrawerClose = ({
-  children,
-  className,
-  ...rest
-}: DrawerCloseProps) => {
+export const DrawerClose = ({ children, className, ...rest }: DrawerCloseProps) => {
   const { closeDrawer, isOpen } = useDrawerContext()
   const { close } = drawerClasses({ isOpen })
 
@@ -194,11 +179,7 @@ type DrawerContentProps = HTMLAttributes<HTMLElement> & {
   children: ReactNode
 }
 
-export const DrawerContent = ({
-  children,
-  className,
-  ...rest
-}: DrawerContentProps) => {
+export const DrawerContent = ({ children, className, ...rest }: DrawerContentProps) => {
   const { isOpen, from, size } = useDrawerContext()
   const { content } = drawerClasses({ isOpen, from })
 
@@ -210,12 +191,7 @@ export const DrawerContent = ({
   }
 
   return (
-    <aside
-      aria-hidden={!isOpen}
-      className={content({ className })}
-      style={from ? dynamicStyle[from] : {}}
-      {...rest}
-    >
+    <aside aria-hidden={!isOpen} className={content({ className })} style={from ? dynamicStyle[from] : {}} {...rest}>
       {children}
     </aside>
   )

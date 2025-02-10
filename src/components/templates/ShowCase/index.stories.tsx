@@ -29,24 +29,13 @@ export default {
 } as Meta
 
 export const Default: StoryObj = {
-  render: (args) => (
-    <ShowCase
-      {...args}
-      heading={headingBlackMock}
-      highlight={highlightMock}
-      cards={cardsMock}
-    />
-  )
+  render: (args) => <ShowCase {...args} heading={headingBlackMock} highlight={highlightMock} cards={cardsMock} />
 }
 
 export const WithoutHighlight: StoryObj = {
-  render: (args) => (
-    <ShowCase {...args} heading={headingBlackMock} cards={cardsMock} />
-  )
+  render: (args) => <ShowCase {...args} heading={headingBlackMock} cards={cardsMock} />
 }
 
 export const WithoutGames: StoryObj = {
-  render: (args) => (
-    <ShowCase {...args} heading={headingBlackMock} highlight={highlightMock} />
-  )
+  render: (args) => <ShowCase {...args} heading={headingBlackMock} highlight={highlightMock} />
 }

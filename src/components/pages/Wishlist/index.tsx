@@ -15,8 +15,7 @@ import { ShowCase } from '@/components/templates/ShowCase'
 const wishlistClasses = tv({
   slots: {
     base: '',
-    gamesContainer:
-      'grid grid-cols-[repeat(auto-fill,_minmax(15rem,_1fr))] items-center gap-8',
+    gamesContainer: 'grid grid-cols-[repeat(auto-fill,_minmax(15rem,_1fr))] items-center gap-8',
     containerClass: 'mb-40 px-3'
   }
 })
@@ -29,13 +28,7 @@ export type WishlistProps = VariantProps<typeof wishlistClasses> & {
   emptyInfo: EmptyProps
 }
 
-const Wishlist = ({
-  games = [],
-  heading,
-  recommendedGames,
-  recommendedHighligth,
-  emptyInfo
-}: WishlistProps) => {
+const Wishlist = ({ games = [], heading, recommendedGames, recommendedHighligth, emptyInfo }: WishlistProps) => {
   const { base, gamesContainer, containerClass } = wishlistClasses()
 
   return (
@@ -49,9 +42,7 @@ const Wishlist = ({
       <Container className={containerClass()}>
         {games?.length >= 1 ? (
           <div className={gamesContainer()}>
-            {games?.map((game) => (
-              <GameCard className="mx-auto" key={uuidv4()} {...game} />
-            ))}
+            {games?.map((game) => <GameCard className="mx-auto" key={uuidv4()} {...game} />)}
           </div>
         ) : (
           <Empty {...emptyInfo} />

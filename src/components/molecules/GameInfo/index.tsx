@@ -27,36 +27,16 @@ export type GameInfoProps = VariantProps<typeof gameInfoClasses> & {
 }
 
 const GameInfo = ({ title, description, price }: GameInfoProps) => {
-  const {
-    base,
-    buttonsDiv,
-    headingClass,
-    descriptionClass,
-    ribbonClass,
-    titleContainer
-  } = gameInfoClasses()
+  const { base, buttonsDiv, headingClass, descriptionClass, ribbonClass, titleContainer } = gameInfoClasses()
 
   return (
     <div className={base()}>
       <div className={titleContainer()}>
-        <Heading
-          className={headingClass()}
-          color="black"
-          lineBottomColor="primary"
-          linePosition="bottom"
-        >
+        <Heading className={headingClass()} color="black" lineBottomColor="primary" linePosition="bottom">
           {title}
         </Heading>
-        <Ribbon
-          className={ribbonClass()}
-          backGroundColor="secondary"
-          decoration={false}
-        >
-          <FormattedNumber
-            value={price}
-            style="currency"
-            currency={useCurrency()}
-          />
+        <Ribbon className={ribbonClass()} backGroundColor="secondary" decoration={false}>
+          <FormattedNumber value={price} style="currency" currency={useCurrency()} />
         </Ribbon>
       </div>
 
@@ -64,11 +44,7 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => {
 
       <div className={buttonsDiv()}>
         <Button icon={<AddToCartIcon />}>Add to Cart</Button>
-        <Button
-          className="text-primary"
-          variation="noBackground"
-          icon={<WishListIcon />}
-        >
+        <Button className="text-primary" variation="noBackground" icon={<WishListIcon />}>
           Wishlist
         </Button>
       </div>

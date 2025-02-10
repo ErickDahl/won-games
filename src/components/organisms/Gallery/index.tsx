@@ -7,20 +7,13 @@ import { tv, VariantProps } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
 
 import { Modal, ModalTrigger } from '@/components/molecules/Modal'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselDots,
-  CarouselItem,
-  CarouselProps
-} from '@/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselProps } from '@/components/ui/carousel'
 import { SubGallery } from './components/SubGallery'
 
 const galleryClasses = tv({
   slots: {
     base: '',
-    carouselItemClass:
-      'flex w-full flex-[0_0_70%] items-center justify-center lg:flex-[0_0_33%]'
+    carouselItemClass: 'flex w-full flex-[0_0_70%] items-center justify-center lg:flex-[0_0_33%]'
   }
 })
 

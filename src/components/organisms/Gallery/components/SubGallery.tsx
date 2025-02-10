@@ -6,21 +6,13 @@ import { tv, VariantProps } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
 
 import { ModalContent } from '@/components/molecules/Modal'
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselDots,
-  CarouselItem
-} from '@/components/ui/carousel'
+import { Carousel, CarouselApi, CarouselContent, CarouselDots, CarouselItem } from '@/components/ui/carousel'
 
 const subGalleryClasses = tv({
   slots: {
     base: 'mx-auto w-full max-w-6xl px-4',
-    carouselItemClass:
-      'flex w-full flex-[0_0_100%] items-center justify-center',
-    modalContentClass:
-      'flex w-full max-w-6xl items-center justify-center bg-transparent shadow-none'
+    carouselItemClass: 'flex w-full flex-[0_0_100%] items-center justify-center',
+    modalContentClass: 'flex w-full max-w-6xl items-center justify-center bg-transparent shadow-none'
   }
 })
 
@@ -40,19 +32,10 @@ const SubGallery = ({ images, index, ...rest }: SubGalleryProps) => {
 
   return (
     <ModalContent className={modalContentClass()}>
-      <Carousel
-        setApi={setApi}
-        className={base()}
-        opts={{ align: 'start' }}
-        {...rest}
-      >
+      <Carousel setApi={setApi} className={base()} opts={{ align: 'start' }} {...rest}>
         <CarouselContent>
           {images?.map((image, index) => (
-            <CarouselItem
-              index={index}
-              className={carouselItemClass()}
-              key={uuidv4()}
-            >
+            <CarouselItem index={index} className={carouselItemClass()} key={uuidv4()}>
               <Image
                 className="w-full"
                 alt={'gallery image'}

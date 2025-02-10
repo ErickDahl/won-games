@@ -2,11 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { IntlProvider } from 'react-intl'
 
 import { GameCard, GameCardProps } from '.'
-import {
-  gameCardMock,
-  gameCardMockInCart,
-  gameCardMockInWishlist
-} from './mock'
+import { gameCardMock, gameCardMockInCart, gameCardMockInWishlist } from './mock'
 
 export default {
   title: 'Molecules/GameCard',

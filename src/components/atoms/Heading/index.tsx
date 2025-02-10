@@ -30,8 +30,7 @@ const headingClasses = tv({
   }
 })
 
-export type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
-  VariantProps<typeof headingClasses>
+export type HeadingProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof headingClasses>
 
 const Heading = ({
   children,

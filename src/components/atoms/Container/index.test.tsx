@@ -33,9 +33,6 @@ describe('<Container />', () => {
       </Container>
     )
     expect(container.firstChild).toHaveAttribute('id', 'test-id')
-    expect(container.firstChild).toHaveAttribute(
-      'data-testid',
-      'test-container'
-    )
+    expect(container.firstChild).toHaveAttribute('data-testid', 'test-container')
   })
 })

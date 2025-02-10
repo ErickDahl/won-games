@@ -16,8 +16,6 @@ describe('<Footer />', () => {
 
   it('should render the copyright text', () => {
     render(<Footer />)
-    expect(
-      screen.getByText(/Won Games 2020 © Todos os Direitos Reservados/i)
-    ).toBeInTheDocument()
+    expect(screen.getByText(/Won Games 2020 © Todos os Direitos Reservados/i)).toBeInTheDocument()
   })
 })

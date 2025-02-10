@@ -5,13 +5,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import { tv, VariantProps } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselDots,
-  CarouselItem,
-  CarouselProps
-} from '@/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselProps } from '@/components/ui/carousel'
 import { Banner, BannerProps } from '../Banner'
 
 const BannerSliderClasses = tv({
@@ -27,11 +21,7 @@ type BannerCarouselProps = VariantProps<typeof BannerSliderClasses> &
     className?: string
   }
 
-const BannerCarousel = ({
-  className,
-  banners,
-  ...rest
-}: BannerCarouselProps) => {
+const BannerCarousel = ({ className, banners, ...rest }: BannerCarouselProps) => {
   const { base } = BannerSliderClasses()
 
   return (
@@ -48,11 +38,7 @@ const BannerCarousel = ({
     >
       <CarouselContent>
         {banners?.map((banner, index) => (
-          <CarouselItem
-            className="flex items-center justify-center"
-            key={uuidv4()}
-            index={index}
-          >
+          <CarouselItem className="flex items-center justify-center" key={uuidv4()} index={index}>
             <Banner {...banner} />
           </CarouselItem>
         ))}
