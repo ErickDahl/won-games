@@ -10,6 +10,7 @@ import {
   MdAddShoppingCart as AddCartIcon,
   MdOutlineShoppingCart as CartIcon,
   MdOutlineClose as CloseIcon,
+  MdDownload as DownloadIcon,
   MdOutlineMailOutline as EmailIcon,
   MdMenu as MenuIcon,
   MdOutlineSearch as SearchIcon
@@ -34,5 +35,6 @@ export {
   UserIcon,
   WindowsIcon,
   LixusIcon,
-  AppleIcon
+  AppleIcon,
+  DownloadIcon
 }
