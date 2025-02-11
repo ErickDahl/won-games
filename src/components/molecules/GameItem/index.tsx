@@ -1,5 +1,6 @@
 'use client'
 
+import { HTMLAttributes } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { FormattedDate, FormattedNumber } from 'react-intl'
 import { tv, VariantProps } from 'tailwind-variants'
@@ -29,16 +30,17 @@ type GameItemPaymentProps = {
   purchaseDate: string
 }
 
-export type GameItemProps = VariantProps<typeof gameItemClasses> & {
-  image: string | StaticImageData
-  title: string
-  price: number
-  downloadLink?: string
-  paymentInfo?: GameItemPaymentProps
-  timeZone?: string
-}
+export type GameItemProps = VariantProps<typeof gameItemClasses> &
+  HTMLAttributes<HTMLDivElement> & {
+    image: string | StaticImageData
+    title: string
+    price: number
+    downloadLink?: string
+    paymentInfo?: GameItemPaymentProps
+    timeZone?: string
+  }
 
-const GameItem = ({ image, title, price, downloadLink, paymentInfo, timeZone }: GameItemProps) => {
+const GameItem = ({ image, title, price, downloadLink, paymentInfo, timeZone, className, ...rest }: GameItemProps) => {
   const {
     base,
     gameContentClass,
@@ -53,7 +55,7 @@ const GameItem = ({ image, title, price, downloadLink, paymentInfo, timeZone }: 
   const currency = useCurrency()
 
   return (
-    <div className={base()}>
+    <div className={base({ className })} {...rest}>
       <div className="sm:max-w-[30%]">
         <Image src={image} alt="game image" layout="responsive" />
       </div>

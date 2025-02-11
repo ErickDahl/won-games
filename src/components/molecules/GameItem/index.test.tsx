@@ -12,15 +12,15 @@ jest.mock('next/image', () => ({
   }
 }))
 
-describe('<GameItem />', () => {
-  const Component = (props: GameItemProps) => {
-    return (
-      <IntlProvider locale={'en'}>
-        <GameItem {...props} timeZone="UTC" />
-      </IntlProvider>
-    )
-  }
+const Component = (props: GameItemProps) => {
+  return (
+    <IntlProvider locale={'en'}>
+      <GameItem {...props} timeZone="UTC" />
+    </IntlProvider>
+  )
+}
 
+describe('<GameItem />', () => {
   it('should render the item', () => {
     render(<Component {...gameItemMock} />)
 

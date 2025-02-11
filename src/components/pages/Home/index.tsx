@@ -23,10 +23,10 @@ export type HomeTemplateProps = VariantProps<typeof homeClasses> & {
   mostPopularHighlight: HighlightProps
   mostPopularGames: GameCardProps[]
   upcomingGames: GameCardProps[]
-  upcomingHighligth: HighlightProps
+  upcomingHighlight: HighlightProps
   upcomingMoreGames: GameCardProps[]
   freeGames: GameCardProps[]
-  freeHighligth: HighlightProps
+  freeHighlight: HighlightProps
 }
 
 const Home = ({
@@ -36,9 +36,9 @@ const Home = ({
   mostPopularGames,
   upcomingGames,
   upcomingMoreGames,
-  upcomingHighligth,
+  upcomingHighlight,
   freeGames,
-  freeHighligth
+  freeHighlight
 }: HomeTemplateProps) => {
   const { base, BannerCarouselClass, clipPathTop } = homeClasses()
 
@@ -59,11 +59,11 @@ const Home = ({
         cards={mostPopularGames}
       />
 
-      <ShowCase title="Upcoming" heading={headingWhiteMock} highlight={upcomingHighligth} cards={upcomingGames} />
+      <ShowCase title="Upcoming" heading={headingWhiteMock} highlight={upcomingHighlight} cards={upcomingGames} />
 
-      <ShowCase highlight={upcomingHighligth} cards={upcomingMoreGames} />
+      <ShowCase highlight={upcomingHighlight} cards={upcomingMoreGames} />
 
-      <ShowCase title="Free Games" heading={headingWhiteMock} highlight={freeHighligth} cards={freeGames} />
+      <ShowCase title="Free Games" heading={headingWhiteMock} highlight={freeHighlight} cards={freeGames} />
     </PageTemplate>
   )
 }
