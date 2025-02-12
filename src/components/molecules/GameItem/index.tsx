@@ -24,7 +24,7 @@ const gameItemClasses = tv({
 })
 
 type GameItemPaymentProps = {
-  cardNumber: string
+  number: string
   flag: string
   img: string
   purchaseDate: string
@@ -84,7 +84,7 @@ const GameItem = ({ image, title, price, downloadLink, paymentInfo, timeZone, cl
         {!!paymentInfo && (
           <div className={paymentInfoContainer()}>
             <div className={paymentCardClass()}>
-              <span>{paymentInfo.cardNumber}</span>
+              <span>{paymentInfo.number}</span>
               <Image src={paymentInfo.img} width={30} height={20} alt={paymentInfo.flag} />
             </div>
             <p>

@@ -1,10 +1,11 @@
 import { CiLock as PasswordIcon } from 'react-icons/ci'
 import {
   FaApple as AppleIcon,
-  FaLinux as LixusIcon,
+  FaLinux as LinusIcon,
   FaRegUserCircle as UserIcon,
   FaWindows as WindowsIcon
 } from 'react-icons/fa'
+import { FaPlus as PlusIcon } from 'react-icons/fa6'
 import { IoIosArrowBack as ArrowLeftIcon, IoIosArrowForward as ArrowRightIcon } from 'react-icons/io'
 import {
   MdAddShoppingCart as AddCartIcon,
@@ -13,7 +14,8 @@ import {
   MdDownload as DownloadIcon,
   MdOutlineMailOutline as EmailIcon,
   MdMenu as MenuIcon,
-  MdOutlineSearch as SearchIcon
+  MdOutlineSearch as SearchIcon,
+  MdOutlineShoppingCart as ShoppingCart
 } from 'react-icons/md'
 import { PiHeartStraightFill as WishListFullIcon, PiHeartStraight as WishListIcon } from 'react-icons/pi'
 import { TbShoppingCartPlus as AddToCartIcon, TbShoppingCartCheck as InCartIcon } from 'react-icons/tb'
@@ -34,7 +36,9 @@ export {
   PasswordIcon,
   UserIcon,
   WindowsIcon,
-  LixusIcon,
+  LinusIcon,
   AppleIcon,
-  DownloadIcon
+  DownloadIcon,
+  ShoppingCart,
+  PlusIcon
 }

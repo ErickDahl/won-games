@@ -43,7 +43,7 @@ describe('<GameDetails />', () => {
     expect(screen.getByText(/2k/i)).toBeInTheDocument()
   })
 
-  it('should render the formated date', () => {
+  it('should render the formatted date', () => {
     render(<Component {...gameDetailsMock} />)
     expect(screen.getByText(/Nov 15, 2019/i)).toBeInTheDocument()
   })

@@ -8,7 +8,7 @@ const gameItemMock: GameItemProps = {
   downloadLink: '/',
   paymentInfo: {
     flag: 'mastercard',
-    cardNumber: '**** **** **** 1234',
+    number: '**** **** **** 1234',
     purchaseDate: '2019-11-15T00:00:00Z',
     img: '/mastercard.png'
   }

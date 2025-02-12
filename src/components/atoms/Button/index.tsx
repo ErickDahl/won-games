@@ -7,7 +7,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 const buttonClasses = tv({
   slots: {
     button: 'inline-flex cursor-pointer items-center justify-center gap-2 rounded-radius p-2 text-white',
-    div: 'flex items-center justify-center gap-2'
+    buttonContainer: 'flex w-full items-center justify-center gap-1'
   },
   variants: {
     size: {
@@ -37,7 +37,7 @@ const buttonClasses = tv({
     },
     disabled: {
       true: {
-        button: 'cursor-default bg-primaryDark hover:bg-primaryDark'
+        button: 'cursor-default saturate-[0.7]'
       }
     },
     fullWidth: {
@@ -52,7 +52,7 @@ const buttonClasses = tv({
     },
     clickAnimation: {
       true: {
-        div: 'transition-transform duration-150 ease-in-out'
+        buttonContainer: 'transition-transform duration-150 ease-in-out'
       }
     }
   },
@@ -61,7 +61,7 @@ const buttonClasses = tv({
       clickAnimation: true,
       click: true,
       className: {
-        div: 'scale-[.97]'
+        buttonContainer: 'scale-[.97]'
       }
     },
     {
@@ -128,7 +128,7 @@ const Button: FC<ButtonProps> = ({
 }: ButtonProps) => {
   const [isClicked, setIsClicked] = useState(false)
   const isDisabled = disabled
-  const { button, div } = buttonClasses({
+  const { button, buttonContainer } = buttonClasses({
     size,
     variation,
     fullWidth,
@@ -161,7 +161,7 @@ const Button: FC<ButtonProps> = ({
       onTouchEnd={handleTouchEvents(false)}
       {...rest}
     >
-      <div className={div({ className })}>
+      <div className={buttonContainer()}>
         {loading ? (
           <LoadingState />
         ) : (

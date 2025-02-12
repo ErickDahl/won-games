@@ -5,7 +5,7 @@ import { FormattedDate } from 'react-intl'
 import { tv } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
 
-import { AppleIcon, LixusIcon, WindowsIcon } from '@/assets/icons'
+import { AppleIcon, LinusIcon, WindowsIcon } from '@/assets/icons'
 
 const gameDetailsClasses = tv({
   slots: {
@@ -27,7 +27,7 @@ export type GameDataProps = {
 
 const platformIcons: Record<'Windows' | 'Linux' | 'Mac', ReactNode> = {
   Windows: <WindowsIcon aria-label="windows" title="windows" />,
-  Linux: <LixusIcon aria-label="linux" title="linux" />,
+  Linux: <LinusIcon aria-label="linux" title="linux" />,
   Mac: <AppleIcon aria-label="mac" title="mac" />
 }
 
