@@ -32,7 +32,7 @@ type PaymentCard = {
 export type PaymentOptionsProps = VariantProps<typeof paymentOptionsClasses> &
   HTMLAttributes<HTMLDivElement> & {
     cards?: PaymentCard[]
-    handlePayment: VoidFunction
+    handlePayment?: VoidFunction
   }
 
 const PaymentOptions = ({ cards, handlePayment, className }: PaymentOptionsProps) => {

@@ -43,8 +43,8 @@ describe('<GameItem />', () => {
 
     expect(screen.getByRole('img', { name: paymentInfo?.flag })).toHaveAttribute('src', paymentInfo?.img)
 
-    if (paymentInfo?.cardNumber) {
-      expect(screen.getByText(paymentInfo.cardNumber)).toBeInTheDocument()
+    if (paymentInfo?.number) {
+      expect(screen.getByText(paymentInfo.number)).toBeInTheDocument()
     }
 
     if (paymentInfo?.purchaseDate) {
