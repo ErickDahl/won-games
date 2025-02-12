@@ -9,10 +9,10 @@ const homeMockData: HomeTemplateProps = {
   mostPopularHighlight: highlightMock,
   mostPopularGames: cardsMock,
   upcomingGames: cardsMock,
-  upcomingHighligth: highlightMock,
+  upcomingHighlight: highlightMock,
   upcomingMoreGames: cardsMock,
   freeGames: cardsMock,
-  freeHighligth: highlightMock
+  freeHighlight: highlightMock
 }
 
 export { homeMockData }

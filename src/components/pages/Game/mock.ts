@@ -10,14 +10,14 @@ import { gameDetailsMock } from '@/components/organisms/GameDetails/mock'
 import { GamePageProps } from '.'
 
 const gamePageMock: GamePageProps = {
-  gameConver: gamePageBackground,
+  gameCover: gamePageBackground,
   gameInfo: gameInfoMock,
   galleryInfo: galleryMock,
   gameDescription: gameDescriptionMock,
   gameDetails: gameDetailsMock,
   gameRequirements: gameRequirementsMock,
   headingMock: headingWhiteMock,
-  upcomingHighligth: highlightMock,
+  upcomingHighlight: highlightMock,
   upcomingMoreGames: cardsMock,
   recommendedGames: cardsMock
 }

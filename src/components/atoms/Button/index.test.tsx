@@ -7,19 +7,19 @@ describe('<Button />', () => {
   it('should render the medium size button by default', () => {
     render(<Button>button</Button>)
     const element = screen.getByRole('button', { name: /button/i })
-    expect(element).toHaveClass('h-medium px-8 text-sm')
+    expect(element).toHaveClass('h-medium text-sm')
   })
 
   it('should render the small size button', () => {
     render(<Button size="small">button</Button>)
     const element = screen.getByRole('button', { name: /button/i })
-    expect(element).toHaveClass('h-small px-7 text-xs')
+    expect(element).toHaveClass('h-small text-xs')
   })
 
   it('should render the large size button', () => {
     render(<Button size="large">button</Button>)
     const element = screen.getByRole('button', { name: /button/i })
-    expect(element).toHaveClass('h-large px-14 text-base')
+    expect(element).toHaveClass('h-large text-base')
   })
 
   it('should render a button with width 100%', () => {

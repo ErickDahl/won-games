@@ -7,7 +7,7 @@ const wishlistMock: WishlistProps = {
   games: cardsMock,
   heading: headingWhiteMock,
   recommendedGames: cardsMock,
-  recommendedHighligth: highlightMock,
+  recommendedHighlight: highlightMock,
   emptyInfo: {
     title: 'Your wishlist is empty',
     description: 'Games added to your wishlist will appear here',
