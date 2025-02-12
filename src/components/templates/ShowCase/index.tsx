@@ -11,7 +11,7 @@ const showCaseClasses = tv({
   }
 })
 
-type ShowCaseProps = VariantProps<typeof showCaseClasses> & {
+export type ShowCaseProps = VariantProps<typeof showCaseClasses> & {
   title?: string
   heading?: HeadingProps
   highlight?: HighlightProps

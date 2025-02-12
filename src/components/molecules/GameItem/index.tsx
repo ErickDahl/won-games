@@ -57,7 +57,7 @@ const GameItem = ({ image, title, price, downloadLink, paymentInfo, timeZone, cl
   return (
     <div className={base({ className })} {...rest}>
       <div className="sm:max-w-[30%]">
-        <Image src={image} alt="game image" layout="responsive" />
+        <Image src={image} alt="game image" style={{ width: '100%', height: 'auto' }} />
       </div>
 
       <div className={contentContainerClass()}>

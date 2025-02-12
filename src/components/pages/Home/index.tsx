@@ -6,8 +6,6 @@ import { BannerProps } from '@/components/molecules/Banner'
 import { BannerCarousel } from '@/components/molecules/BannerCarousel'
 import { GameCardProps } from '@/components/molecules/GameCard'
 import { HighlightProps } from '@/components/molecules/Highlight'
-import { PaymentOptions } from '@/components/molecules/PaymentOptions'
-import { paymentOptionMock } from '@/components/molecules/PaymentOptions/mock'
 import { PageTemplate } from '@/components/templates/Page'
 import { ShowCase } from '@/components/templates/ShowCase'
 
@@ -53,8 +51,6 @@ const Home = ({
       <div className={clipPathTop()}>
         <ShowCase title="New" heading={headingBlackMock} cards={newGames} />
       </div>
-
-      <PaymentOptions {...paymentOptionMock} />
 
       <ShowCase
         title="Most Popular"

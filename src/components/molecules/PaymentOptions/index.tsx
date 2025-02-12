@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { HTMLAttributes, useState } from 'react'
 import Image from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
 
@@ -29,12 +29,13 @@ type PaymentCard = {
   img: string
 }
 
-export type PaymentOptionsProps = VariantProps<typeof paymentOptionsClasses> & {
-  cards?: PaymentCard[]
-  handlePayment: VoidFunction
-}
+export type PaymentOptionsProps = VariantProps<typeof paymentOptionsClasses> &
+  HTMLAttributes<HTMLDivElement> & {
+    cards?: PaymentCard[]
+    handlePayment: VoidFunction
+  }
 
-const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
+const PaymentOptions = ({ cards, handlePayment, className }: PaymentOptionsProps) => {
   const [checked, setChecked] = useState(false)
   const {
     base,
@@ -48,7 +49,7 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
   } = paymentOptionsClasses()
 
   return (
-    <aside className={base()}>
+    <aside className={base({ className })}>
       <div className={contentWrapper()}>
         <Heading className="m-0 text-lg font-semibold text-black" linePosition="bottom" lineBottomColor="primary">
           Payment

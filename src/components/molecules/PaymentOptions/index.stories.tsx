@@ -4,7 +4,7 @@ import { PaymentOptions } from '.'
 import { paymentOptionMock } from './mock'
 
 export default {
-  title: 'PaymentOptions',
+  title: 'Molecules/PaymentOptions',
   component: PaymentOptions,
   args: paymentOptionMock,
   argTypes: {

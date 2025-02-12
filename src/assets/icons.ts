@@ -6,7 +6,11 @@ import {
   FaWindows as WindowsIcon
 } from 'react-icons/fa'
 import { FaPlus as PlusIcon } from 'react-icons/fa6'
-import { IoIosArrowBack as ArrowLeftIcon, IoIosArrowForward as ArrowRightIcon } from 'react-icons/io'
+import {
+  IoIosArrowBack as ArrowLeftIcon,
+  IoIosArrowForward as ArrowRightIcon,
+  IoIosInformationCircleOutline as InformationIcon
+} from 'react-icons/io'
 import {
   MdAddShoppingCart as AddCartIcon,
   MdOutlineShoppingCart as CartIcon,
@@ -40,5 +44,6 @@ export {
   AppleIcon,
   DownloadIcon,
   ShoppingCart,
-  PlusIcon
+  PlusIcon,
+  InformationIcon
 }

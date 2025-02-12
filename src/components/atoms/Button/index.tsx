@@ -15,13 +15,13 @@ const buttonClasses = tv({
         button: 'h-5'
       },
       small: {
-        button: 'h-small px-7 text-xs'
+        button: 'h-small text-xs'
       },
       medium: {
-        button: 'h-medium px-8 text-sm'
+        button: 'h-medium text-sm'
       },
       large: {
-        button: 'h-large px-14 text-base'
+        button: 'h-large text-base'
       }
     },
     variation: {
