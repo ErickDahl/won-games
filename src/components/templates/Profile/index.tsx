@@ -28,7 +28,7 @@ const ProfileTemplate = ({ children, className }: PropsWithChildren<ProfileTempl
 
   return (
     <Container className={containerClass({ className })} paddingMobile>
-      <Heading linePosition="left" lineColor="secondary">
+      <Heading className="m-0" linePosition="left" lineColor="secondary">
         My Profile
       </Heading>
 
