@@ -1,9 +1,12 @@
+'use client'
+
 import { PropsWithChildren } from 'react'
+import { usePathname } from 'next/navigation'
 import { tv, VariantProps } from 'tailwind-variants'
 
 import { Container } from '@/components/atoms/Container'
 import { Heading } from '@/components/atoms/Heading'
-import { ProfileMenu } from '@/components/molecules/ProfileMenu'
+import { ActiveLinkProps, ProfileMenu } from '@/components/molecules/ProfileMenu'
 import { profileMenuMock } from '@/components/molecules/ProfileMenu/mock'
 
 const profileClasses = tv({
@@ -21,6 +24,7 @@ export type ProfileTemplateProps = VariantProps<typeof profileClasses> & {
 
 const ProfileTemplate = ({ children, className }: PropsWithChildren<ProfileTemplateProps>) => {
   const { containerClass, containerContentClass, contentClass, profileClass } = profileClasses()
+  const pathname = usePathname()
 
   return (
     <Container className={containerClass({ className })} paddingMobile>
@@ -29,7 +33,7 @@ const ProfileTemplate = ({ children, className }: PropsWithChildren<ProfileTempl
       </Heading>
 
       <div className={containerContentClass()}>
-        <ProfileMenu className={profileClass()} {...profileMenuMock} />
+        <ProfileMenu className={profileClass()} {...profileMenuMock} activeLink={pathname as ActiveLinkProps} />
         <div className={contentClass()}>{children}</div>
       </div>
     </Container>

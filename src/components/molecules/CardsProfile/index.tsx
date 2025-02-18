@@ -25,11 +25,15 @@ const CardsProfile = ({ cards }: CardsProfileProps) => {
         My cards
       </Heading>
 
-      <div className={cardsClass()}>
+      <ul className={cardsClass()}>
         {cards?.map((card) => {
-          return <CreditCard className={cardClass()} {...card} key={card.number} />
+          return (
+            <li className={cardClass()} key={card.number}>
+              <CreditCard {...card} />
+            </li>
+          )
         })}
-      </div>
+      </ul>
     </div>
   )
 }

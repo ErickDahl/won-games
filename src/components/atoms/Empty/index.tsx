@@ -8,6 +8,13 @@ const emptyClasses = tv({
     base: 'flex flex-col items-center text-center',
     titleClass: 'text-3xl text-primary',
     descriptionClass: 'mb-6 font-light text-white'
+  },
+  variants: {
+    textBlack: {
+      true: {
+        descriptionClass: 'text-black'
+      }
+    }
   }
 })
 
@@ -17,8 +24,8 @@ export type EmptyProps = VariantProps<typeof emptyClasses> & {
   hasLink?: boolean
 }
 
-const Empty = ({ title, description, hasLink }: EmptyProps) => {
-  const { base, titleClass, descriptionClass } = emptyClasses()
+const Empty = ({ title, description, hasLink, textBlack }: EmptyProps) => {
+  const { base, titleClass, descriptionClass } = emptyClasses({ textBlack })
 
   return (
     <main className={base()}>

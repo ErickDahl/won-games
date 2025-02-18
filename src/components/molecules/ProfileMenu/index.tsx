@@ -26,9 +26,11 @@ type MenuProps = {
   href: string
 }
 
+export type ActiveLinkProps = '/profile/me' | '/profile/cards' | '/profile/orders'
+
 export type ProfileMenuProps = VariantProps<typeof profileMenuClasses> & {
   links: MenuProps[]
-  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders'
+  activeLink?: ActiveLinkProps
   className?: string
 }
 
