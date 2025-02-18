@@ -23,8 +23,8 @@ const SignIn = () => {
   return (
     <AuthTemplate className={base()} pageType="signin">
       <form className={content()}>
-        <TextField className={input()} labelFor="Email" placeholder="Email" icon={<EmailIcon />} />
-        <TextField className={input()} labelFor="Password" placeholder="Password" icon={<PasswordIcon />} />
+        <TextField className={input()} name="Email" placeholder="Email" icon={<EmailIcon />} />
+        <TextField className={input()} name="Password" placeholder="Password" icon={<PasswordIcon />} />
         <StoreLink className={forgotPassword()} href={'#'} hoverEffect={false}>
           Forgot your password?
         </StoreLink>

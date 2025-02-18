@@ -21,15 +21,10 @@ const SignUp = () => {
   return (
     <AuthTemplate className={base()} pageType="signup">
       <form className={content()}>
-        <TextField className={input()} labelFor="Name" placeholder="Name" icon={<UserIcon />} />
-        <TextField className={input()} labelFor="Email" placeholder="Email" icon={<EmailIcon />} />
-        <TextField className={input()} labelFor="Password" placeholder="Password" icon={<PasswordIcon />} />
-        <TextField
-          className={input()}
-          labelFor="Confirm Password"
-          placeholder="Confirm Password"
-          icon={<PasswordIcon />}
-        />
+        <TextField className={input()} name="Name" placeholder="Name" icon={<UserIcon />} />
+        <TextField className={input()} name="Email" placeholder="Email" icon={<EmailIcon />} />
+        <TextField className={input()} name="Password" placeholder="Password" icon={<PasswordIcon />} />
+        <TextField className={input()} name="ConfirmPassword" placeholder="Confirm Password" icon={<PasswordIcon />} />
         <Button fullWidth>Sign up now</Button>
       </form>
     </AuthTemplate>

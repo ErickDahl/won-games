@@ -6,7 +6,7 @@ import { TextField } from '.'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    render(<TextField label="Label" labelFor="Field" id="Field" />)
+    render(<TextField label="Label" name="TextField" />)
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
 
@@ -22,7 +22,7 @@ describe('<TextField />', () => {
 
   it('Changes its value when typing', async () => {
     const onInput = jest.fn()
-    render(<TextField onInput={onInput} label="TextField" labelFor="TextField" id="TextField" />)
+    render(<TextField onInput={onInput} label="TextField" name="TextField" />)
     const input = screen.getByRole('textbox')
     const text = 'This is my new text'
     userEvent.type(input, text)
@@ -34,7 +34,7 @@ describe('<TextField />', () => {
   })
 
   it('Is accessible by tab', async () => {
-    render(<TextField label="TextField" labelFor="TextField" id="TextField" />)
+    render(<TextField label="TextField" name="TextField" />)
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
     await userEvent.tab()
@@ -53,7 +53,7 @@ describe('<TextField />', () => {
 
   it('Does not changes its value when disabled', async () => {
     const onInput = jest.fn()
-    render(<TextField onInput={onInput} label="TextField" labelFor="TextField" id="TextField" disabled />)
+    render(<TextField onInput={onInput} label="TextField" name="TextField" disabled />)
     const input = screen.getByRole('textbox')
     expect(input).toBeDisabled()
     const text = 'This is my new text'
@@ -65,7 +65,7 @@ describe('<TextField />', () => {
   })
 
   it('Is not accessible by tab when disabled', async () => {
-    render(<TextField label="TextField" labelFor="TextField" id="TextField" disabled />)
+    render(<TextField label="TextField" name="TextField" disabled />)
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
     await userEvent.tab()
@@ -77,7 +77,7 @@ describe('<TextField />', () => {
       <TextField
         icon={<WishListIcon data-testid="icon" />}
         label="TextField"
-        labelFor="TextField"
+        name="TextField"
         error
         errorMessage="Error message"
       />

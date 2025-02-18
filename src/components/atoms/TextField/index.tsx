@@ -47,18 +47,17 @@ type TextFieldProps = VariantProps<typeof textFieldClasses> &
   HTMLAttributes<HTMLInputElement> & {
     onInput?: (value: string) => void
     label?: string
-    labelFor?: string
     initialValue?: string
     placeholder?: string
     icon?: ReactNode
     errorMessage?: string
     className?: string
+    name?: string
   }
 
 const TextField = ({
   onInput,
   label,
-  labelFor,
   initialValue,
   placeholder,
   icon,
@@ -67,6 +66,7 @@ const TextField = ({
   error,
   errorMessage,
   className,
+  name,
   ...rest
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -88,7 +88,7 @@ const TextField = ({
   return (
     <section className={base({ className })}>
       {!!label && (
-        <label className={labelClass()} htmlFor={labelFor}>
+        <label className={labelClass()} htmlFor={name}>
           {label}
         </label>
       )}
@@ -101,6 +101,8 @@ const TextField = ({
           disabled={disabled}
           onChange={onChange}
           value={value}
+          name={name}
+          {...(label && { id: name })}
           {...rest}
         />
       </div>
