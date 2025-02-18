@@ -1,0 +1,55 @@
+import { ReactNode } from 'react'
+import { tv, VariantProps } from 'tailwind-variants'
+import { v4 as uuidv4 } from 'uuid'
+
+import { StoreLink } from '@/components/atoms/Link'
+
+const profileMenuClasses = tv({
+  slots: {
+    base: 'flex items-center justify-center md:block',
+    linkClass:
+      'flex flex-1 items-center justify-center gap-3 p-4 text-lg font-normal transition-all duration-100 last:border-none hover:bg-primary hover:text-white md:justify-start md:border-b md:border-solid md:border-lightGray',
+    spanClass: 'hidden md:block'
+  },
+  variants: {
+    isActive: {
+      true: {
+        linkClass: 'bg-primary text-white'
+      }
+    }
+  }
+})
+
+type MenuProps = {
+  icon: ReactNode
+  title: string
+  href: string
+}
+
+export type ProfileMenuProps = VariantProps<typeof profileMenuClasses> & {
+  links: MenuProps[]
+  activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders'
+}
+
+const ProfileMenu = ({ links, activeLink }: ProfileMenuProps) => {
+  const { base, linkClass, spanClass } = profileMenuClasses()
+
+  return (
+    <nav className={base()}>
+      {links?.map((link) => (
+        <StoreLink
+          className={linkClass({ isActive: activeLink === link.href })}
+          title={link.title}
+          key={uuidv4()}
+          href={link.href}
+          hoverEffect={false}
+        >
+          {link.icon}
+          <span className={spanClass()}>{link.title}</span>
+        </StoreLink>
+      ))}
+    </nav>
+  )
+}
+
+export { ProfileMenu }

@@ -1,7 +1,7 @@
 import { tv, VariantProps } from 'tailwind-variants'
 
 import { Heading } from '@/components/atoms/Heading'
-import { sanitize } from '@/utils/sanitize'
+import { sanitize } from '@/lib/sanitize'
 
 const gameDescriptionClasses = tv({
   slots: {

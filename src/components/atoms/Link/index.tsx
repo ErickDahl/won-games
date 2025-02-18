@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { CSSProperties, PropsWithChildren } from 'react'
 import Link, { LinkProps as NextLinkProps } from 'next/link'
 import { tv, VariantProps } from 'tailwind-variants'
 
@@ -34,8 +34,9 @@ const LinkClasses = tv({
 
 type StoreLinkProps = NextLinkProps &
   VariantProps<typeof LinkClasses> & {
-    children: ReactNode
     className?: string
+    style?: CSSProperties
+    title?: string
   }
 
 const StoreLink = ({
@@ -46,9 +47,13 @@ const StoreLink = ({
   hoverEffect,
   button,
   hoverEffectColor,
+  style,
+  title,
   ...rest
-}: StoreLinkProps) => (
+}: PropsWithChildren<StoreLinkProps>) => (
   <Link
+    title={title}
+    style={style}
     className={LinkClasses({
       hoverEffect,
       hoverEffectColor,

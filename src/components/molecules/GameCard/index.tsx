@@ -40,9 +40,10 @@ export type GameCardProps = VariantProps<typeof gameCardClasses> &
 
 type RenderBuyButtonProps = Pick<GameCardProps, 'isInCart'> & {
   isMobile: boolean
+  className?: string
 }
 
-const RenderBuyButton = ({ isInCart, isMobile }: RenderBuyButtonProps) => {
+const RenderBuyButton = ({ isInCart, isMobile, className }: RenderBuyButtonProps) => {
   const { buyButton } = gameCardClasses()
   const variation = isInCart ? 'secondary' : 'primary'
   const iconsProps = {
@@ -58,7 +59,7 @@ const RenderBuyButton = ({ isInCart, isMobile }: RenderBuyButtonProps) => {
 
   return (
     <Button
-      className={buyButton()}
+      className={buyButton({ className })}
       style={isMobile ? { marginLeft: 'auto', width: '2.5rem' } : { marginLeft: '0.3rem', width: '1.8rem' }}
       size="xsmall"
       variation={variation}
@@ -135,9 +136,9 @@ const GameCard = ({
           <span className={listPriceClass()}>
             {<FormattedNumber value={listPrice} style="currency" currency={currency} />}
           </span>
-          {!isMobile && <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />}
+          {<RenderBuyButton className="hidden lg:block" isMobile={isMobile} isInCart={isInCart} />}
         </div>
-        {isMobile && <RenderBuyButton isMobile={isMobile} isInCart={isInCart} />}
+        {<RenderBuyButton className="block lg:hidden" isMobile={isMobile} isInCart={isInCart} />}
       </div>
     </article>
   )
