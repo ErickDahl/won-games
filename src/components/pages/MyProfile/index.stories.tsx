@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { PageTemplate } from '.'
+import { MyProfile } from '.'
 
 export default {
-  title: 'Templates/PageTemplate',
-  component: PageTemplate,
+  title: 'Pages/MyProfile',
+  component: MyProfile,
   parameters: {
     backgrounds: {
       default: 'dark'

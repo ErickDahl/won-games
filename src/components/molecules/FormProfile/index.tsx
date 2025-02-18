@@ -13,13 +13,15 @@ const formProfileClasses = tv({
   }
 })
 
-type FormProfileProps = VariantProps<typeof formProfileClasses>
+type FormProfileProps = VariantProps<typeof formProfileClasses> & {
+  className?: string
+}
 
-const FormProfile = ({}: FormProfileProps) => {
+const FormProfile = ({ className }: FormProfileProps) => {
   const { base, formClass, buttonClass, headingClass } = formProfileClasses()
 
   return (
-    <div className={base()}>
+    <div className={base({ className })}>
       <Heading className={headingClass()} color="black" linePosition="bottom" lineBottomColor="primary">
         My profile
       </Heading>

@@ -6,6 +6,7 @@ import { FormattedDate, FormattedNumber } from 'react-intl'
 import { tv, VariantProps } from 'tailwind-variants'
 
 import { DownloadIcon } from '@/assets/icons'
+import { CreditCard, CreditCardProps } from '@/components/atoms/CreditCard'
 import { StoreLink } from '@/components/atoms/Link'
 import { useCurrency } from '@/hooks/useCurrency'
 
@@ -18,17 +19,9 @@ const gameItemClasses = tv({
     contentContainerClass:
       'flex w-full flex-col items-center justify-center gap-4 sm:w-[70%] sm:flex-row sm:justify-between',
     priceClass: 'w-fit rounded-md bg-secondary px-3 py-1 text-sm font-semibold text-white',
-    paymentInfoContainer: 'flex h-full w-full flex-col items-start justify-between gap-3 text-sm sm:items-end sm:gap-0',
-    paymentCardClass: 'flex items-center gap-2'
+    paymentInfoContainer: 'flex h-full w-full flex-col items-start justify-between gap-3 text-sm sm:items-end sm:gap-0'
   }
 })
-
-type GameItemPaymentProps = {
-  number: string
-  flag: string
-  img: string
-  purchaseDate: string
-}
 
 export type GameItemProps = VariantProps<typeof gameItemClasses> &
   HTMLAttributes<HTMLDivElement> & {
@@ -36,7 +29,9 @@ export type GameItemProps = VariantProps<typeof gameItemClasses> &
     title: string
     price: number
     downloadLink?: string
-    paymentInfo?: GameItemPaymentProps
+    paymentInfo?: CreditCardProps & {
+      purchaseDate: string
+    }
     timeZone?: string
   }
 
@@ -48,7 +43,7 @@ const GameItem = ({ image, title, price, downloadLink, paymentInfo, timeZone, cl
     downloadClass,
     priceClass,
     paymentInfoContainer,
-    paymentCardClass,
+
     contentContainerClass
   } = gameItemClasses()
 
@@ -83,10 +78,7 @@ const GameItem = ({ image, title, price, downloadLink, paymentInfo, timeZone, cl
 
         {!!paymentInfo && (
           <div className={paymentInfoContainer()}>
-            <div className={paymentCardClass()}>
-              <span>{paymentInfo.number}</span>
-              <Image src={paymentInfo.img} width={30} height={20} alt={paymentInfo.flag} />
-            </div>
+            <CreditCard {...paymentInfo} invertOrder />
             <p>
               Purchase made on{' '}
               <FormattedDate

@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { IntlProvider } from 'react-intl'
 
 import { headingBlackMock } from '@/components/atoms/Heading/mock'
 import { ShowCase } from '.'
@@ -28,14 +29,22 @@ export default {
   ]
 } as Meta
 
+const Component = (props: any) => {
+  return (
+    <IntlProvider locale="en">
+      <ShowCase {...props} />
+    </IntlProvider>
+  )
+}
+
 export const Default: StoryObj = {
-  render: (args) => <ShowCase {...args} heading={headingBlackMock} highlight={highlightMock} cards={cardsMock} />
+  render: (args) => <Component {...args} heading={headingBlackMock} highlight={highlightMock} cards={cardsMock} />
 }
 
 export const WithoutHighlight: StoryObj = {
-  render: (args) => <ShowCase {...args} heading={headingBlackMock} cards={cardsMock} />
+  render: (args) => <Component {...args} heading={headingBlackMock} cards={cardsMock} />
 }
 
 export const WithoutGames: StoryObj = {
-  render: (args) => <ShowCase {...args} heading={headingBlackMock} highlight={highlightMock} />
+  render: (args) => <Component {...args} heading={headingBlackMock} highlight={highlightMock} />
 }
