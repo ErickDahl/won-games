@@ -1,7 +1,9 @@
 import { CiLock as PasswordIcon } from 'react-icons/ci'
 import {
   FaApple as AppleIcon,
+  FaRegCreditCard as CreditCardIcon,
   FaLinux as LinusIcon,
+  FaListUl as ListIcon,
   FaRegUserCircle as UserIcon,
   FaWindows as WindowsIcon
 } from 'react-icons/fa'
@@ -21,7 +23,11 @@ import {
   MdOutlineSearch as SearchIcon,
   MdOutlineShoppingCart as ShoppingCart
 } from 'react-icons/md'
-import { PiHeartStraightFill as WishListFullIcon, PiHeartStraight as WishListIcon } from 'react-icons/pi'
+import {
+  PiSignOut as SignOutIcon,
+  PiHeartStraightFill as WishListFullIcon,
+  PiHeartStraight as WishListIcon
+} from 'react-icons/pi'
 import { TbShoppingCartPlus as AddToCartIcon, TbShoppingCartCheck as InCartIcon } from 'react-icons/tb'
 
 export {
@@ -45,5 +51,8 @@ export {
   DownloadIcon,
   ShoppingCart,
   PlusIcon,
-  InformationIcon
+  InformationIcon,
+  CreditCardIcon,
+  ListIcon,
+  SignOutIcon
 }

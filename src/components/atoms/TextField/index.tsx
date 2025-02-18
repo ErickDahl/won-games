@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, HTMLAttributes, ReactNode, useState } from 'react'
+import { ChangeEvent, HTMLAttributes, HTMLInputTypeAttribute, ReactNode, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const textFieldClasses = tv({
@@ -47,18 +47,18 @@ type TextFieldProps = VariantProps<typeof textFieldClasses> &
   HTMLAttributes<HTMLInputElement> & {
     onInput?: (value: string) => void
     label?: string
-    labelFor?: string
     initialValue?: string
     placeholder?: string
     icon?: ReactNode
     errorMessage?: string
     className?: string
+    name?: string
+    type?: HTMLInputTypeAttribute
   }
 
 const TextField = ({
   onInput,
   label,
-  labelFor,
   initialValue,
   placeholder,
   icon,
@@ -67,6 +67,8 @@ const TextField = ({
   error,
   errorMessage,
   className,
+  name,
+  type,
   ...rest
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -88,7 +90,7 @@ const TextField = ({
   return (
     <section className={base({ className })}>
       {!!label && (
-        <label className={labelClass()} htmlFor={labelFor}>
+        <label className={labelClass()} htmlFor={name}>
           {label}
         </label>
       )}
@@ -96,11 +98,13 @@ const TextField = ({
         {icon && <div className={iconClass()}>{icon}</div>}
         <input
           className={inputClass()}
-          type="text"
+          type={type || 'text'}
           placeholder={placeholder}
           disabled={disabled}
           onChange={onChange}
           value={value}
+          name={name}
+          {...(label && { id: name })}
           {...rest}
         />
       </div>

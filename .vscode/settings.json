@@ -2,7 +2,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["uuidv", "xsmall"],
+  "cSpell.words": ["autoplay", "embla", "formatjs", "ianvs", "plopfile", "supabase", "turbopack", "uuidv", "xsmall"],
   "deno.enablePaths": ["supabase/functions"],
   "deno.lint": true,
   "deno.unstable": [

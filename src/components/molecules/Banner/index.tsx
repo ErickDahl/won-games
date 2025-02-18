@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 import { tv, VariantProps } from 'tailwind-variants'
 
 import { Ribbon } from '@/components/atoms/Ribbon'
-import { sanitize } from '@/utils/sanitize'
+import { sanitize } from '@/lib/sanitize'
 import { StoreLink } from '../../atoms/Link'
 
 const bannerClasses = tv({

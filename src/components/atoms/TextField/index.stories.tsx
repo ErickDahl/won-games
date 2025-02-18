@@ -8,8 +8,7 @@ export default {
   component: TextField,
   args: {
     label: 'E-mail',
-    labelFor: 'Email',
-    id: 'Email',
+    name: 'email',
     initialValue: '',
     placeholder: 'john.cage@gmail.com'
   },
@@ -25,6 +24,14 @@ export const Default: StoryObj = {
   render: (args) => (
     <div style={{ maxWidth: 300, padding: 15 }}>
       <TextField {...args} />
+    </div>
+  )
+}
+
+export const WithNoLabel: StoryObj = {
+  render: (args) => (
+    <div style={{ maxWidth: 300, padding: 15 }}>
+      <TextField {...args} label={undefined} />
     </div>
   )
 }

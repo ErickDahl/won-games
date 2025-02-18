@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { PageTemplate } from '.'
+import { MyCards } from '.'
+import { myCardsMock } from './mock'
 
 export default {
-  title: 'Templates/PageTemplate',
-  component: PageTemplate,
+  title: 'Pages/MyCards',
+  component: MyCards,
+  args: myCardsMock,
   parameters: {
     backgrounds: {
       default: 'dark'
