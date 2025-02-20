@@ -69,7 +69,7 @@ const AuthTemplate = ({ pageType, className, children }: PropsWithChildren<AuthT
   const isMobile = useIsMobile(768)
 
   return (
-    <div className={base({ className })}>
+    <main className={base({ className })}>
       {!isMobile && (
         <div className={leftDiv()} style={{ backgroundImage: `url(${backgroundImage.src})` }}>
           <div className={leftDivContent()}>
@@ -99,7 +99,7 @@ const AuthTemplate = ({ pageType, className, children }: PropsWithChildren<AuthT
           <RenderActionText pageType={pageType} />
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 
