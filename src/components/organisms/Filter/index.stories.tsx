@@ -6,7 +6,12 @@ import { filterMock } from './mock'
 export default {
   title: 'Organisms/Filter',
   component: Filter,
-  args: filterMock
+  args: filterMock,
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
+  }
 } as Meta
 
 export const Default: StoryObj = {}
