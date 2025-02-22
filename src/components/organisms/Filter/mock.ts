@@ -37,11 +37,11 @@ const filterMock: FilterProps = {
       type: 'radio',
       options: [
         {
-          label: ' Low to High',
+          label: 'Low to High',
           value: 'price-asc'
         },
         {
-          label: ' High to Low',
+          label: 'High to Low',
           value: 'price-desc'
         }
       ]
