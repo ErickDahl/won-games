@@ -17,7 +17,7 @@ const filterClasses = tv({
 })
 
 type FilterOption = { label: string; value?: string }
-type FilterGroup = { title: string; type: 'radio' | 'checkbox'; options: FilterOption[] }
+export type FilterGroup = { title: string; type: 'radio' | 'checkbox'; options: FilterOption[] }
 type Values = Record<string, string | boolean>
 
 export type FilterProps = VariantProps<typeof filterClasses> & {

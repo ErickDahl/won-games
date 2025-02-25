@@ -8,10 +8,15 @@ export default {
   component: Filter,
   args: filterMock,
   parameters: {
+    nextjs: {
+      appDirectory: true
+    },
     backgrounds: {
       default: 'dark'
     }
   }
 } as Meta
 
-export const Default: StoryObj = {}
+export const Default: StoryObj = {
+  render: (args) => <Filter filters={filterMock.filters} {...args} />
+}
