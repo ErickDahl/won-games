@@ -1,6 +1,7 @@
 'use client'
 
 import { ChangeEvent, HTMLAttributes, HTMLInputTypeAttribute, ReactNode, useState } from 'react'
+import { ClassNameValue } from 'tailwind-merge'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const textFieldClasses = tv({
@@ -35,6 +36,12 @@ const textFieldClasses = tv({
       right: {
         iconClass: 'order-last'
       }
+    },
+    color: {
+      dark: {
+        inputDiv: 'border-darkGray bg-darkGray',
+        inputClass: 'placeholder:gray text-white'
+      }
     }
   },
   defaultVariants: {
@@ -52,6 +59,7 @@ type TextFieldProps = VariantProps<typeof textFieldClasses> &
     icon?: ReactNode
     errorMessage?: string
     className?: string
+    bgColor?: ClassNameValue
     name?: string
     type?: HTMLInputTypeAttribute
   }
@@ -69,13 +77,15 @@ const TextField = ({
   className,
   name,
   type,
+  color,
   ...rest
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
   const { base, labelClass, inputDiv, inputClass, iconClass, errorClass } = textFieldClasses({
     iconPosition,
     disabled,
-    error
+    error,
+    color
   })
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -88,7 +98,7 @@ const TextField = ({
   }
 
   return (
-    <section className={base({ className })}>
+    <div className={base({ className })}>
       {!!label && (
         <label className={labelClass()} htmlFor={name}>
           {label}
@@ -109,7 +119,7 @@ const TextField = ({
         />
       </div>
       {error && <span className={errorClass()}>{errorMessage}</span>}
-    </section>
+    </div>
   )
 }
 

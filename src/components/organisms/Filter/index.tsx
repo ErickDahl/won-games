@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { tv, VariantProps } from 'tailwind-variants'
@@ -23,6 +25,7 @@ type Values = Record<string, string | boolean>
 export type FilterProps = VariantProps<typeof filterClasses> & {
   filters: FilterGroup[]
   onFilterChange?: (values: Values) => void
+  className?: string
 }
 
 const FilterElements = ({ filters, onFilterChange }: FilterProps) => {
@@ -95,20 +98,13 @@ const FilterElements = ({ filters, onFilterChange }: FilterProps) => {
   )
 }
 
-const Filter = ({ filters, onFilterChange }: FilterProps) => {
+const Filter = ({ filters, onFilterChange, className }: FilterProps) => {
   const { base } = filterClasses()
   const isMobile = useIsMobile(640)
+  const filterContent = <FilterElements filters={filters} onFilterChange={onFilterChange} />
 
   return (
-    <div className={base()}>
-      {isMobile ? (
-        <FilterDrawer>
-          <FilterElements filters={filters} onFilterChange={onFilterChange} />
-        </FilterDrawer>
-      ) : (
-        <FilterElements filters={filters} onFilterChange={onFilterChange} />
-      )}
-    </div>
+    <div className={base({ className })}>{isMobile ? <FilterDrawer>{filterContent}</FilterDrawer> : filterContent}</div>
   )
 }
 
