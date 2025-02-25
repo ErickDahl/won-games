@@ -13,6 +13,7 @@ import {
   IoIosArrowForward as ArrowRightIcon,
   IoIosInformationCircleOutline as InformationIcon
 } from 'react-icons/io'
+import { IoFilterOutline as FilterIcon } from 'react-icons/io5'
 import {
   MdAddShoppingCart as AddCartIcon,
   MdOutlineShoppingCart as CartIcon,
@@ -54,5 +55,6 @@ export {
   InformationIcon,
   CreditCardIcon,
   ListIcon,
-  SignOutIcon
+  SignOutIcon,
+  FilterIcon
 }

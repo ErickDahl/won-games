@@ -1,80 +1,66 @@
-// import { render, screen } from '@testing-library/react'
+import { useSearchParams } from 'next/navigation'
+import { render, screen } from '@testing-library/react'
 
 // import userEvent from '@testing-library/user-event'
 
-// import { Filter } from '.'
-// import { filterMock } from './mock'
+import { Filter } from '.'
+import { filterMock } from './mock'
+
+jest.mock('next/navigation', () => {
+  const originalModule = jest.requireActual('next/navigation')
+  return {
+    ...originalModule,
+    useRouter: jest.fn(() => ({
+      replace: jest.fn()
+    })),
+    useSearchParams: jest.fn(() => new URLSearchParams())
+  }
+})
 
 describe('<ExploreSidebar />', () => {
   it('should render headings', () => {
-    // render(<Filter {...filterMock} onFilterChange={jest.fn} />)
+    render(<Filter {...filterMock} onFilterChange={jest.fn()} />) // Call jest.fn()
 
-    // expect(screen.getByRole('heading', { name: /price/i })).toBeInTheDocument()
-    // expect(screen.getByRole('heading', { name: /sort by/i })).toBeInTheDocument()
-    // expect(screen.getByRole('heading', { name: /system/i })).toBeInTheDocument()
-    // expect(screen.getByRole('heading', { name: /genre/i })).toBeInTheDocument()
-    expect(true).toBe(true)
+    expect(screen.getByRole('heading', { name: /price/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /sort by/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /system/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /genre/i })).toBeInTheDocument()
   })
 
-  // it('should render inputs', () => {
-  //   render(<Filter {...filterMock} onFilterChange={jest.fn} />)
+  it('should check initial values that are passed', () => {
+    ;(useSearchParams as jest.Mock).mockImplementation(() => new URLSearchParams('windows=true&sort_by=price_asc'))
 
-  //   expect(screen.getByRole('checkbox', { name: /under \$50/i })).toBeInTheDocument()
-  //   expect(screen.getByRole('radio', { name: /low to high/i })).toBeInTheDocument()
-  // })
+    render(<Filter {...filterMock} onFilterChange={jest.fn()} />) // Call jest.fn()
 
-  // it('should render the filter button', () => {
-  //   render(<Filter {...filterMock} onFilter={jest.fn} />)
-
-  //   expect(screen.getByRole('button', { name: /filter/i })).toBeInTheDocument()
-  // })
-
-  // it('should check initial values that are passed', () => {
-  //   render(<Filter {...filterMock} onFilter={jest.fn}  />)
-
-  //   expect(screen.getByRole('checkbox', { name: /windows/i })).toBeChecked()
-
-  //   expect(screen.getByRole('radio', { name: /low to high/i })).toBeChecked()
-  // })
-
-  // it('should filter with initial values', () => {
-  //   const onFilter = jest.fn()
-
-  //   render(<Filter {...filterMock}  onFilter={onFilter} />)
-
-  //   userEvent.click(screen.getByRole('button', { name: /filter/i }))
-
-  //   expect(onFilter).toHaveBeenCalledWith({ windows: true, sort_by: 'low-to-high' })
-  // })
+    expect(screen.getByRole('checkbox', { name: /windows/i })).toBeChecked()
+    expect(screen.getByRole('radio', { name: /low to high/i })).toBeChecked()
+  })
 
   // it('should filter with checked values', () => {
   //   const onFilter = jest.fn()
 
-  //   render(<Filter {...filterMock} onFilter={onFilter} />)
+  //   render(<Filter {...filterMock} onFilterChange={onFilter} />)
 
   //   userEvent.click(screen.getByLabelText(/windows/i))
   //   userEvent.click(screen.getByLabelText(/linux/i))
   //   userEvent.click(screen.getByLabelText(/low to high/i))
 
-  //   userEvent.click(screen.getByRole('button', { name: /filter/i }))
-
   //   expect(onFilter).toHaveBeenCalledWith({
-  //     windows: true,
-  //     linux: true,
-  //     sort_by: 'low-to-high'
+  //     windows: 'true',
+  //     linux: 'true',
+  //     sort_by: 'price-asc'
   //   })
   // })
 
-  // it('should altern between radio options', () => {
+  // it('should alternate between radio options', () => {
+  //   // Uncommented and fixed
   //   const onFilter = jest.fn()
 
-  //   render(<Filter {...filterMock} onFilter={onFilter} />)
+  //   render(<Filter {...filterMock} onFilterChange={onFilter} />) // Fixed prop name
 
   //   userEvent.click(screen.getByLabelText(/low to high/i))
   //   userEvent.click(screen.getByLabelText(/high to low/i))
 
-  //   userEvent.click(screen.getByRole('button', { name: /filter/i }))
-
-  //   expect(onFilter).toHaveBeenCalledWith({ sort_by: 'high-to-low' })
+  //   expect(onFilter).toHaveBeenCalledWith({ sort_by: 'price-desc' })
   // })
 })

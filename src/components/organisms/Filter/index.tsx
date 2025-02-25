@@ -5,15 +5,18 @@ import { tv, VariantProps } from 'tailwind-variants'
 import { Checkbox } from '@/components/atoms/Checkbox'
 import { Heading } from '@/components/atoms/Heading'
 import { Radio } from '@/components/atoms/Radio'
+import useIsMobile from '@/hooks/useIsMobile'
+import { FilterDrawer } from './components/FilterDrawer'
 
 const filterClasses = tv({
   slots: {
     base: 'flex flex-col gap-6',
-    filterBase: 'flex flex-col items-start gap-4 border-solid border-darkGray pb-6 [&:not(:last-child)]:border-b'
+    filterBase:
+      'flex w-full flex-col items-start gap-4 border-solid border-darkGray py-4 pb-6 [&:not(:last-child)]:border-b'
   }
 })
 
-type FilterOption = { label: string; value: string }
+type FilterOption = { label: string; value?: string }
 type FilterGroup = { title: string; type: 'radio' | 'checkbox'; options: FilterOption[] }
 type Values = Record<string, string | boolean>
 
@@ -22,8 +25,8 @@ export type FilterProps = VariantProps<typeof filterClasses> & {
   onFilterChange?: (values: Values) => void
 }
 
-const Filter = ({ filters, onFilterChange }: FilterProps) => {
-  const { base, filterBase } = filterClasses()
+const FilterElements = ({ filters, onFilterChange }: FilterProps) => {
+  const { filterBase } = filterClasses()
   const searchParams = useSearchParams()
   const router = useRouter()
 
@@ -49,9 +52,9 @@ const Filter = ({ filters, onFilterChange }: FilterProps) => {
   }, [searchParams, onFilterChange])
 
   return (
-    <div className={base()}>
+    <>
       {filters.map(({ title, type, options }) => {
-        const titleKey = title.replace(/\s+/g, '-').toLowerCase()
+        const titleKey = title.replace(/\s+/g, '_').toLowerCase()
         return (
           <div className={filterBase()} key={title}>
             <Heading className="m-0 mb-4 lg:mb-4" linePosition="bottom" lineBottomColor="secondary">
@@ -60,7 +63,7 @@ const Filter = ({ filters, onFilterChange }: FilterProps) => {
             {options.map(({ label, value }, index) => {
               const id = `${titleKey}-${value}-${index}`
               const labelKey = label
-                .replace(/\s+/g, '-')
+                .replace(/\s+/g, '_')
                 .replace(/[^a-zA-Z0-9-]/g, '')
                 .toLowerCase()
 
@@ -71,7 +74,7 @@ const Filter = ({ filters, onFilterChange }: FilterProps) => {
                   labelFor={id}
                   label={label}
                   name={titleKey}
-                  value={value}
+                  value={value || ''}
                   onCheck={(val) => updateSearchParams({ [titleKey]: val as string })}
                   defaultChecked={searchParams.get(titleKey) === value}
                 />
@@ -88,6 +91,23 @@ const Filter = ({ filters, onFilterChange }: FilterProps) => {
           </div>
         )
       })}
+    </>
+  )
+}
+
+const Filter = ({ filters, onFilterChange }: FilterProps) => {
+  const { base } = filterClasses()
+  const isMobile = useIsMobile(640)
+
+  return (
+    <div className={base()}>
+      {isMobile ? (
+        <FilterDrawer>
+          <FilterElements filters={filters} onFilterChange={onFilterChange} />
+        </FilterDrawer>
+      ) : (
+        <FilterElements filters={filters} onFilterChange={onFilterChange} />
+      )}
     </div>
   )
 }

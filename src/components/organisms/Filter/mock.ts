@@ -7,28 +7,22 @@ const filterMock: FilterProps = {
       type: 'checkbox',
       options: [
         {
-          label: 'Under $50',
-          value: 'under-25'
+          label: 'Under $50'
         },
         {
-          label: 'under 100',
-          value: '25-50'
+          label: 'under 100'
         },
         {
-          label: 'under 150',
-          value: '50-100'
+          label: 'under 150'
         },
         {
-          label: 'under 200',
-          value: '100-200'
+          label: 'under 200'
         },
         {
-          label: 'free',
-          value: 'over-200'
+          label: 'free'
         },
         {
-          label: 'Discounted',
-          value: 'custom'
+          label: 'Discounted'
         }
       ]
     },
@@ -38,11 +32,11 @@ const filterMock: FilterProps = {
       options: [
         {
           label: 'Low to High',
-          value: 'price-asc'
+          value: 'price_asc'
         },
         {
           label: 'High to Low',
-          value: 'price-desc'
+          value: 'price_desc'
         }
       ]
     },
@@ -51,16 +45,13 @@ const filterMock: FilterProps = {
       type: 'checkbox',
       options: [
         {
-          label: 'Windows',
-          value: 'windows'
+          label: 'Windows'
         },
         {
-          label: 'MacOS',
-          value: 'macos'
+          label: 'MacOS'
         },
         {
-          label: 'Linux',
-          value: 'linux'
+          label: 'Linux'
         }
       ]
     },
@@ -69,44 +60,40 @@ const filterMock: FilterProps = {
       type: 'checkbox',
       options: [
         {
-          label: 'Action',
-          value: 'action'
+          label: 'Action'
         },
         {
-          label: 'Adventure',
-          value: 'adventure'
+          label: 'Adventure'
         },
         {
-          label: 'RPG',
-          value: 'rpg'
+          label: 'RPG'
         },
         {
-          label: 'Indie',
-          value: 'indie'
+          label: 'Indie'
         },
         {
-          label: 'Strategy',
-          value: 'strategy'
+          label: 'Strategy'
         },
         {
-          label: 'Simulation',
-          value: 'simulation'
+          label: 'Simulation'
         },
         {
-          label: 'Casual',
-          value: 'casual'
+          label: 'Casual'
         },
         {
-          label: 'Puzzle',
-          value: 'puzzle'
+          label: 'Puzzle'
         },
         {
-          label: 'Shooter',
-          value: 'shooter'
+          label: 'Shooter'
         },
         {
-          label: 'Sports',
-          value: 'sports'
+          label: 'Sports'
+        },
+        {
+          label: 'MMORPG'
+        },
+        {
+          label: 'FPS'
         }
       ]
     }

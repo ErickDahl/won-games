@@ -12,14 +12,14 @@ describe('<Radio />', () => {
   })
 
   it('should render with label (black)', () => {
-    render(<Radio label="Radio" labelColor="black" name={''} />)
+    render(<Radio label="Radio" labelColor="black" name={''} value={''} />)
     const label = screen.getByText('Radio')
     expect(label).toBeInTheDocument()
     expect(label).toHaveClass('text-black')
   })
 
   it('should render without label', () => {
-    render(<Radio name={''} />)
+    render(<Radio name={''} value={''} />)
     expect(screen.queryByLabelText('Radio')).not.toBeInTheDocument()
   })
 
@@ -35,7 +35,7 @@ describe('<Radio />', () => {
   })
 
   it('Should be accessible with tab', async () => {
-    render(<Radio label="Radio" labelFor="Radio" name={''} />)
+    render(<Radio label="Radio" labelFor="Radio" name={''} value={'anyValue'} />)
     const radio = screen.getByLabelText('Radio')
     expect(document.body).toHaveFocus()
     await userEvent.tab()
