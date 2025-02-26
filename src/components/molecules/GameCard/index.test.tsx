@@ -23,14 +23,14 @@ describe('<GameCard />', () => {
   }
 
   it('should render the title and developer', () => {
-    render(<Component {...gameCardMock} />)
+    render(<Component {...gameCardMock} title="Game Title" />)
 
     expect(screen.getByText(/Game Title/i)).toBeInTheDocument()
     expect(screen.getByText(/Game Developer/i)).toBeInTheDocument()
   })
 
   it('should render the image with correct src and alt', () => {
-    render(<Component {...gameCardMock} />)
+    render(<Component {...gameCardMock} title="Game Title" />)
 
     const image = screen.getByAltText('Game Title')
     expect(image).toBeInTheDocument()

@@ -80,7 +80,7 @@ const TextField = ({
   color,
   ...rest
 }: TextFieldProps) => {
-  const [value, setValue] = useState(initialValue)
+  const [value, setValue] = useState(initialValue ?? '')
   const { base, labelClass, inputDiv, inputClass, iconClass, errorClass } = textFieldClasses({
     iconPosition,
     disabled,

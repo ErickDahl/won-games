@@ -58,7 +58,7 @@ export const DefaultLinks = ({ className }: { className?: string }) => {
       <StoreLink className={storeLinks({ className })} href={'/'}>
         Home
       </StoreLink>
-      <StoreLink className={storeLinks({ className })} href={'#'}>
+      <StoreLink className={storeLinks({ className })} href={'/games'}>
         Explore
       </StoreLink>
     </>
@@ -77,10 +77,9 @@ const MenuIcons = ({ className, isMobile }: { className?: string; isMobile: bool
   </div>
 )
 
-const MenuLinks = ({ isLogged, className }: { isLogged?: boolean; className?: string }) => (
+const MenuLinks = ({ className }: { className?: string }) => (
   <div className={className}>
     <DefaultLinks />
-    {isLogged && <LoggedInLinks />}
   </div>
 )
 
@@ -95,7 +94,7 @@ const Menu = ({ isLogged, className, ...rest }: MenuProps) => {
         <StoreLink href={'/'} hoverEffect={false}>
           <Logo className={logo()} variant={isMobile ? 'compact' : 'white'} size={'small'} />
         </StoreLink>
-        {!isMobile && <MenuLinks className={links()} isLogged={isLogged} />}
+        {!isMobile && <MenuLinks className={links()} />}
       </div>
       <MenuIcons className={icons()} isMobile={isMobile} />
     </menu>

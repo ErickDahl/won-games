@@ -91,7 +91,7 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonClasses> & {
     children?: ReactNode
     icon?: ReactNode
-    iconPosition?: 'left' | 'right'
+    iconPosition?: 'left' | 'right' | 'down'
     loading?: boolean
   }
 
@@ -107,7 +107,12 @@ const LoadingState = () => (
 const ButtonContent = ({ icon, iconPosition, children }: ButtonContentProps) => (
   <>
     {!!icon && iconPosition === 'left' && icon}
-    {children && <span className="leading-none">{children}</span>}
+    {children && (
+      <div className="flex flex-col items-center justify-center">
+        <span className="leading-none">{children}</span>
+        {!!icon && iconPosition === 'down' && icon}
+      </div>
+    )}
     {!!icon && iconPosition === 'right' && icon}
   </>
 )
