@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { ReactNode, Suspense, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -42,12 +42,12 @@ const useFilteredGames = (games: GameCardProps[], searchQuery: string) => {
 const SearchBar = ({
   onSearch,
   isMobile,
-  filters
+  FilterComponent
 }: {
   searchQuery: string
   onSearch: (value: string) => void
   isMobile: boolean
-  filters: FilterGroup[]
+  FilterComponent: ReactNode
 }) => (
   <div className="flex gap-4">
     <TextField
@@ -59,7 +59,7 @@ const SearchBar = ({
       name="search"
       onInput={(value) => onSearch(value.toString())}
     />
-    {isMobile && <Filter filters={filters} />}
+    {isMobile && FilterComponent}
   </div>
 )
 
@@ -95,6 +95,11 @@ const GamesPage = ({ filters, games = [] }: GamesPageProps) => {
   const filteredGames = useFilteredGames(games, searchQuery)
   const thereIsGames = filteredGames.length > 0
   const { base, gamesClass, containerClass } = gamesPageClasses({ noGames: !thereIsGames })
+  const FilterComponent = () => (
+    <Suspense>
+      <Filter filters={filters} />
+    </Suspense>
+  )
 
   const handleSearchInput = (value: string) => setSearchQuery(value)
 
@@ -102,9 +107,14 @@ const GamesPage = ({ filters, games = [] }: GamesPageProps) => {
     <PageTemplate>
       <Container paddingMobile>
         <div className={base()}>
-          {!isMobile && <Filter filters={filters} />}
+          {!isMobile && <FilterComponent />}
           <section className={containerClass()}>
-            <SearchBar searchQuery={searchQuery} onSearch={handleSearchInput} isMobile={isMobile} filters={filters} />
+            <SearchBar
+              searchQuery={searchQuery}
+              onSearch={handleSearchInput}
+              isMobile={isMobile}
+              FilterComponent={<FilterComponent />}
+            />
             <GameList games={filteredGames} gamesClass={gamesClass()} />
             {thereIsGames && <ShowMoreButton thereIsGames={thereIsGames} />}
           </section>
