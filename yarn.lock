@@ -13311,22 +13311,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-addon-next-router@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "storybook-addon-next-router@npm:4.0.2"
-  dependencies:
-    tslib: "npm:2.4.0"
-  peerDependencies:
-    "@storybook/addon-actions": ^6.0.0
-    "@storybook/addons": ^6.0.0
-    "@storybook/client-api": ^6.0.0
-    next: ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/4625ec504eec57a4206aeda8828a9a3243aaf37b567d98e4d1846856da4ddaa0cc73d8213681b2f2a2acb655699f7b1ca814cfb8bd78ea310999fba426b1b01b
-  languageName: node
-  linkType: hard
-
 "storybook@npm:^8.5.8":
   version: 8.5.8
   resolution: "storybook@npm:8.5.8"
@@ -14112,13 +14096,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.4.0":
-  version: 2.4.0
-  resolution: "tslib@npm:2.4.0"
-  checksum: 10c0/eb19bda3ae545b03caea6a244b34593468e23d53b26bf8649fbc20fce43e9b21a71127fd6d2b9662c0fe48ee6ff668ead48fd00d3b88b2b716b1c12edae25b5d
-  languageName: node
-  linkType: hard
-
 "tty-browserify@npm:^0.0.1":
   version: 0.0.1
   resolution: "tty-browserify@npm:0.0.1"
@@ -14841,7 +14818,6 @@ __metadata:
     react-intl: "npm:^7.1.6"
     react-spinners: "npm:^0.15.0"
     storybook: "npm:^8.5.8"
-    storybook-addon-next-router: "npm:^4.0.2"
     supabase: "npm:^2.0.0"
     tailwind-merge: "npm:^3.0.1"
     tailwind-variants: "npm:^0.3.1"
