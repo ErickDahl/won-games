@@ -1,3 +1,5 @@
+'use client'
+
 import { tv, VariantProps } from 'tailwind-variants'
 
 import { Container } from '@/components/atoms/Container'
@@ -6,8 +8,6 @@ import { BannerProps } from '@/components/molecules/Banner'
 import { BannerCarousel } from '@/components/molecules/BannerCarousel'
 import { GameCardProps } from '@/components/molecules/GameCard'
 import { HighlightProps } from '@/components/molecules/Highlight'
-import { ProfileMenu } from '@/components/molecules/ProfileMenu'
-import { profileMenuMock } from '@/components/molecules/ProfileMenu/mock'
 import { PageTemplate } from '@/components/templates/Page'
 import { ShowCase } from '@/components/templates/ShowCase'
 
@@ -53,10 +53,6 @@ const Home = ({
       <div className={clipPathTop()}>
         <ShowCase title="New" heading={headingBlackMock} cards={newGames} />
       </div>
-
-      <Container className="bg-white">
-        <ProfileMenu {...profileMenuMock} />
-      </Container>
 
       <ShowCase
         title="Most Popular"

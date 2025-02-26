@@ -1,6 +1,10 @@
 import { dirname, join } from 'path'
 import type { StorybookConfig } from '@storybook/nextjs'
 
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, 'package.json')))
+}
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 
@@ -24,7 +28,3 @@ const config: StorybookConfig = {
   }
 }
 export default config
-
-function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, 'package.json')))
-}

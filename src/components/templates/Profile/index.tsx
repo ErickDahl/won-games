@@ -27,16 +27,18 @@ const ProfileTemplate = ({ children, className }: PropsWithChildren<ProfileTempl
   const pathname = usePathname()
 
   return (
-    <Container className={containerClass({ className })} paddingMobile>
-      <Heading className="m-0" linePosition="left" lineColor="secondary">
-        My Profile
-      </Heading>
+    <main>
+      <Container className={containerClass({ className })} paddingMobile>
+        <Heading className="m-0" linePosition="left" lineColor="secondary">
+          My Profile
+        </Heading>
 
-      <div className={containerContentClass()}>
-        <ProfileMenu className={profileClass()} {...profileMenuMock} activeLink={pathname as ActiveLinkProps} />
-        <div className={contentClass()}>{children}</div>
-      </div>
-    </Container>
+        <div className={containerContentClass()}>
+          <ProfileMenu className={profileClass()} {...profileMenuMock} activeLink={pathname as ActiveLinkProps} />
+          <div className={contentClass()}>{children}</div>
+        </div>
+      </Container>
+    </main>
   )
 }
 

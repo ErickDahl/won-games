@@ -51,7 +51,7 @@ const PageTemplate = ({ children, className, ...rest }: PropsWithChildren<PageTe
           </Container>
         </div>
 
-        <div className="flex-1">{children}</div>
+        <main className="flex-1">{children}</main>
 
         <div className={clipPathFooter()}>
           <Container className="my-0">

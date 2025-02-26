@@ -11,7 +11,7 @@ const drawerClasses = tv({
     trigger: '',
     overlay: 'fixed inset-0 z-40 h-screen bg-black transition-opacity duration-300',
     content:
-      'fixed z-50 flex flex-col items-center justify-center gap-2 overflow-hidden bg-white p-4 text-black transition-transform duration-300',
+      'fixed z-50 flex flex-col items-center justify-center gap-2 overflow-y-auto bg-white p-4 text-black transition-transform duration-300',
     close: ''
   },
   variants: {

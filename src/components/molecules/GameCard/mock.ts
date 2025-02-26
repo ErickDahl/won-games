@@ -2,7 +2,7 @@ import gameImage from '@/assets/gameCard.png'
 import { GameCardProps } from '.'
 
 const gameCardMock: GameCardProps = {
-  title: 'Game Title',
+  title: 'Red dead',
   developer: 'Game Developer',
   image: gameImage,
   listPrice: 100,
@@ -13,7 +13,7 @@ const gameCardMock: GameCardProps = {
 }
 
 const gameCardMockInCart: GameCardProps = {
-  title: 'Game Title',
+  title: 'Test',
   developer: 'Game Developer',
   image: gameImage,
   listPrice: 100,
@@ -24,7 +24,7 @@ const gameCardMockInCart: GameCardProps = {
 }
 
 const gameCardMockInWishlist: GameCardProps = {
-  title: 'Game Title',
+  title: 'Borderlands',
   developer: 'Game Developer',
   image: gameImage,
   listPrice: 100,

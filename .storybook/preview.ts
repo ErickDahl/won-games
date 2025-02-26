@@ -4,6 +4,9 @@ import '@/app/globals.css'
 
 const preview: Preview = {
   parameters: {
+    nextjs: {
+      router: {}
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

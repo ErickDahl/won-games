@@ -24,15 +24,15 @@ const radioClasses = tv({
   }
 })
 
-type RadioValue = string | ReadonlyArray<string> | number
+export type RadioValue = string | ReadonlyArray<string> | number
 
 type RadioProps = VariantProps<typeof radioClasses> &
   HTMLAttributes<HTMLInputElement> & {
-    onCheck?: (value?: RadioValue) => void
+    onCheck?: (value: RadioValue) => void
     label?: string
     labelColor?: 'white' | 'black'
     labelFor?: string
-    value?: RadioValue
+    value: RadioValue
     name: string
     className?: string
   }
