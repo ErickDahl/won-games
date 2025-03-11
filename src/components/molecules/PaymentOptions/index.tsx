@@ -3,7 +3,7 @@
 import { HTMLAttributes, useState } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
-import { PlusIcon, ShoppingCart } from '@/assets/icons'
+import { CartIcon, PlusIcon } from '@/assets/icons'
 import { Button } from '@/components/atoms/Button'
 import { CreditCard, CreditCardProps } from '@/components/atoms/CreditCard'
 import { Heading } from '@/components/atoms/Heading'
@@ -67,7 +67,7 @@ const PaymentOptions = ({ cards, handlePayment, className }: PaymentOptionsProps
           Continue shopping
         </StoreLink>
 
-        <Button icon={<ShoppingCart />} onClick={handlePayment} disabled={!checked}>
+        <Button icon={<CartIcon />} onClick={handlePayment} disabled={!checked}>
           Buy now
         </Button>
       </div>

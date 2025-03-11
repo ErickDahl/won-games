@@ -68,9 +68,9 @@ export const Modal = ({ children, closeOnEsc }: PropsWithChildren<ModalProps>) =
   )
 }
 
-type DrawerContentProps = HTMLAttributes<HTMLElement>
+type ModalContentProps = HTMLAttributes<HTMLElement>
 
-export const ModalContent = ({ children, className, ...rest }: PropsWithChildren<DrawerContentProps>) => {
+export const ModalContent = ({ children, className, ...rest }: PropsWithChildren<ModalContentProps>) => {
   const { isOpen } = useModalContext()
   const { content } = modalClasses({ isOpen })
 
@@ -88,7 +88,7 @@ export const ModalTrigger = ({ children, className, ...rest }: ModalTriggerProps
   const { trigger } = modalClasses({ isOpen })
 
   return (
-    <div onClick={openModal} role="button" aria-label="Open Drawer" className={trigger({ className })} {...rest}>
+    <div onClick={openModal} role="button" aria-label="Open Modal" className={trigger({ className })} {...rest}>
       {children}
     </div>
   )
@@ -105,7 +105,7 @@ export const ModalClose = ({ children, className, ...rest }: PropsWithChildren<M
       onClick={closeModal}
       role="button"
       aria-hidden={!isOpen}
-      aria-label="Close Drawer"
+      aria-label="Close Modal"
       className={close({ className })}
       {...rest}
     >

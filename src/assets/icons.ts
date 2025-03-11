@@ -22,8 +22,7 @@ import {
   MdDownload as DownloadIcon,
   MdOutlineMailOutline as EmailIcon,
   MdMenu as MenuIcon,
-  MdOutlineSearch as SearchIcon,
-  MdOutlineShoppingCart as ShoppingCart
+  MdOutlineSearch as SearchIcon
 } from 'react-icons/md'
 import {
   PiSignOut as SignOutIcon,
@@ -51,7 +50,6 @@ export {
   LinusIcon,
   AppleIcon,
   DownloadIcon,
-  ShoppingCart,
   PlusIcon,
   InformationIcon,
   CreditCardIcon,

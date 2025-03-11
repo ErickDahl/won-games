@@ -3,9 +3,11 @@
 import { HTMLAttributes } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
-import { CartIcon, SearchIcon } from '@/assets/icons'
+import { SearchIcon } from '@/assets/icons'
 import { StoreLink } from '@/components/atoms/Link'
 import { Logo } from '@/components/atoms/Logo'
+import { Dropdown, DropdownContent, DropdownTrigger } from '@/components/molecules/Dropdown'
+import { HeaderCart } from '@/components/molecules/HeaderCart'
 import useIsMobile from '@/hooks/useIsMobile'
 import { MenuDrawer } from './components/MenuDrawer'
 
@@ -68,7 +70,12 @@ export const DefaultLinks = ({ className }: { className?: string }) => {
 const MenuIcons = ({ className, isMobile }: { className?: string; isMobile: boolean }) => (
   <div className={className}>
     <SearchIcon aria-label="Search" size={iconSize} color={iconsColor} />
-    <CartIcon aria-label="openCart" size={iconSize} color={iconsColor} />
+    <Dropdown>
+      <DropdownTrigger>
+        <HeaderCart aria-label="openCart" count={2} />
+        <DropdownContent>test</DropdownContent>
+      </DropdownTrigger>
+    </Dropdown>
     {!isMobile && (
       <StoreLink href={'/sign-in'} hoverEffect={false} button>
         Sign in
